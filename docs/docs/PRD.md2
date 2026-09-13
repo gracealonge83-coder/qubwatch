@@ -10608,3 +10608,4999 @@ The system must:
 
 This principle should remain central to every present and future AI capability within QubWatch.
 
+
+# SECTION 26 — AUDIT, ACCOUNTABILITY AND TRACEABILITY REQUIREMENTS
+
+## 26.1 Purpose
+
+QubWatch must provide a reliable record of important activities performed within the platform.
+
+Because QubWatch is designed to monitor business activity, generate alerts, support investigations, and assist decision-making, users must be able to understand:
+
+* What happened
+* When it happened
+* Who performed the action
+* What information was affected
+* What changed
+* Why the action occurred, where applicable
+* What happened afterward
+
+This section defines the requirements for **auditability, accountability, and traceability** throughout QubWatch.
+
+### Core Principle
+
+> **If an important action occurs, QubWatch should be able to provide an appropriate record of that action.**
+
+---
+
+## 26.2 Audit Objectives
+
+The QubWatch audit system should support:
+
+1. Accountability
+2. Security monitoring
+3. Investigation
+4. Data integrity
+5. Compliance
+6. Troubleshooting
+7. Incident response
+8. User activity review
+9. AI accountability
+10. Business transparency
+
+Audit records should help authorized users reconstruct important events without unnecessarily exposing sensitive information.
+
+---
+
+## 26.3 What Is an Audit Trail?
+
+An audit trail is a chronological record of important activities performed within QubWatch.
+
+Examples include:
+
+* User login
+* Logout
+* Failed login
+* Product creation
+* Product modification
+* Transaction creation
+* Transaction modification
+* Refund
+* Discount
+* Alert generation
+* Alert review
+* Investigation creation
+* Investigation update
+* Investigation closure
+* User permission changes
+* AI interactions
+* Security configuration changes
+* Data export
+* Data deletion
+
+---
+
+## 26.4 Audit Event Structure
+
+Where appropriate, an audit event should contain:
+
+* Event ID
+* Date and time
+* User ID
+* User role
+* Business ID
+* Event type
+* Object affected
+* Object ID
+* Action performed
+* Previous value where appropriate
+* New value where appropriate
+* Source of action
+* Result/status
+* Relevant metadata
+* IP address or device information where legally and technically appropriate
+
+The system should collect only information necessary for audit purposes.
+
+---
+
+## 26.5 Audit Event Categories
+
+QubWatch should categorize audit events.
+
+### Authentication Events
+
+Examples:
+
+* Successful login
+* Failed login
+* Logout
+* Password change
+* Password reset
+* Session termination
+
+### Authorization Events
+
+Examples:
+
+* Permission granted
+* Permission changed
+* Permission removed
+* Unauthorized access attempt
+
+### Business Events
+
+Examples:
+
+* Business created
+* Business profile updated
+* Business settings changed
+
+### Product Events
+
+Examples:
+
+* Product added
+* Product edited
+* Product archived
+
+### Transaction Events
+
+Examples:
+
+* Transaction created
+* Transaction edited
+* Transaction refunded
+* Transaction discounted
+
+### Alert Events
+
+Examples:
+
+* Alert generated
+* Alert viewed
+* Alert acknowledged
+* Alert dismissed
+* Alert escalated
+* Alert resolved
+
+### Investigation Events
+
+Examples:
+
+* Investigation created
+* Evidence added
+* Investigation note added
+* Finding recorded
+* Investigation status changed
+* Investigation closed
+
+### AI Events
+
+Examples:
+
+* AI question submitted
+* AI response generated
+* AI-assisted analysis requested
+* AI-generated summary created
+
+### Administrative Events
+
+Examples:
+
+* User created
+* User role changed
+* User disabled
+* Security configuration changed
+* Integration configured
+
+### Data Events
+
+Examples:
+
+* Data exported
+* Data archived
+* Data deleted
+
+---
+
+## 26.6 Authentication Audit
+
+Authentication events should be recorded appropriately.
+
+The system should record events such as:
+
+* Successful login
+* Failed login
+* Repeated failed login attempts
+* Logout
+* Password reset
+* Password change
+* Session expiration
+* Account lockout where implemented
+
+Authentication logs should not store passwords or other authentication secrets.
+
+---
+
+## 26.7 Authorization Audit
+
+QubWatch should record significant authorization events.
+
+Examples include:
+
+* Attempt to access restricted information
+* Attempt to perform an unauthorized action
+* Role assignment
+* Role modification
+* Permission removal
+
+Repeated authorization failures may indicate a security issue and should be monitored.
+
+---
+
+## 26.8 Transaction Auditability
+
+Important transaction changes should be traceable.
+
+For example, if a transaction amount changes from:
+
+**₦100,000 → ₦70,000**
+
+the system should, where appropriate, preserve a record showing:
+
+* Original value
+* New value
+* User who made the change
+* Date and time
+* Reason or supporting information where required
+
+The objective is to prevent important changes from becoming invisible.
+
+---
+
+## 26.9 Product Auditability
+
+Important product changes should also be traceable.
+
+Examples include:
+
+* Product creation
+* Product price change
+* Product quantity change
+* Product status change
+* Product deletion/archiving
+
+Where appropriate, previous and new values should be retained in the audit record.
+
+---
+
+## 26.10 Alert Auditability
+
+QubWatch should maintain an appropriate history of alerts.
+
+The audit record should help answer:
+
+* When was the alert generated?
+* What rule generated it?
+* What information triggered it?
+* Who viewed it?
+* Who acknowledged it?
+* Was it escalated?
+* Was it resolved?
+* When was it resolved?
+* Who resolved it?
+
+This allows users to understand how an alert progressed through the system.
+
+---
+
+## 26.11 Investigation Auditability
+
+Investigation activity must be highly traceable.
+
+The system should record important investigation events such as:
+
+* Investigation creation
+* Alert associated with investigation
+* Evidence added
+* Evidence removed where permitted
+* Notes added
+* Findings recorded
+* Status changes
+* Priority changes
+* Assigned investigator changes
+* AI assistance requested
+* Investigation resolution
+* Investigation closure
+
+This creates a defensible history of the investigation process.
+
+---
+
+## 26.12 Evidence Integrity
+
+Evidence associated with an investigation should be protected from unauthorized modification.
+
+Where appropriate, QubWatch should:
+
+* Record who added evidence
+* Record when it was added
+* Preserve the original evidence
+* Track permitted changes
+* Record removal actions
+* Restrict evidence modification
+* Maintain an audit trail
+
+The system should make it difficult for users to secretly alter investigation evidence.
+
+---
+
+## 26.13 Investigation Timeline
+
+QubWatch should provide an investigation timeline where practical.
+
+A timeline may display events such as:
+
+**Alert Created → Investigation Opened → Evidence Added → AI Analysis Requested → Finding Recorded → Investigation Resolved**
+
+This provides investigators with a chronological view of the investigation.
+
+---
+
+## 26.14 AI Auditability
+
+AI-assisted activity must also be traceable.
+
+Where appropriate, QubWatch should record:
+
+* User who requested the AI assistance
+* Date and time
+* Type of request
+* Relevant alert/investigation
+* Information accessed
+* AI response
+* AI model/provider information where available
+* Actions taken after the AI response
+
+AI records must respect privacy and data-retention requirements.
+
+---
+
+## 26.15 Audit Trail Protection
+
+Audit records are sensitive security and business information.
+
+Therefore, QubWatch should protect audit records against:
+
+* Unauthorized access
+* Unauthorized modification
+* Unauthorized deletion
+* Accidental loss
+* Data corruption
+
+Audit records should have stronger protection than ordinary application data where appropriate.
+
+---
+
+## 26.16 Separation of Duties
+
+Where practical, users who generate or manage sensitive audit information should not have unrestricted ability to alter the records of their own activities.
+
+This supports accountability and reduces the risk of audit manipulation.
+
+For example:
+
+> A user should not be able to secretly delete the audit record showing that the user changed a transaction.
+
+---
+
+## 26.17 Audit Access Control
+
+Not every user should have access to every audit record.
+
+Access should follow the QubWatch permission model.
+
+### Business Owner
+
+May view relevant business audit information.
+
+### Authorized Manager
+
+May view audit information according to assigned permissions.
+
+### Staff User
+
+Should have limited or no access to sensitive audit records unless specifically authorized.
+
+### Administrator
+
+May have technical access required for platform administration, but administrative access must itself be controlled and logged.
+
+---
+
+## 26.18 Business Data Isolation
+
+Audit information must respect business boundaries.
+
+A user associated with Business A must not be able to view audit records belonging to Business B unless explicitly authorized through an appropriate administrative function.
+
+Business isolation applies to:
+
+* Transactions
+* Products
+* Alerts
+* Investigations
+* Audit records
+* AI interactions
+* Reports
+* Notifications
+
+---
+
+## 26.19 Audit Record Immutability
+
+Where appropriate, important audit records should be protected from modification.
+
+The application should not allow ordinary users to:
+
+* Rewrite historical audit events
+* Change timestamps
+* Change the identity of the user who performed an action
+* Remove evidence of an important action
+
+If corrections are required, the system should create a new audit event rather than silently rewriting history.
+
+---
+
+## 26.20 Audit Retention
+
+Audit records should be retained according to:
+
+* Business requirements
+* Security requirements
+* Investigation requirements
+* Applicable legal or regulatory requirements
+* QubWatch retention policies
+
+Retention periods should be defined and documented.
+
+Not all audit events necessarily require the same retention period.
+
+---
+
+## 26.21 Audit Data Privacy
+
+Audit records may contain personal or sensitive information.
+
+QubWatch should therefore:
+
+* Limit unnecessary personal data
+* Restrict access
+* Protect stored audit information
+* Protect audit information during transmission
+* Apply appropriate retention periods
+* Securely dispose of records when retention requirements expire
+
+Auditability must not become an excuse for unlimited data collection.
+
+---
+
+## 26.22 Audit Search and Filtering
+
+Authorized users should be able to search or filter audit information where practical.
+
+Possible filters include:
+
+* Date
+* User
+* Event type
+* Business
+* Object
+* Transaction
+* Alert
+* Investigation
+* Action
+* Status
+
+This will make large audit histories easier to investigate.
+
+---
+
+## 26.23 Audit Reporting
+
+QubWatch may provide audit summaries such as:
+
+* Recent important actions
+* User activity
+* Security events
+* Transaction changes
+* Investigation activity
+* Permission changes
+* Failed access attempts
+
+Future versions may provide more advanced audit reports.
+
+---
+
+## 26.24 Security Monitoring
+
+Audit information may support detection of suspicious system behavior.
+
+Examples include:
+
+* Repeated failed login attempts
+* Unusual permission changes
+* Large numbers of transaction modifications
+* Repeated unauthorized access attempts
+* Unexpected data exports
+* Unusual administrative activity
+
+Audit information may therefore become an input into future QubWatch security monitoring.
+
+---
+
+## 26.25 Audit Alerts
+
+QubWatch may generate security or administrative alerts based on audit activity.
+
+Examples:
+
+* Multiple failed login attempts
+* Repeated unauthorized access attempts
+* Unexpected role changes
+* Large data export
+* Suspicious administrative behavior
+
+Such alerts should be carefully configured to minimize unnecessary false positives.
+
+---
+
+## 26.26 Audit Integrity
+
+QubWatch should provide mechanisms to help ensure that audit records remain trustworthy.
+
+Possible future controls include:
+
+* Integrity checks
+* Cryptographic hashes
+* Append-only storage
+* Tamper detection
+* Restricted database access
+* Separate audit storage
+* Automated integrity monitoring
+
+These capabilities may be introduced as the platform matures.
+
+---
+
+## 26.27 Audit Failure Handling
+
+If the audit system experiences a failure, QubWatch should handle the situation safely.
+
+Important questions include:
+
+* Should the action be blocked?
+* Should the event be queued?
+* Should the system retry recording the event?
+* Should an administrator be notified?
+* Could continuing without an audit record create a security or compliance risk?
+
+For critical security and administrative actions, failure to create an appropriate audit record may require the action to be prevented or escalated.
+
+---
+
+## 26.28 Audit Availability
+
+Audit information should be available to authorized users when needed for:
+
+* Investigation
+* Security review
+* Incident response
+* Business review
+* Troubleshooting
+* Compliance
+
+However, availability must be balanced against security and privacy.
+
+---
+
+## 26.29 Audit and Data Lifecycle
+
+Audit records must follow the QubWatch data lifecycle:
+
+**Create → Validate → Store → Use → Retain → Archive → Securely Delete**
+
+Audit records should not be retained indefinitely without a legitimate reason.
+
+---
+
+## 26.30 Audit and Incident Response
+
+During a security or business incident, audit information may help investigators determine:
+
+* What happened
+* When it happened
+* Which accounts were involved
+* Which information was accessed
+* What changes occurred
+* What actions were taken afterward
+
+Audit records should therefore be available to authorized incident responders.
+
+---
+
+## 26.31 Audit and Compliance
+
+QubWatch should support audit requirements that may arise from applicable business, contractual, legal, regulatory, or organizational requirements.
+
+However, QubWatch should not claim compliance with a specific law, regulation, framework, or certification unless the appropriate requirements have been assessed and verified.
+
+---
+
+## 26.32 User Accountability
+
+Each user should have an identifiable account rather than sharing credentials.
+
+Shared accounts make accountability difficult because the system cannot reliably determine who performed an action.
+
+Therefore:
+
+> **Users should use individual accounts wherever practical.**
+
+---
+
+## 26.33 Administrative Accountability
+
+Administrative actions require additional accountability because administrators may have elevated privileges.
+
+QubWatch should record important administrative actions such as:
+
+* User creation
+* User suspension
+* Role changes
+* Permission changes
+* Security setting changes
+* Integration configuration
+* System configuration changes
+
+Administrative actions should be reviewed and protected appropriately.
+
+---
+
+## 26.34 Audit and Human Decision-Making
+
+Audit records should support, rather than replace, human judgment.
+
+For investigations, the audit trail should provide context around:
+
+* Alerts
+* Evidence
+* User actions
+* Investigation activity
+* AI assistance
+* Findings
+* Final outcomes
+
+The audit trail should not itself be treated as proof of wrongdoing.
+
+An audit record showing that a user performed an action establishes that an action occurred; it does not automatically establish why the user performed it or whether the action was improper.
+
+---
+
+## 26.35 Audit and Responsible AI
+
+AI-generated information should remain distinguishable from human decisions.
+
+For example:
+
+**AI generated:**
+"Possible explanation: unusual refund activity may be related to a pricing or customer-service issue."
+
+**Human finding:**
+"Investigation review found that the refunds were authorized promotional adjustments."
+
+The audit system should preserve this distinction.
+
+---
+
+## 26.36 Audit Review
+
+Organizations using QubWatch should periodically review audit information.
+
+Reviews may identify:
+
+* Security weaknesses
+* Permission problems
+* Unusual activity
+* Process weaknesses
+* Repeated errors
+* Excessive privileges
+* Investigation delays
+* AI misuse
+* Configuration problems
+
+Audit review should be proportionate to the organization's needs and risk.
+
+---
+
+## 26.37 Audit Governance
+
+QubWatch should define:
+
+* What events are logged
+* Who can access logs
+* How logs are protected
+* How long logs are retained
+* How logs are reviewed
+* How audit incidents are handled
+* Who is responsible for audit management
+
+These requirements should be documented as the platform develops.
+
+---
+
+## 26.38 Future Audit Capabilities
+
+Future versions may include:
+
+* Advanced audit dashboards
+* Automated anomaly detection within audit logs
+* Tamper-evident audit storage
+* Advanced user activity analytics
+* Security information and event management integrations
+* Compliance reporting
+* Automated audit reports
+* Investigation replay
+* Advanced administrative monitoring
+* Cross-system audit correlation
+
+These capabilities should be introduced according to security, business, and operational priorities.
+
+---
+
+## 26.39 Core Audit Rule
+
+QubWatch should maintain the following principle:
+
+> **Important actions must be appropriately traceable, protected, and attributable to an authorized user or system process.**
+
+The system should make it difficult for important actions to disappear without a trace.
+
+---
+
+## 26.40 Section 26 Summary
+
+QubWatch audit and accountability requirements ensure that important platform activities can be understood and traced.
+
+The system should:
+
+* Record important actions
+* Identify who performed them
+* Record when they occurred
+* Track important changes
+* Protect audit records
+* Respect business data isolation
+* Restrict audit access
+* Preserve investigation history
+* Track important AI activity
+* Support security monitoring
+* Protect evidence integrity
+* Support incident response
+* Maintain appropriate retention
+* Prevent unauthorized alteration
+* Support human accountability
+
+### Fundamental QubWatch Audit Principle
+
+**What happened should be traceable. Who did it should be identifiable. Important changes should be protected. Evidence should remain trustworthy.**
+
+
+
+# SECTION 27 — BACKUP, RECOVERY AND BUSINESS CONTINUITY REQUIREMENTS
+
+## 27.1 Purpose
+
+QubWatch will contain important business information, including products, transactions, alerts, investigations, audit records, user information, and AI-assisted investigation records.
+
+Loss, corruption, accidental deletion, system failure, cyberattack, or infrastructure failure could significantly affect users and their businesses.
+
+This section defines the requirements for protecting QubWatch data and restoring the platform when something goes wrong.
+
+### Core Principle
+
+> **Important business information must be recoverable after an appropriate failure or incident.**
+
+---
+
+## 27.2 Backup Objectives
+
+QubWatch backups should help protect against:
+
+* Accidental deletion
+* Data corruption
+* Hardware failure
+* Software failure
+* Database failure
+* Cyberattacks
+* Ransomware
+* Configuration errors
+* Failed deployments
+* Human error
+* Infrastructure outages
+* Disaster events
+
+Backups should support restoration of both business data and the systems required to use that data.
+
+---
+
+## 27.3 Data Requiring Backup
+
+Depending on the implementation, backups should protect important information such as:
+
+* User accounts
+* Business profiles
+* Products
+* Transactions
+* Alerts
+* Investigations
+* Investigation evidence
+* Investigation notes
+* Audit records
+* Relevant AI conversation records
+* Detection rules
+* Configuration information
+* Integration configuration
+* Required application data
+
+Secrets such as passwords and API keys must not be backed up in an insecure or exposed form.
+
+---
+
+## 27.4 Backup Strategy
+
+QubWatch should use a documented backup strategy.
+
+The strategy should define:
+
+* What is backed up
+* How often backups occur
+* Where backups are stored
+* How backups are protected
+* How long backups are retained
+* Who can access backups
+* How backups are tested
+* How restoration is performed
+* What happens when a backup fails
+
+Backup frequency should reflect the importance and rate of change of the data.
+
+---
+
+## 27.5 Automated Backups
+
+Where practical, important QubWatch data should be backed up automatically.
+
+Automation reduces dependence on users remembering to create backups manually.
+
+Backup processes should be monitored to confirm that they are actually completing successfully.
+
+---
+
+## 27.6 Backup Frequency
+
+Backup frequency should be determined by:
+
+* Data criticality
+* Transaction volume
+* Acceptable data loss
+* Business requirements
+* Infrastructure capabilities
+* Cost
+
+For example, highly active transaction data may require more frequent backups than rarely changed configuration data.
+
+---
+
+## 27.7 Recovery Point Objective
+
+QubWatch should define a **Recovery Point Objective (RPO)** for important systems.
+
+RPO answers:
+
+> "How much recent data can the business afford to lose after an incident?"
+
+For example, an RPO of one hour means the recovery strategy should aim to limit data loss to approximately one hour of changes or less.
+
+The exact RPO should be determined during technical planning.
+
+---
+
+## 27.8 Recovery Time Objective
+
+QubWatch should also define a **Recovery Time Objective (RTO)**.
+
+RTO answers:
+
+> "How quickly should the system be restored after a significant failure?"
+
+Different QubWatch services may have different recovery priorities.
+
+Critical business functionality should receive appropriate recovery priority.
+
+---
+
+## 27.9 Backup Storage
+
+Backups should be stored separately from the primary production environment where practical.
+
+This reduces the risk that a single incident destroys both:
+
+* Production data
+* Backup data
+
+For important systems, backup infrastructure should have appropriate access controls and security protections.
+
+---
+
+## 27.10 Backup Security
+
+Backups may contain sensitive business information and therefore require strong protection.
+
+Controls should include:
+
+* Access control
+* Encryption where appropriate
+* Secure transmission
+* Restricted administrative access
+* Strong authentication
+* Monitoring
+* Appropriate retention
+* Protection against unauthorized deletion
+
+Backup credentials should never be exposed in application source code.
+
+---
+
+## 27.11 Protection Against Ransomware
+
+QubWatch should consider ransomware scenarios when designing backup systems.
+
+Where practical, backup strategies should reduce the possibility that an attacker who compromises the production environment can also destroy or encrypt all available backups.
+
+Possible controls include:
+
+* Separate backup credentials
+* Restricted backup access
+* Isolated backup storage
+* Immutable backups where supported
+* Backup monitoring
+* Offline or logically isolated copies where appropriate
+
+---
+
+## 27.12 Backup Integrity
+
+A successful backup operation does not necessarily mean the backup can be restored.
+
+QubWatch should therefore verify backup integrity where practical.
+
+Verification may include:
+
+* Checking backup completion
+* Checking file/database integrity
+* Validating backup metadata
+* Performing restoration tests
+* Comparing expected and actual backup sizes
+* Monitoring backup errors
+
+---
+
+## 27.13 Backup Testing
+
+Backups must be tested periodically.
+
+A backup that has never been successfully restored should not automatically be considered reliable.
+
+Testing should verify that:
+
+* The backup can be accessed
+* The backup is not corrupted
+* Data can be restored
+* Required application components can be restored
+* Restored data remains consistent
+* Security controls remain functional
+
+---
+
+## 27.14 Restoration Process
+
+QubWatch should maintain a documented restoration process.
+
+A simplified recovery process may be:
+
+**Detect Incident → Assess Damage → Contain Incident → Identify Recovery Point → Restore Systems/Data → Validate → Secure → Resume Operations → Monitor**
+
+The exact process may vary according to the incident.
+
+---
+
+## 27.15 Database Recovery
+
+Database recovery should protect against:
+
+* Data corruption
+* Accidental deletion
+* Failed migrations
+* Infrastructure failure
+* Unauthorized changes
+
+Database backups should be coordinated with application recovery so that restored data remains compatible with the application version being restored.
+
+---
+
+## 27.16 Point-in-Time Recovery
+
+Where supported by the chosen database technology, QubWatch may use point-in-time recovery.
+
+This can allow the system to restore data to an appropriate point before a failure or accidental change.
+
+This capability should be evaluated according to:
+
+* Cost
+* Database technology
+* Data volume
+* Business requirements
+* Recovery objectives
+
+---
+
+## 27.17 Application Recovery
+
+Recovery planning should consider more than the database.
+
+Where required, QubWatch should be able to restore:
+
+* Application code
+* Configuration
+* Database
+* Required infrastructure
+* Required integrations
+* Security configuration
+
+Source code should be maintained in version control so that it does not depend on a single computer.
+
+---
+
+## 27.18 Configuration Recovery
+
+Important configuration should be documented and recoverable.
+
+Examples include:
+
+* Application settings
+* Database configuration
+* Detection rules
+* Notification settings
+* Integration configuration
+* AI configuration
+* Security settings
+
+Secrets should be recovered through secure secret-management processes rather than being stored directly in source code.
+
+---
+
+## 27.19 Disaster Recovery
+
+QubWatch should maintain an appropriate disaster recovery approach for significant events.
+
+Potential scenarios include:
+
+* Cloud infrastructure failure
+* Major database failure
+* Cyberattack
+* Ransomware
+* Accidental deletion
+* Severe software failure
+* Natural disaster
+* Extended service outage
+
+The recovery approach should prioritize the most important services first.
+
+---
+
+## 27.20 Business Continuity
+
+Business continuity focuses on keeping important business operations functioning during disruption.
+
+QubWatch should identify:
+
+* Critical functions
+* Critical data
+* Essential personnel
+* Recovery priorities
+* Communication procedures
+* Alternative operating procedures
+
+Where QubWatch itself is unavailable, users may need temporary manual processes for recording business activity until the platform is restored.
+
+---
+
+## 27.21 Service Prioritization During Recovery
+
+Recovery should prioritize essential functions.
+
+A possible order is:
+
+1. Infrastructure
+2. Authentication
+3. Database
+4. Core business data
+5. Transaction functionality
+6. Dashboard and monitoring
+7. Alerts
+8. Investigations
+9. Audit functionality
+10. AI services
+11. Non-critical future features
+
+AI availability should not prevent recovery of the core business platform.
+
+---
+
+## 27.22 AI Service Failure
+
+Because QubWatch may depend on external AI services, AI availability should be treated separately from core application availability.
+
+If an AI provider becomes unavailable:
+
+* Core QubWatch functionality should continue where practical.
+* Users should be informed that AI assistance is unavailable.
+* Existing business data should remain accessible.
+* Investigations should remain accessible.
+* Users should still be able to record findings manually.
+
+---
+
+## 27.23 Third-Party Dependency Recovery
+
+QubWatch may depend on external services such as:
+
+* AI providers
+* Authentication services
+* Email providers
+* Payment services
+* Cloud infrastructure
+* Database services
+* Notification providers
+
+Recovery planning should consider the failure of each critical dependency.
+
+Where practical, QubWatch should avoid unnecessary single points of failure.
+
+---
+
+## 27.24 Data Recovery Validation
+
+After restoration, QubWatch should verify:
+
+* User accounts
+* Business records
+* Products
+* Transactions
+* Alerts
+* Investigations
+* Audit records
+* Permissions
+* Security settings
+* Data relationships
+
+Restoration should not be considered complete simply because the application starts.
+
+The restored system must also be functionally and securely validated.
+
+---
+
+## 27.25 Data Integrity After Recovery
+
+After recovery, QubWatch should check for inconsistencies such as:
+
+* Missing transactions
+* Duplicate records
+* Broken relationships
+* Missing alerts
+* Missing investigations
+* Incorrect timestamps
+* Permission inconsistencies
+* Corrupted audit records
+
+Any discovered discrepancies should be documented and investigated.
+
+---
+
+## 27.26 Recovery Testing
+
+Recovery exercises should be conducted periodically where practical.
+
+Testing may include:
+
+* Database restoration
+* Application restoration
+* Backup restoration
+* Infrastructure recovery
+* Dependency failure simulations
+* Incident recovery exercises
+
+The objective is to identify weaknesses before a real incident occurs.
+
+---
+
+## 27.27 Backup and Retention
+
+Backup retention should be aligned with the QubWatch data-retention strategy.
+
+The organization should define:
+
+* Daily backup retention
+* Weekly backup retention
+* Long-term backup retention where required
+* Investigation-related retention
+* Audit-related retention
+* Secure backup disposal
+
+Backups should not be retained forever without a legitimate reason.
+
+---
+
+## 27.28 Backup Access Control
+
+Access to backups should be restricted.
+
+Users should not automatically receive access to backup infrastructure simply because they can access the QubWatch application.
+
+Backup administration should be limited to appropriately authorized personnel.
+
+---
+
+## 27.29 Recovery Access
+
+Emergency recovery access should be carefully controlled.
+
+Where emergency or elevated access is required:
+
+* Access should be authorized
+* Actions should be logged
+* Access should be limited to the recovery purpose
+* Credentials should be protected
+* Access should be removed when no longer required
+
+---
+
+## 27.30 Recovery and Security Incidents
+
+If the reason for recovery is a suspected cyberattack, QubWatch should avoid immediately restoring compromised systems without understanding the incident.
+
+Where appropriate, the process should include:
+
+**Contain → Investigate → Preserve Evidence → Remove Threat → Restore → Validate → Monitor**
+
+Restoring a compromised system without addressing the underlying cause may allow the attacker to regain access.
+
+---
+
+## 27.31 Recovery and Audit Trails
+
+Audit information should be preserved during recovery where possible.
+
+If an incident affects audit data, the system should document:
+
+* What audit information was affected
+* What was recovered
+* What could not be recovered
+* When recovery occurred
+* Who performed the recovery
+
+---
+
+## 27.32 Recovery Communication
+
+During significant outages or incidents, authorized stakeholders should receive appropriate information.
+
+Communication should explain, where appropriate:
+
+* What happened
+* Which services are affected
+* What users should do
+* Whether data is affected
+* Expected recovery status
+* When service has been restored
+
+Communication should avoid unsupported claims.
+
+---
+
+## 27.33 Backup Failure Notifications
+
+QubWatch should monitor backup operations.
+
+Where practical, responsible administrators should receive notifications when:
+
+* A scheduled backup fails
+* Backup storage is unavailable
+* Backup capacity is running low
+* Backup integrity checks fail
+* Restoration tests fail
+
+A silent backup failure is a significant operational risk.
+
+---
+
+## 27.34 Capacity Planning
+
+Backup storage requirements should be monitored as QubWatch grows.
+
+Factors include:
+
+* Number of businesses
+* Number of transactions
+* Investigation evidence
+* Audit records
+* AI conversation records
+* Database growth
+* Backup frequency
+* Retention periods
+
+Backup capacity should be reviewed before storage becomes insufficient.
+
+---
+
+## 27.35 Recovery Documentation
+
+QubWatch should maintain documentation covering:
+
+* Backup procedures
+* Restoration procedures
+* Recovery priorities
+* Responsible personnel
+* System dependencies
+* Recovery credentials/processes
+* RPO
+* RTO
+* Recovery testing
+* Incident communication
+
+Documentation should be kept current as the platform changes.
+
+---
+
+## 27.36 Business Continuity Review
+
+Business continuity and recovery plans should be reviewed periodically.
+
+Reviews should consider:
+
+* New features
+* New integrations
+* New AI providers
+* Increased data volume
+* New security threats
+* Changes in business requirements
+* Changes in infrastructure
+
+---
+
+## 27.37 Recovery Metrics
+
+QubWatch may track metrics such as:
+
+* Backup success rate
+* Backup failure rate
+* Backup age
+* Restoration success rate
+* Average recovery time
+* Actual RTO
+* Actual RPO
+* Number of recovery tests
+* Recovery incidents
+* Data loss during recovery
+
+These metrics can help identify weaknesses in recovery planning.
+
+---
+
+## 27.38 Minimum Recovery Requirement for MVP
+
+The MVP should have a practical backup and recovery approach appropriate to its chosen technology stack.
+
+At minimum, the MVP should:
+
+* Protect the primary database
+* Use reliable backups
+* Restrict backup access
+* Protect sensitive backup information
+* Monitor backup success where supported
+* Document how data can be restored
+* Test restoration before relying on the system for important business operations
+
+Advanced disaster recovery capabilities may be implemented later.
+
+---
+
+## 27.39 Future Recovery Capabilities
+
+Future versions of QubWatch may introduce:
+
+* Automated multi-region recovery
+* High-availability architecture
+* Database replication
+* Cross-region backups
+* Automated disaster recovery
+* Immutable backup infrastructure
+* Automated failover
+* Recovery orchestration
+* Advanced business continuity dashboards
+* Automated recovery testing
+
+These capabilities should be introduced according to actual business needs and risk.
+
+---
+
+## 27.40 Recovery Priority
+
+When recovery decisions involve competing priorities, QubWatch should generally prioritize:
+
+1. Human safety
+2. Security
+3. Data integrity
+4. Business-critical data
+5. Authentication and access control
+6. Core business functionality
+7. Monitoring and alerts
+8. Investigations
+9. Auditability
+10. AI functionality
+11. Non-critical features
+
+AI functionality should never be restored at the expense of protecting core business information.
+
+---
+
+## 27.41 Core Recovery Rule
+
+QubWatch should maintain the following principle:
+
+> **A backup is not complete protection unless the organization can securely restore the information when it is needed.**
+
+Backups must therefore be:
+
+**Created → Protected → Monitored → Tested → Retained → Recoverable → Securely Disposed**
+
+---
+
+## 27.42 Section 27 Summary
+
+QubWatch backup, recovery, and business continuity requirements ensure that the platform can withstand failures and recover important information.
+
+The system should:
+
+* Back up important business information
+* Protect backups
+* Restrict backup access
+* Monitor backup operations
+* Test restoration
+* Define recovery objectives
+* Protect against ransomware
+* Maintain recovery documentation
+* Validate restored information
+* Preserve audit and investigation information
+* Plan for third-party failures
+* Maintain business continuity procedures
+* Prioritize critical services
+* Continue core functions when AI is unavailable
+* Regularly review and improve recovery plans
+
+### Fundamental QubWatch Recovery Principle
+
+**Protect the data. Test the backup. Know how to recover. Validate the recovery. Learn from every failure.**
+
+
+# SECTION 28 — PERFORMANCE, SCALABILITY AND CAPACITY REQUIREMENTS
+
+## 28.1 Purpose
+
+QubWatch must provide a responsive and reliable experience as the number of users, businesses, products, transactions, alerts, investigations, and AI interactions increases.
+
+The system should be designed to perform effectively during normal usage while also providing a clear path for future growth.
+
+This section defines requirements for:
+
+* Application performance
+* Response times
+* Database performance
+* AI performance
+* Scalability
+* Capacity management
+* Resource usage
+* Performance monitoring
+* Performance testing
+* Growth planning
+
+### Core Principle
+
+> **QubWatch should remain secure, responsive, reliable, and usable as business activity grows.**
+
+---
+
+## 28.2 Performance Objectives
+
+QubWatch performance should support:
+
+* Fast navigation
+* Responsive dashboards
+* Efficient transaction processing
+* Timely alert generation
+* Efficient investigation workflows
+* Reasonable AI response times
+* Reliable search and filtering
+* Efficient database operations
+* Stable performance during increased usage
+
+Performance should never be achieved by weakening security, data integrity, or authorization controls.
+
+---
+
+## 28.3 User-Perceived Performance
+
+Performance should be evaluated from the user's perspective.
+
+Users should not experience unnecessary delays when:
+
+* Logging in
+* Opening the dashboard
+* Viewing transactions
+* Adding products
+* Recording transactions
+* Viewing alerts
+* Opening investigations
+* Searching records
+* Saving information
+
+Where an operation takes longer because substantial processing is required, QubWatch should provide an appropriate loading or progress indication.
+
+---
+
+## 28.4 Response Time
+
+QubWatch should establish measurable response-time targets for important operations.
+
+Examples include:
+
+* Login
+* Dashboard loading
+* Product creation
+* Transaction creation
+* Transaction search
+* Alert retrieval
+* Investigation retrieval
+* Report generation
+
+Exact performance targets should be established during technical implementation based on:
+
+* Infrastructure
+* Database technology
+* Expected usage
+* Network conditions
+* Application architecture
+
+Performance requirements should be measurable rather than simply described as "fast."
+
+---
+
+## 28.5 Performance Priorities
+
+Performance optimization should generally prioritize:
+
+1. Authentication
+2. Core business data access
+3. Transaction processing
+4. Dashboard
+5. Alerts
+6. Investigations
+7. Search
+8. Reporting
+9. AI features
+10. Non-critical background functionality
+
+Critical business functions should remain usable even when non-critical operations experience delays.
+
+---
+
+## 28.6 Dashboard Performance
+
+The QubWatch dashboard may contain:
+
+* Transaction summaries
+* Sales information
+* Product information
+* Alert counts
+* Investigation counts
+* Trends
+* Risk indicators
+
+Dashboard queries should be designed efficiently.
+
+The dashboard should avoid unnecessarily loading large amounts of raw historical data when only summary information is required.
+
+---
+
+## 28.7 Transaction Performance
+
+Transaction creation and retrieval are core QubWatch operations.
+
+The system should ensure that:
+
+* Transactions can be recorded efficiently
+* Validation occurs before storage
+* Duplicate transactions are appropriately controlled
+* Authorized users can retrieve relevant transactions
+* Transaction queries remain efficient as data grows
+
+Transaction performance should not compromise data integrity.
+
+---
+
+## 28.8 Alert Performance
+
+QubWatch monitoring should identify applicable rule conditions without creating unnecessary delays.
+
+The detection system should be designed to process relevant transaction information efficiently.
+
+Where real-time detection is not practical, the system may use appropriate background processing.
+
+Users should receive appropriate feedback when alert generation is delayed.
+
+---
+
+## 28.9 Investigation Performance
+
+Investigation records may grow over time.
+
+QubWatch should efficiently support:
+
+* Opening investigations
+* Viewing evidence
+* Reviewing timelines
+* Adding notes
+* Recording findings
+* Searching related transactions
+
+Large investigation histories should not unnecessarily slow the application.
+
+---
+
+## 28.10 Search Performance
+
+Search functionality should remain practical as data volume increases.
+
+Search may include:
+
+* Transactions
+* Products
+* Alerts
+* Investigations
+* Users
+* Audit records
+
+Search should use appropriate indexing and query techniques where supported by the selected technology.
+
+---
+
+## 28.11 Database Performance
+
+The database is a critical component of QubWatch performance.
+
+Database design should consider:
+
+* Appropriate indexes
+* Efficient queries
+* Relationships
+* Data types
+* Query complexity
+* Transaction consistency
+* Pagination
+* Data growth
+* Archiving
+
+Indexes should be added based on actual query requirements rather than indiscriminately.
+
+---
+
+## 28.12 Pagination
+
+Large datasets should generally not be loaded into the user's browser at once.
+
+Pagination or another appropriate data-loading strategy should be used for large collections such as:
+
+* Transactions
+* Alerts
+* Investigations
+* Audit events
+* Products
+
+This reduces unnecessary memory and network usage.
+
+---
+
+## 28.13 Filtering
+
+Filtering should preferably occur efficiently at the data or API layer rather than downloading large datasets and filtering everything in the user's browser.
+
+Examples include filtering transactions by:
+
+* Date
+* Amount
+* Product
+* User
+* Status
+
+---
+
+## 28.14 API Performance
+
+QubWatch APIs should be designed to:
+
+* Return only required information
+* Validate requests efficiently
+* Avoid unnecessary database queries
+* Use appropriate pagination
+* Handle errors consistently
+* Enforce authorization efficiently
+* Avoid unnecessary repeated processing
+
+API performance must not bypass security controls.
+
+---
+
+## 28.15 Frontend Performance
+
+The frontend should be designed to minimize unnecessary:
+
+* Network requests
+* Rendering
+* Data processing
+* Large file transfers
+* Repeated API calls
+
+Where practical, the frontend may use appropriate techniques such as:
+
+* Lazy loading
+* Caching
+* Pagination
+* Efficient component rendering
+* Optimized assets
+
+---
+
+## 28.16 Backend Performance
+
+The backend should efficiently handle:
+
+* Authentication
+* Authorization
+* Business logic
+* Database operations
+* Detection rules
+* Alert generation
+* Investigation operations
+* AI requests
+* Notifications
+
+Long-running tasks should be separated from immediate user interactions where appropriate.
+
+---
+
+## 28.17 Background Processing
+
+Some operations may be better handled asynchronously.
+
+Examples include:
+
+* Large reports
+* Historical analytics
+* Large data imports
+* Bulk processing
+* Notification delivery
+* Certain detection calculations
+* AI processing where appropriate
+
+The system should provide appropriate status information for long-running tasks.
+
+---
+
+## 28.18 AI Performance
+
+AI responses may take longer than normal application operations.
+
+QubWatch should therefore:
+
+* Show a clear loading state
+* Avoid freezing the interface
+* Handle provider timeouts
+* Handle provider failures
+* Limit unnecessary requests
+* Prevent accidental duplicate submissions
+* Provide useful error messages
+
+AI response speed should be balanced against:
+
+* Accuracy
+* Security
+* Data grounding
+* Cost
+
+Speed must not override responsible AI requirements.
+
+---
+
+## 28.19 AI Timeout Handling
+
+If an AI service does not respond within an appropriate period, QubWatch should:
+
+* Stop waiting after a defined timeout
+* Inform the user
+* Avoid indefinite loading
+* Preserve the user's original request where appropriate
+* Allow the user to retry
+* Record relevant technical information for troubleshooting
+
+---
+
+## 28.20 Performance Under Normal Load
+
+QubWatch should be tested under expected normal usage.
+
+Testing should consider:
+
+* Number of active users
+* Number of businesses
+* Transaction volume
+* Alert volume
+* Investigation volume
+* AI requests
+* Database size
+
+The system should meet agreed performance targets under expected load.
+
+---
+
+## 28.21 Performance Under Peak Load
+
+QubWatch should also consider periods of unusually high activity.
+
+Examples include:
+
+* End-of-day transaction processing
+* Promotional periods
+* Large business imports
+* Multiple users accessing the system simultaneously
+* High alert activity
+
+The system should degrade gracefully where possible rather than failing unexpectedly.
+
+---
+
+## 28.22 Scalability
+
+QubWatch should be designed so that increased usage can be supported without requiring a complete redesign.
+
+Scalability may involve:
+
+* More users
+* More businesses
+* More transactions
+* More products
+* More alerts
+* More investigations
+* More AI requests
+* More integrations
+
+---
+
+## 28.23 Vertical Scaling
+
+Vertical scaling means increasing the resources of an existing system.
+
+Examples include increasing:
+
+* CPU
+* RAM
+* Storage
+* Database resources
+
+Vertical scaling may be appropriate for early versions of QubWatch.
+
+---
+
+## 28.24 Horizontal Scaling
+
+Horizontal scaling means adding additional application resources or instances.
+
+Future QubWatch versions may use horizontal scaling when user and transaction volumes justify it.
+
+Examples may include:
+
+* Multiple application servers
+* Load balancing
+* Distributed processing
+* Scalable background workers
+
+Horizontal scaling should only be introduced when required because it can increase architectural complexity.
+
+---
+
+## 28.25 Database Scalability
+
+As data grows, QubWatch should evaluate:
+
+* Index performance
+* Query performance
+* Database capacity
+* Storage growth
+* Archiving
+* Partitioning where appropriate
+* Read/write workload
+* Replication where appropriate
+
+Database scaling should preserve data integrity and security.
+
+---
+
+## 28.26 Storage Scalability
+
+Storage requirements may grow because of:
+
+* Transactions
+* Audit records
+* Investigation evidence
+* Reports
+* AI records
+* Uploaded files
+* Backups
+
+QubWatch should monitor storage capacity and provide appropriate warnings before capacity becomes critical.
+
+---
+
+## 28.27 Capacity Planning
+
+QubWatch should periodically evaluate future resource requirements.
+
+Capacity planning should consider:
+
+* Current usage
+* Growth rate
+* Expected users
+* Expected businesses
+* Transaction volume
+* Storage requirements
+* AI usage
+* Integration traffic
+* Backup requirements
+
+---
+
+## 28.28 Resource Monitoring
+
+QubWatch infrastructure should monitor relevant resources where practical.
+
+Examples include:
+
+* CPU usage
+* Memory usage
+* Storage usage
+* Database capacity
+* Network usage
+* API request volume
+* Error rates
+* Response times
+* AI usage
+* Queue sizes
+
+Monitoring should help identify problems before they significantly affect users.
+
+---
+
+## 28.29 Performance Monitoring
+
+QubWatch should monitor application performance using measurable indicators.
+
+Possible metrics include:
+
+* Average response time
+* Maximum response time
+* API latency
+* Database query latency
+* Error rate
+* Page load time
+* Alert processing time
+* AI response time
+* Background job duration
+
+---
+
+## 28.30 Performance Alerts
+
+Administrators may receive alerts when performance exceeds defined thresholds.
+
+Examples:
+
+* Excessive API latency
+* High error rate
+* Database overload
+* Low storage capacity
+* High CPU utilization
+* High memory utilization
+* AI service delays
+* Queue backlog
+
+Thresholds should be carefully selected to avoid excessive false alarms.
+
+---
+
+## 28.31 Performance and Security
+
+Performance optimization must not weaken security.
+
+QubWatch must not:
+
+* Remove authorization checks to improve speed
+* Disable validation
+* Expose additional information to reduce processing
+* Store sensitive information insecurely
+* Bypass audit requirements
+
+Security controls remain mandatory.
+
+---
+
+## 28.32 Performance and Data Integrity
+
+Performance optimization must also preserve data integrity.
+
+For example, transaction processing should not prioritize speed over:
+
+* Validation
+* Duplicate prevention
+* Correct transaction storage
+* Consistency
+* Auditability
+
+---
+
+## 28.33 Caching
+
+QubWatch may use caching to improve performance where appropriate.
+
+However, cached information must be:
+
+* Correct
+* Properly scoped
+* Appropriately expired
+* Protected
+* Invalidated when necessary
+
+Sensitive information should not be accidentally exposed through shared or improperly configured caches.
+
+---
+
+## 28.34 Rate Limiting
+
+Rate limiting may be used to protect QubWatch from:
+
+* Excessive requests
+* Accidental request loops
+* Abuse
+* Automated attacks
+* Uncontrolled AI usage
+* Resource exhaustion
+
+Rate limits should be appropriate to the function being protected.
+
+---
+
+## 28.35 Performance and Notifications
+
+Notification delivery should not unnecessarily slow down core business operations.
+
+Where appropriate, notifications may be processed asynchronously.
+
+For example:
+
+**Transaction Recorded → Transaction Saved → User Receives Confirmation → Notification Processed**
+
+The system should not make the user wait unnecessarily for an external email service before completing a transaction.
+
+---
+
+## 28.36 Performance and Integrations
+
+External services may introduce latency.
+
+QubWatch should account for:
+
+* API response time
+* External service failures
+* Network delays
+* Rate limits
+* Retry behavior
+
+External service delays should not unnecessarily block unrelated core QubWatch operations.
+
+---
+
+## 28.37 Performance Testing
+
+Performance testing should be performed at appropriate stages of development.
+
+Testing may include:
+
+### Load Testing
+
+Tests expected levels of simultaneous activity.
+
+### Stress Testing
+
+Tests behavior beyond expected capacity.
+
+### Endurance Testing
+
+Tests performance over an extended period.
+
+### Spike Testing
+
+Tests sudden increases in activity.
+
+### Database Performance Testing
+
+Tests queries and database behavior with realistic data volumes.
+
+### AI Performance Testing
+
+Tests AI response time, timeout behavior, and provider failure handling.
+
+---
+
+## 28.38 Performance Test Data
+
+Performance testing should use realistic but safe test data.
+
+Production-sensitive information should not be unnecessarily used for performance testing.
+
+Test data should represent realistic:
+
+* Businesses
+* Products
+* Transactions
+* Alerts
+* Investigations
+* Users
+
+---
+
+## 28.39 Performance Regression
+
+Performance should be monitored after significant changes.
+
+A feature that previously worked efficiently should not become significantly slower without an understood reason.
+
+Performance regression testing may be included in the development process.
+
+---
+
+## 28.40 Performance Degradation
+
+If QubWatch becomes slower as usage increases, the system should provide sufficient monitoring to identify the cause.
+
+Possible causes include:
+
+* Inefficient queries
+* Increased database size
+* Excessive API requests
+* Infrastructure limitations
+* External service delays
+* Poorly optimized application code
+
+Performance problems should be investigated rather than simply ignored.
+
+---
+
+## 28.41 Graceful Degradation
+
+When non-critical services fail or become slow, QubWatch should remain usable where possible.
+
+For example:
+
+If AI is unavailable:
+
+* Transactions should continue working.
+* Existing alerts should remain accessible.
+* Investigations should remain accessible.
+* Users should be able to record findings manually.
+
+This principle prevents secondary services from becoming single points of failure for the entire platform.
+
+---
+
+## 28.42 MVP Performance Requirements
+
+The MVP should prioritize practical performance rather than premature optimization.
+
+At minimum, the MVP should:
+
+* Load core screens within reasonable time
+* Process normal transactions reliably
+* Retrieve transactions efficiently
+* Display dashboard information efficiently
+* Generate rule-based alerts appropriately
+* Support investigation workflows without unnecessary delays
+* Handle AI timeouts
+* Use pagination for large datasets where required
+* Monitor important application errors
+* Avoid obvious inefficient database operations
+
+Exact performance targets should be established during implementation and testing.
+
+---
+
+## 28.43 Performance Documentation
+
+Performance requirements should be documented alongside technical implementation.
+
+Documentation should identify:
+
+* Performance targets
+* Infrastructure assumptions
+* Expected capacity
+* Monitoring metrics
+* Known limitations
+* Scaling approach
+* Performance test results
+
+---
+
+## 28.44 Future Performance Capabilities
+
+Future versions may introduce:
+
+* Advanced caching
+* Distributed processing
+* Load balancing
+* Auto-scaling
+* Read replicas
+* Advanced database optimization
+* Distributed queues
+* Dedicated analytics infrastructure
+* AI request optimization
+* Advanced performance monitoring
+* Predictive capacity planning
+
+These should be introduced based on actual usage and business requirements.
+
+---
+
+## 28.45 Performance Priority
+
+When performance improvements conflict with other requirements, QubWatch should generally prioritize:
+
+1. Security
+2. Data integrity
+3. Authorization
+4. Reliability
+5. Core business functionality
+6. User experience
+7. Performance optimization
+8. Advanced automation
+
+Performance must not be improved by compromising fundamental security or trust requirements.
+
+---
+
+## 28.46 Core Performance Rule
+
+QubWatch should maintain the following principle:
+
+> **Build for today's needs, monitor actual usage, and scale deliberately as the platform grows.**
+
+The system should not be unnecessarily complicated before there is a demonstrated need for greater scale.
+
+---
+
+## 28.47 Section 28 Summary
+
+QubWatch performance and scalability requirements ensure that the platform remains usable as adoption and business activity increase.
+
+The system should:
+
+* Provide responsive core functions
+* Establish measurable performance targets
+* Optimize database operations
+* Use pagination for large datasets
+* Monitor infrastructure
+* Monitor application performance
+* Handle AI delays and failures
+* Support increasing data volumes
+* Plan for future scalability
+* Test under realistic loads
+* Degrade gracefully when non-critical services fail
+* Maintain security and data integrity while optimizing performance
+* Scale based on actual business requirements
+
+### Fundamental QubWatch Performance Principle
+
+**Be responsive today. Measure performance continuously. Scale when necessary. Never sacrifice security or data integrity for speed.**
+
+
+# SECTION 29 — MONITORING, LOGGING AND OBSERVABILITY REQUIREMENTS
+
+## 29.1 Purpose
+
+QubWatch must provide sufficient visibility into the health, security, performance, and behavior of the platform.
+
+As QubWatch grows, it will become increasingly important to know not only **whether something has gone wrong**, but also:
+
+* What went wrong
+* When it happened
+* Where it happened
+* What was affected
+* How serious it is
+* Whether users are affected
+* What happened immediately before the problem
+* Whether the problem has been resolved
+
+This section defines the requirements for **monitoring, logging, observability, alerting, and operational visibility** within QubWatch.
+
+### Core Principle
+
+> **You cannot reliably manage what you cannot see.**
+
+---
+
+# 29.2 Monitoring Objectives
+
+QubWatch monitoring should help identify:
+
+* Application failures
+* Security events
+* Performance problems
+* Infrastructure problems
+* Database problems
+* Integration failures
+* AI service problems
+* Backup failures
+* Unusual system behavior
+* Capacity issues
+* Availability problems
+
+Monitoring should support both proactive detection and incident investigation.
+
+---
+
+# 29.3 Observability
+
+Observability refers to the ability to understand the internal condition and behavior of a system by examining information produced by that system.
+
+QubWatch observability should provide visibility across:
+
+1. Application behavior
+2. Infrastructure
+3. Database
+4. APIs
+5. Security
+6. Integrations
+7. AI services
+8. Background processing
+9. User activity
+10. Business-critical processes
+
+---
+
+# 29.4 Three Core Observability Signals
+
+Where practical, QubWatch should use three major observability signals:
+
+### Logs
+
+Records of events that occurred.
+
+### Metrics
+
+Numerical measurements showing system behavior.
+
+### Traces
+
+Information showing how a request or operation moves through different components.
+
+These signals should complement one another.
+
+---
+
+# 29.5 Application Logging
+
+The application should generate appropriate logs for important technical and operational events.
+
+Examples include:
+
+* Application startup
+* Application shutdown
+* Errors
+* Failed operations
+* API failures
+* Database errors
+* Authentication failures
+* Integration failures
+* Background job failures
+* AI service failures
+
+Logs should contain enough information to support troubleshooting without unnecessarily exposing sensitive data.
+
+---
+
+# 29.6 Log Levels
+
+QubWatch should use appropriate logging levels.
+
+Possible levels include:
+
+* DEBUG
+* INFO
+* WARNING
+* ERROR
+* CRITICAL
+
+### DEBUG
+
+Detailed information useful primarily during development and troubleshooting.
+
+### INFO
+
+Normal operational events.
+
+### WARNING
+
+Unexpected conditions that may require attention but do not necessarily indicate failure.
+
+### ERROR
+
+A significant failure affecting a specific operation.
+
+### CRITICAL
+
+A serious failure that may affect the availability, security, or integrity of the system.
+
+Logging levels should be configurable according to the environment.
+
+---
+
+# 29.7 Development Logging
+
+Development environments may use more detailed logging to assist developers.
+
+Development logs should not expose production-sensitive information.
+
+Developers should also avoid placing secrets or credentials in source code simply for debugging purposes.
+
+---
+
+# 29.8 Production Logging
+
+Production logging should focus on useful operational, security, and troubleshooting information.
+
+Production logs should avoid unnecessary sensitive information.
+
+Logging should be carefully configured so that excessive logging does not:
+
+* Increase storage costs unnecessarily
+* Reduce application performance
+* Expose confidential information
+* Create excessive operational noise
+
+---
+
+# 29.9 Sensitive Information in Logs
+
+QubWatch must avoid logging sensitive information unnecessarily.
+
+Examples of information that should not normally appear in logs include:
+
+* Passwords
+* Authentication tokens
+* API keys
+* Secret keys
+* Payment credentials
+* Full confidential business records
+* Unnecessary personal information
+
+Sensitive information should be masked, excluded, or appropriately protected where logging is necessary.
+
+---
+
+# 29.10 Authentication Monitoring
+
+QubWatch should monitor important authentication events.
+
+Examples include:
+
+* Successful login
+* Failed login
+* Repeated failed login attempts
+* Password reset
+* Account lockout
+* Session expiration
+* Suspicious authentication patterns
+
+Authentication monitoring may help identify credential attacks.
+
+---
+
+# 29.11 Authorization Monitoring
+
+The system should monitor significant authorization failures.
+
+Examples include:
+
+* Attempt to access another business's data
+* Attempt to access a restricted investigation
+* Attempt to perform an unauthorized administrative action
+* Repeated permission failures
+
+Authorization failures may indicate either legitimate user error or attempted misuse.
+
+The system should avoid automatically accusing the user of malicious behavior.
+
+---
+
+# 29.12 Business Data Monitoring
+
+QubWatch should monitor the health and integrity of important business processes.
+
+Examples include:
+
+* Transaction processing
+* Product updates
+* Alert generation
+* Investigation creation
+* Audit event creation
+* Notification processing
+
+Monitoring should help identify situations where expected business processes stop functioning.
+
+---
+
+# 29.13 Database Monitoring
+
+Database monitoring should consider:
+
+* Database availability
+* Connection failures
+* Query performance
+* Error rates
+* Storage capacity
+* Connection usage
+* Backup status
+* Replication status where applicable
+* Database growth
+* Failed migrations
+
+Database problems should be identified before they cause major business disruption where practical.
+
+---
+
+# 29.14 API Monitoring
+
+QubWatch APIs should be monitored for:
+
+* Request volume
+* Response time
+* Error rates
+* Authentication failures
+* Authorization failures
+* Rate-limit events
+* Unexpected traffic patterns
+* Service availability
+
+API monitoring should support both performance and security analysis.
+
+---
+
+# 29.15 Infrastructure Monitoring
+
+Depending on the deployment architecture, QubWatch should monitor relevant infrastructure resources.
+
+Examples include:
+
+* CPU
+* Memory
+* Storage
+* Network
+* Server availability
+* Containers
+* Application instances
+* Database infrastructure
+
+Infrastructure monitoring should support capacity planning and incident response.
+
+---
+
+# 29.16 Availability Monitoring
+
+QubWatch should monitor whether important services are available.
+
+Monitoring may check:
+
+* Application availability
+* Login availability
+* API availability
+* Database availability
+* Critical background services
+
+Availability checks should be designed so that monitoring itself does not create unnecessary load.
+
+---
+
+# 29.17 Performance Monitoring
+
+Performance monitoring should track important indicators such as:
+
+* Page response time
+* API latency
+* Database latency
+* Error rate
+* Transaction processing time
+* Alert processing time
+* Investigation loading time
+* AI response time
+
+Performance data should be compared with established targets.
+
+---
+
+# 29.18 Error Monitoring
+
+QubWatch should identify and record significant application errors.
+
+Examples include:
+
+* Unhandled exceptions
+* Database errors
+* API failures
+* Failed background tasks
+* Integration errors
+* AI errors
+* Notification failures
+
+Repeated errors should be investigated rather than simply ignored.
+
+---
+
+# 29.19 Alerting
+
+Monitoring systems may generate operational alerts when defined conditions are met.
+
+Examples include:
+
+* Application unavailable
+* Database unavailable
+* High error rate
+* Excessive API latency
+* Low storage capacity
+* Backup failure
+* Security event
+* AI provider outage
+
+Operational alerts are different from QubWatch business alerts.
+
+### Business Alert
+
+An alert concerning business activity, such as unusual refunds.
+
+### System Alert
+
+An alert concerning the health or security of the QubWatch platform.
+
+These should remain conceptually separate.
+
+---
+
+# 29.20 Monitoring Alert Severity
+
+Operational alerts may use severity levels such as:
+
+* Informational
+* Low
+* Medium
+* High
+* Critical
+
+Severity should reflect the potential impact on:
+
+* Security
+* Availability
+* Data integrity
+* Business operations
+
+---
+
+# 29.21 Alert Fatigue
+
+Too many operational alerts can cause users or administrators to ignore important warnings.
+
+QubWatch should therefore minimize:
+
+* Duplicate alerts
+* Low-value alerts
+* Excessive notifications
+* Unclear messages
+* Repeated alerts for the same unresolved problem
+
+Monitoring rules should be reviewed periodically.
+
+---
+
+# 29.22 Monitoring Alert Content
+
+A useful system alert should communicate:
+
+* What happened
+* When it happened
+* Affected component
+* Severity
+* Possible impact
+* Recommended next action where appropriate
+
+Example:
+
+> **High — Database connection failures detected.**
+> Multiple application requests are currently unable to access the database.
+
+The message should not claim more than the monitoring evidence establishes.
+
+---
+
+# 29.23 Logging and Audit Trail
+
+Operational logs and audit records serve different purposes.
+
+### Operational Log
+
+Primarily helps understand technical system behavior.
+
+### Audit Record
+
+Primarily establishes accountability for important actions.
+
+For example:
+
+A database error may appear in an operational log.
+
+A user changing a transaction amount should create an audit record.
+
+Some events may appropriately appear in both systems.
+
+---
+
+# 29.24 Logging and Security
+
+Logs can become valuable security information.
+
+QubWatch should protect logs against:
+
+* Unauthorized access
+* Unauthorized modification
+* Unauthorized deletion
+* Data leakage
+* Accidental exposure
+
+Access to sensitive logs should be restricted.
+
+---
+
+# 29.25 Log Integrity
+
+Important logs should be protected against tampering.
+
+Possible future controls include:
+
+* Restricted write access
+* Centralized logging
+* Append-only storage
+* Integrity checks
+* Cryptographic verification
+* Separate log storage
+
+The appropriate level of protection should depend on the sensitivity of the log.
+
+---
+
+# 29.26 Centralized Logging
+
+As QubWatch grows, logs from different application components may be centralized.
+
+This may include:
+
+* Frontend errors
+* Backend logs
+* API logs
+* Database logs
+* Security logs
+* Integration logs
+* Background worker logs
+
+Centralization can make troubleshooting and incident investigation easier.
+
+---
+
+# 29.27 Log Retention
+
+Log retention should be based on:
+
+* Operational requirements
+* Security requirements
+* Investigation needs
+* Privacy requirements
+* Storage capacity
+* Applicable legal or regulatory requirements
+
+Logs should not be retained indefinitely without a legitimate purpose.
+
+---
+
+# 29.28 Log Search
+
+Authorized administrators should be able to search relevant logs where practical.
+
+Possible search criteria include:
+
+* Date/time
+* Severity
+* Service
+* Error type
+* User/session reference
+* Request ID
+* Event type
+
+Search functionality should respect access controls.
+
+---
+
+# 29.29 Request and Correlation IDs
+
+Where appropriate, QubWatch should assign identifiers to requests or operations.
+
+For example:
+
+**Request ID: QW-8F42A1**
+
+A request identifier can help connect:
+
+* Frontend request
+* API request
+* Database operation
+* Background task
+* External integration
+* Error message
+
+This can significantly improve troubleshooting.
+
+---
+
+# 29.30 Distributed Tracing
+
+As QubWatch architecture becomes more complex, distributed tracing may be introduced.
+
+Tracing can help identify where delays or failures occur across:
+
+**User → Frontend → API → Backend → Database → External Service**
+
+Distributed tracing may be unnecessary for the earliest MVP if the architecture remains simple.
+
+---
+
+# 29.31 Background Job Monitoring
+
+Background processes should be monitored where they exist.
+
+Examples include:
+
+* Notification delivery
+* Data processing
+* Alert processing
+* Report generation
+* Data imports
+* Scheduled tasks
+
+The system should identify:
+
+* Failed jobs
+* Stuck jobs
+* Repeated retries
+* Excessive processing time
+
+---
+
+# 29.32 Queue Monitoring
+
+If QubWatch uses queues for background processing, the system should monitor:
+
+* Queue length
+* Processing time
+* Failed jobs
+* Retry counts
+* Dead-lettered jobs where applicable
+
+A growing queue may indicate that processing capacity is insufficient.
+
+---
+
+# 29.33 Integration Monitoring
+
+External integrations should be monitored for:
+
+* Availability
+* API failures
+* Authentication failures
+* Rate limits
+* Data synchronization failures
+* Timeout
+* Invalid responses
+* Unexpected changes
+
+Integration failures should not silently corrupt QubWatch data.
+
+---
+
+# 29.34 AI Monitoring
+
+AI functionality should be monitored for:
+
+* Provider availability
+* Response time
+* Error rate
+* Request volume
+* Token/usage levels
+* Cost
+* Unexpected failures
+* Safety-related events
+* Prompt injection attempts where detectable
+
+AI monitoring should complement, not replace, AI governance requirements defined in Section 25.
+
+---
+
+# 29.35 AI Quality Monitoring
+
+Where practical, QubWatch may monitor AI quality indicators such as:
+
+* User feedback
+* Repeated corrections
+* Unsupported responses
+* Failed grounding checks
+* AI refusal/error rates
+* Response consistency
+
+Quality monitoring should not require storing unnecessary sensitive conversation information.
+
+---
+
+# 29.36 Security Monitoring
+
+QubWatch should monitor for potentially significant security events.
+
+Examples include:
+
+* Repeated failed logins
+* Unauthorized access attempts
+* Suspicious administrative activity
+* Unexpected privilege changes
+* Unusual data exports
+* Security configuration changes
+* Suspicious API behavior
+
+Security monitoring should generate useful signals without automatically labeling users as attackers.
+
+---
+
+# 29.37 Monitoring Business Data Integrity
+
+Monitoring should also identify technical conditions that may affect data integrity.
+
+Examples include:
+
+* Failed transaction writes
+* Duplicate records
+* Missing relationships
+* Failed alert creation
+* Failed audit events
+* Database synchronization errors
+
+Data integrity failures should receive appropriate priority.
+
+---
+
+# 29.38 Monitoring Backups
+
+Backup monitoring should verify:
+
+* Scheduled backup execution
+* Backup success
+* Backup storage availability
+* Backup age
+* Backup integrity where supported
+* Restoration test status
+
+A failed backup should generate an appropriate operational warning.
+
+---
+
+# 29.39 Monitoring Configuration Changes
+
+Important system configuration changes should be traceable.
+
+Examples include:
+
+* Detection rule changes
+* Security configuration changes
+* Integration changes
+* Notification configuration changes
+* AI configuration changes
+
+Where appropriate, changes should be both audited and monitored.
+
+---
+
+# 29.40 Health Checks
+
+QubWatch services should provide appropriate health checks.
+
+A health check may determine whether:
+
+* Application is running
+* Database is reachable
+* Required dependencies are available
+* Critical services are operational
+
+Health checks should not expose sensitive system information to unauthorized users.
+
+---
+
+# 29.41 Readiness and Liveness
+
+Where appropriate, infrastructure may distinguish between:
+
+### Liveness
+
+Whether a service is running.
+
+### Readiness
+
+Whether the service is ready to handle requests.
+
+This distinction can be useful in containerized or distributed deployments.
+
+---
+
+# 29.42 Monitoring During Deployment
+
+Deployments should be monitored for:
+
+* Application startup failures
+* Increased error rates
+* Performance degradation
+* Database migration failures
+* Integration failures
+
+Where appropriate, deployment monitoring should support rollback decisions.
+
+---
+
+# 29.43 Monitoring and Incident Response
+
+Monitoring should feed into the incident response process.
+
+A simplified flow is:
+
+**Detect → Alert → Assess → Contain → Investigate → Resolve → Recover → Review**
+
+Monitoring should provide enough information to support each stage.
+
+---
+
+# 29.44 Monitoring and Privacy
+
+Monitoring must respect privacy.
+
+QubWatch should collect only information reasonably required to:
+
+* Operate the platform
+* Secure the platform
+* Troubleshoot problems
+* Maintain accountability
+* Meet legitimate requirements
+
+Monitoring should not become unnecessary surveillance of users.
+
+---
+
+# 29.45 Monitoring Access Control
+
+Not every user needs access to operational monitoring information.
+
+Access should generally be restricted to authorized technical or administrative users.
+
+Business users should receive relevant business information without being unnecessarily exposed to technical infrastructure details.
+
+---
+
+# 29.46 Monitoring Performance
+
+Monitoring itself consumes resources.
+
+QubWatch should ensure that monitoring does not create significant performance problems.
+
+Monitoring frequency, log volume, tracing, and metrics should be balanced against:
+
+* Cost
+* Performance
+* Storage
+* Security
+* Operational usefulness
+
+---
+
+# 29.47 Monitoring Capacity
+
+Monitoring systems should also be monitored.
+
+QubWatch should consider:
+
+* Log storage capacity
+* Monitoring service availability
+* Metric storage
+* Alert delivery
+* Monitoring costs
+
+A monitoring system that silently stops working can create a dangerous visibility gap.
+
+---
+
+# 29.48 Monitoring and Third-Party Services
+
+Where QubWatch depends on external monitoring or observability services, the system should consider:
+
+* Provider security
+* Data processing
+* Availability
+* Cost
+* Data retention
+* Access control
+* Vendor dependency
+
+Sensitive information should not be sent to third-party monitoring services unnecessarily.
+
+---
+
+# 29.49 Operational Dashboards
+
+Future versions may provide operational dashboards showing:
+
+* System health
+* Availability
+* Error rates
+* API performance
+* Database status
+* Backup status
+* Integration status
+* AI status
+* Resource utilization
+
+These dashboards should be restricted to appropriate users.
+
+---
+
+# 29.50 MVP Monitoring Requirements
+
+The MVP should implement practical monitoring appropriate to its size.
+
+At minimum, the MVP should provide mechanisms for identifying:
+
+* Application errors
+* Authentication failures
+* Database failures
+* API failures
+* AI failures
+* Important security events
+* Backup failures where supported
+* Core service availability
+
+Advanced distributed tracing and enterprise observability platforms can be introduced later if required.
+
+---
+
+# 29.51 Monitoring Documentation
+
+Monitoring documentation should define:
+
+* What is monitored
+* Why it is monitored
+* Alert thresholds
+* Responsible personnel
+* Escalation procedures
+* Log retention
+* Monitoring access
+* Incident procedures
+* Recovery procedures
+
+Documentation should be updated when architecture changes.
+
+---
+
+# 29.52 Future Monitoring Capabilities
+
+Future QubWatch versions may introduce:
+
+* Advanced observability dashboards
+* Distributed tracing
+* Security information and event management integration
+* Automated anomaly detection
+* Predictive infrastructure monitoring
+* Advanced AI monitoring
+* Automated incident correlation
+* Real-time performance analytics
+* Advanced cost monitoring
+* Automated remediation for low-risk technical failures
+
+Automated remediation should be carefully controlled and should not bypass security or human oversight.
+
+---
+
+# 29.53 Monitoring Priority
+
+When monitoring resources or priorities conflict, QubWatch should generally prioritize:
+
+1. Security
+2. Data integrity
+3. Availability
+4. Core business functionality
+5. Authentication and authorization
+6. Database health
+7. Transaction processing
+8. Alerts and investigations
+9. AI services
+10. Non-critical functionality
+
+---
+
+# 29.54 Core Monitoring Rule
+
+QubWatch should maintain the following principle:
+
+> **Detect important problems early, provide enough information to understand them, protect the monitoring data, and use monitoring information to improve system reliability and security.**
+
+---
+
+# 29.55 Section 29 Summary
+
+QubWatch monitoring, logging, and observability requirements ensure that the platform can be understood and managed throughout its lifecycle.
+
+The system should:
+
+* Monitor application health
+* Monitor infrastructure
+* Monitor databases
+* Monitor APIs
+* Monitor integrations
+* Monitor AI services
+* Monitor security events
+* Monitor backups
+* Record useful operational logs
+* Protect logs
+* Use appropriate metrics
+* Support troubleshooting
+* Detect important failures
+* Generate meaningful operational alerts
+* Avoid excessive alert noise
+* Support incident response
+* Respect privacy
+* Maintain appropriate monitoring access controls
+* Scale observability as the platform grows
+
+### Fundamental QubWatch Monitoring Principle
+
+**See what is happening. Detect what matters. Understand what went wrong. Respond appropriately.**
+
+
+
+Absolutely. **Section 30** should come directly after Section 29 in your existing `docs/PRD.md`. We will continue the **master/general PRD**—not the MVP specification yet.
+
+# Section 30 — Incident Response and Security Incident Management Requirements
+
+## 30.1 Purpose
+
+QubWatch must have a structured approach for identifying, responding to, investigating, containing, recovering from, and learning from security incidents and major system incidents.
+
+Because QubWatch may process sensitive business information, transactions, investigations, user information, and AI-related data, incidents must be handled in a controlled and traceable manner.
+
+The incident response process should reduce damage, preserve evidence, restore services, protect business information, and prevent recurrence where possible.
+
+---
+
+## 30.2 Core Incident Response Principle
+
+QubWatch should follow this principle:
+
+> **Detect quickly. Contain appropriately. Preserve evidence. Investigate objectively. Recover securely. Learn from every incident.**
+
+Incident response must also follow the QubWatch principle:
+
+> **Evidence informs. AI assists. Humans decide.**
+
+QubWatch must not automatically accuse a person of fraud, theft, misconduct, or wrongdoing merely because an incident or unusual activity has been detected.
+
+---
+
+## 30.3 Definition of an Incident
+
+An incident is an event or situation that may negatively affect the:
+
+* Confidentiality of information
+* Integrity of information
+* Availability of systems or data
+* Security of users
+* Security of business information
+* Reliability of QubWatch
+* Proper operation of the platform
+* AI security or reliability
+* Investigation evidence
+* Business operations
+
+Examples include:
+
+* Unauthorized account access
+* Stolen credentials
+* Suspicious login activity
+* Unauthorized data access
+* Accidental exposure of sensitive information
+* Data modification without authorization
+* Database failure
+* Malware or ransomware affecting infrastructure
+* API abuse
+* Denial-of-service activity
+* Security vulnerability exploitation
+* Exposed API keys or secrets
+* Unauthorized administrative activity
+* Data corruption
+* Backup failure
+* Third-party service compromise
+* AI prompt injection
+* AI data exposure
+* Manipulation of information used by the AI Assistant
+* Significant system outage
+
+---
+
+## 30.4 Incident Categories
+
+QubWatch should classify incidents into appropriate categories.
+
+### Security Incidents
+
+Examples:
+
+* Unauthorized access
+* Credential compromise
+* Account takeover
+* Data exposure
+* Malicious activity
+* Exploitation of vulnerabilities
+* Suspicious administrative activity
+
+### Data Incidents
+
+Examples:
+
+* Data leakage
+* Data corruption
+* Unauthorized modification
+* Accidental deletion
+* Incorrect data import
+* Business data isolation failure
+
+### Application Incidents
+
+Examples:
+
+* Application crash
+* Authentication failure
+* API failure
+* Broken functionality
+* Unexpected application behavior
+
+### Infrastructure Incidents
+
+Examples:
+
+* Server failure
+* Database outage
+* Storage failure
+* Network failure
+* Hosting failure
+
+### AI Incidents
+
+Examples:
+
+* AI service outage
+* AI hallucination affecting an important workflow
+* Prompt injection
+* Unauthorized AI data access
+* AI-generated information being incorrectly presented as fact
+* AI provider security incident
+
+### Third-Party Incidents
+
+Examples:
+
+* Payment provider outage
+* Authentication provider failure
+* AI provider incident
+* Integration compromise
+* External API failure
+
+---
+
+## 30.5 Incident Severity
+
+Incidents should be assigned a severity level based on their potential or actual impact.
+
+### Low
+
+Limited impact with no significant compromise of sensitive information or core functionality.
+
+### Medium
+
+Noticeable impact requiring investigation and corrective action.
+
+### High
+
+Significant security, data, operational, or business impact requiring urgent response.
+
+### Critical
+
+Severe incident involving major business disruption, significant security compromise, serious data exposure, or substantial loss of system integrity or availability.
+
+Severity should consider:
+
+* Number of users affected
+* Amount and sensitivity of data involved
+* Business impact
+* Security impact
+* Duration
+* Scope
+* Potential legal or regulatory implications
+* Availability impact
+* Integrity impact
+* Confidentiality impact
+* Ability to contain the incident
+
+---
+
+## 30.6 Incident Detection
+
+Incidents may be detected through:
+
+* Application monitoring
+* Security monitoring
+* Audit logs
+* Authentication monitoring
+* User reports
+* System alerts
+* Backup monitoring
+* Database monitoring
+* Integration monitoring
+* AI monitoring
+* Vulnerability detection
+* Infrastructure monitoring
+* External notifications
+* Investigation findings
+
+Monitoring information should provide enough context to support appropriate incident assessment.
+
+---
+
+## 30.7 Incident Identification
+
+When a potential incident is detected, QubWatch should determine:
+
+* What happened?
+* When did it happen?
+* Which system was affected?
+* Which business was affected?
+* Which users were affected?
+* What data may be involved?
+* Is the incident still occurring?
+* Is there evidence of unauthorized access?
+* Is the event a confirmed incident or only a potential incident?
+* What immediate action is required?
+
+The system should avoid treating incomplete information as confirmed fact.
+
+---
+
+## 30.8 Incident Triage
+
+Incident triage should determine:
+
+1. Whether an incident actually occurred.
+2. The incident category.
+3. The severity.
+4. The systems and data affected.
+5. Whether the incident is ongoing.
+6. Whether immediate containment is required.
+7. Whether evidence must be preserved.
+8. Who should be notified.
+9. What response actions are appropriate.
+
+Triage should prioritize incidents according to risk and potential impact.
+
+---
+
+## 30.9 Incident Response Lifecycle
+
+QubWatch should use a structured response lifecycle:
+
+**Detect → Report → Triage → Contain → Preserve Evidence → Investigate → Eradicate → Recover → Validate → Monitor → Review → Improve**
+
+Each stage should have an appropriate purpose and documented actions.
+
+---
+
+## 30.10 Incident Reporting
+
+Users or system processes should be able to report potential incidents through appropriate channels.
+
+Incident reports should capture, where available:
+
+* Reporter
+* Date and time
+* Description
+* Affected business
+* Affected system
+* Relevant user
+* Related transaction
+* Related alert
+* Related investigation
+* Evidence
+* Screenshots or supporting information where appropriate
+* Initial severity
+* Immediate actions taken
+
+Users should not be required to determine the final cause of an incident before reporting it.
+
+---
+
+## 30.11 Incident Containment
+
+Containment should prevent an incident from becoming worse.
+
+Depending on the situation, containment may include:
+
+* Disabling a compromised account
+* Revoking a compromised session
+* Rotating exposed credentials
+* Restricting access
+* Blocking suspicious activity
+* Isolating an affected service
+* Temporarily disabling an integration
+* Restricting API access
+* Preventing further unauthorized data modification
+* Increasing monitoring
+
+Containment actions should be authorized and recorded.
+
+---
+
+## 30.12 Evidence Preservation
+
+Evidence associated with an incident should be preserved appropriately.
+
+Potential evidence includes:
+
+* Audit records
+* Application logs
+* Authentication records
+* Transaction records
+* Alert records
+* Investigation records
+* System events
+* API activity
+* Configuration changes
+* AI interaction records where appropriate
+* Relevant timestamps
+* User actions
+
+Evidence should not be unnecessarily altered or deleted during an investigation.
+
+---
+
+## 30.13 Incident Investigation
+
+Incident investigations should establish, as far as reasonably possible:
+
+* What happened?
+* When did it happen?
+* How did it happen?
+* What systems were affected?
+* What information was affected?
+* What actions occurred?
+* What evidence supports the findings?
+* What remains unknown?
+* What actions were taken?
+* What was the impact?
+* What corrective actions are required?
+
+Investigations should distinguish between:
+
+* Confirmed facts
+* Observations
+* Evidence
+* Analysis
+* Possible explanations
+* Assumptions
+* Unknown information
+* Final human findings
+
+---
+
+## 30.14 Human Decision-Making
+
+QubWatch must maintain human oversight during significant incident response activities.
+
+The platform should not independently:
+
+* Declare an employee guilty
+* Declare that fraud definitely occurred
+* Accuse a person of theft
+* Terminate employment
+* Impose disciplinary action
+* Make legal conclusions
+* Contact law enforcement automatically based solely on an AI conclusion
+* Close a serious security investigation without authorized review
+
+The platform may provide:
+
+* Evidence
+* Alerts
+* Patterns
+* Summaries
+* Risk indicators
+* Possible explanations
+* Recommendations
+
+Final decisions should remain with appropriately authorized humans.
+
+---
+
+## 30.15 AI-Assisted Incident Response
+
+The AI Assistant may support incident response by:
+
+* Summarizing an incident
+* Explaining relevant events
+* Organizing evidence
+* Identifying patterns
+* Highlighting unusual activity
+* Suggesting investigation questions
+* Suggesting possible containment actions
+* Summarizing investigation timelines
+* Identifying missing information
+* Recommending preventive measures
+
+AI-generated information should be clearly distinguished from confirmed facts.
+
+The AI should communicate uncertainty when information is incomplete.
+
+---
+
+## 30.16 AI Security Incidents
+
+QubWatch should specifically monitor for AI-related security incidents.
+
+Examples include:
+
+* Prompt injection
+* Attempts to bypass AI safeguards
+* Unauthorized access to AI context
+* Sensitive information appearing in AI prompts
+* AI output exposing confidential information
+* Manipulation of business data intended for AI analysis
+* Incorrect AI conclusions affecting an investigation
+* AI provider compromise
+* Unexpected model behavior
+
+AI-related incidents should be logged and investigated according to their potential impact.
+
+---
+
+## 30.17 Data Breach and Data Exposure Response
+
+If sensitive information may have been exposed, the response should include:
+
+1. Identify the affected information.
+2. Determine how exposure occurred.
+3. Identify potentially affected users or businesses.
+4. Contain the exposure.
+5. Preserve relevant evidence.
+6. Assess the scope and impact.
+7. Correct the underlying weakness.
+8. Validate that exposure has stopped.
+9. Document the incident.
+10. Determine whether additional notification or reporting obligations apply.
+
+Any legal or regulatory notification should be handled according to applicable requirements and appropriate professional advice.
+
+---
+
+## 30.18 Credential Compromise Response
+
+If a credential may have been compromised, appropriate response actions may include:
+
+* Disable or restrict the affected account
+* Revoke active sessions
+* Reset credentials
+* Rotate exposed secrets
+* Review recent activity
+* Review audit records
+* Check for unauthorized changes
+* Identify affected data
+* Monitor for continued suspicious activity
+* Document the response
+
+---
+
+## 30.19 Account Takeover Response
+
+For suspected account takeover, QubWatch should support:
+
+* Account identification
+* Session review
+* Authentication-event review
+* Suspicious activity review
+* Session termination
+* Credential reset
+* Access review
+* Data-access review
+* Investigation creation
+* Audit recording
+
+Account recovery should verify that control of the account is appropriately restored.
+
+---
+
+## 30.20 Eradication
+
+After containment, the underlying cause should be addressed where possible.
+
+Examples include:
+
+* Removing malicious software
+* Fixing vulnerable code
+* Removing unauthorized accounts
+* Correcting access permissions
+* Rotating compromised credentials
+* Removing exposed secrets
+* Updating vulnerable dependencies
+* Correcting insecure configurations
+* Removing malicious integrations
+* Correcting data-processing weaknesses
+
+Eradication should not destroy evidence required for investigation.
+
+---
+
+## 30.21 Recovery
+
+Recovery should restore affected systems and services securely.
+
+The recovery process should include:
+
+* Restoring affected services
+* Restoring data where necessary
+* Validating data integrity
+* Testing authentication
+* Testing authorization
+* Testing core functions
+* Checking security controls
+* Reviewing logs
+* Monitoring the restored system
+* Confirming that the incident has been contained
+
+Recovery should follow the requirements defined in **Section 27 — Backup, Recovery and Business Continuity Requirements**.
+
+---
+
+## 30.22 Post-Recovery Monitoring
+
+After recovery, enhanced monitoring may be appropriate.
+
+Monitoring should look for:
+
+* Repeated attack activity
+* Unauthorized access
+* Unexpected system behavior
+* Data integrity problems
+* Repeated failures
+* Reintroduced vulnerabilities
+* Suspicious user activity
+* Integration problems
+
+The system should remain under appropriate observation until the incident is considered sufficiently resolved.
+
+---
+
+## 30.23 Incident Closure
+
+An incident should only be closed when appropriate authorized personnel determine that:
+
+* The incident has been contained.
+* Necessary investigation has been completed.
+* Evidence has been appropriately preserved.
+* Affected systems have been recovered.
+* Data integrity has been validated.
+* Required corrective actions have been identified.
+* Outstanding risks are documented.
+* Required notifications or escalations have been addressed.
+* The incident record is complete.
+
+Closure should be recorded in the audit trail.
+
+---
+
+## 30.24 Incident Documentation
+
+Each significant incident should maintain an incident record containing, where appropriate:
+
+* Incident ID
+* Date and time detected
+* Date and time reported
+* Incident category
+* Severity
+* Affected business
+* Affected systems
+* Affected users
+* Description
+* Timeline
+* Evidence
+* Actions taken
+* Containment actions
+* Investigation findings
+* Root or contributing causes where established
+* Recovery actions
+* Final outcome
+* Corrective actions
+* Lessons learned
+* Closure information
+
+---
+
+## 30.25 Incident Timeline
+
+QubWatch should support an incident timeline where appropriate.
+
+The timeline may include:
+
+* Detection
+* Reporting
+* Alert creation
+* Investigation creation
+* Evidence collection
+* Containment
+* Configuration changes
+* User actions
+* Recovery
+* Review
+* Closure
+
+Important timeline events should be traceable through the audit system.
+
+---
+
+## 30.26 Third-Party Incidents
+
+If an external provider experiences an incident that may affect QubWatch, the incident should be assessed.
+
+Potential providers include:
+
+* Hosting providers
+* AI providers
+* Authentication providers
+* Payment providers
+* Notification providers
+* Database providers
+* Integration providers
+
+QubWatch should assess:
+
+* What service is affected?
+* What QubWatch data may be affected?
+* Which businesses may be affected?
+* Is QubWatch functionality affected?
+* Is temporary disconnection required?
+* What information has the provider supplied?
+* What recovery actions are available?
+
+Third-party incidents should be documented where they materially affect QubWatch.
+
+---
+
+## 30.27 Incident Communication
+
+Incident communications should be:
+
+* Accurate
+* Timely
+* Clear
+* Appropriate to the audience
+* Based on verified information
+* Non-speculative
+* Security-conscious
+
+Communication should avoid unnecessarily revealing:
+
+* Passwords
+* API keys
+* Security secrets
+* Sensitive investigation information
+* Confidential business information
+* Personal information
+
+Internal technical details should only be shared with authorized personnel.
+
+---
+
+## 30.28 Incident Escalation
+
+Incidents should be escalated when:
+
+* Severity increases
+* More users or businesses are affected
+* Sensitive information may be exposed
+* The incident remains unresolved
+* Containment fails
+* Evidence indicates a wider compromise
+* A critical service is unavailable
+* A third-party incident affects QubWatch
+* Specialist expertise is required
+
+Escalation decisions should be documented.
+
+---
+
+## 30.29 Incident Response Roles
+
+Responsibilities should be clearly assigned.
+
+### Business Owner
+
+May:
+
+* Review business-impacting incidents
+* Approve appropriate business decisions
+* Review investigations
+* Review corrective actions
+
+### Authorized Manager
+
+May:
+
+* Assist with incident review
+* Coordinate business-level response
+* Review relevant evidence
+* Support investigations within assigned authority
+
+### Staff User
+
+May:
+
+* Report incidents
+* Provide relevant information
+* Follow response instructions
+* Avoid unauthorized changes to evidence or systems
+
+### Administrator
+
+May:
+
+* Manage technical response
+* Restrict access
+* Investigate system-level events
+* Coordinate recovery
+* Manage security configurations
+
+Administrative access should remain controlled and auditable.
+
+---
+
+## 30.30 Incident Response and Auditability
+
+Important incident-response actions should be recorded.
+
+Examples include:
+
+* Incident creation
+* Severity changes
+* Assignment
+* Access restrictions
+* Account disabling
+* Credential resets
+* Configuration changes
+* Evidence additions
+* Investigation findings
+* Recovery actions
+* Closure
+
+Audit records should support accountability without unnecessarily exposing sensitive information.
+
+---
+
+## 30.31 Incident Response and Privacy
+
+Incident response must protect privacy.
+
+Incident investigations should:
+
+* Access only necessary information.
+* Follow authorization rules.
+* Protect personal information.
+* Avoid unnecessary copying of sensitive information.
+* Restrict investigation records to authorized users.
+* Preserve confidentiality where appropriate.
+* Retain information according to applicable retention requirements.
+
+---
+
+## 30.32 Incident Response Testing
+
+QubWatch's incident response capabilities should be tested periodically.
+
+Testing may include:
+
+* Tabletop exercises
+* Account compromise scenarios
+* Data exposure scenarios
+* Database failure scenarios
+* Backup restoration exercises
+* AI incident scenarios
+* Third-party outage scenarios
+* Unauthorized access scenarios
+* Application security incidents
+
+Testing should identify weaknesses before real incidents occur.
+
+---
+
+## 30.33 Lessons Learned
+
+After significant incidents, QubWatch should conduct a review.
+
+The review should ask:
+
+* What happened?
+* Why did it happen?
+* What worked?
+* What failed?
+* Was detection fast enough?
+* Was containment effective?
+* Was evidence preserved?
+* Was communication effective?
+* Could the incident have been prevented?
+* What controls should be improved?
+* What monitoring should be improved?
+* What training is required?
+* What changes should be made?
+
+The objective should be improvement rather than inappropriate blame.
+
+---
+
+## 30.34 Corrective and Preventive Actions
+
+Incident reviews may produce corrective actions such as:
+
+* Security patches
+* Configuration changes
+* Permission changes
+* New monitoring rules
+* New detection rules
+* Improved authentication
+* Improved backups
+* Improved documentation
+* User training
+* AI guardrail improvements
+* Dependency updates
+* New security tests
+* Process improvements
+
+Actions should have appropriate owners and status tracking.
+
+---
+
+## 30.35 Incident Metrics
+
+QubWatch may track incident-response metrics such as:
+
+* Number of incidents
+* Incidents by severity
+* Incidents by category
+* Time to detection
+* Time to response
+* Time to containment
+* Time to recovery
+* Number of repeated incidents
+* Number of unresolved incidents
+* Number of security incidents
+* Number of AI incidents
+* Number of third-party incidents
+* Backup/recovery incidents
+* Corrective actions completed
+
+Metrics should be used to improve security and reliability rather than simply measure activity.
+
+---
+
+## 30.36 MVP Incident Response Requirements
+
+The MVP should provide basic capability for:
+
+* Recording significant incidents
+* Linking incidents to relevant alerts or investigations where appropriate
+* Recording incident severity
+* Recording incident status
+* Recording important response actions
+* Preserving relevant audit information
+* Restricting incident access
+* Recording incident closure
+* Supporting basic human review
+
+Advanced automated incident response can be introduced later.
+
+---
+
+## 30.37 Future Incident Response Capabilities
+
+Future versions may include:
+
+* Automated incident correlation
+* Advanced security monitoring
+* SIEM integration
+* Automated threat intelligence
+* Advanced incident dashboards
+* Automated evidence collection
+* Security orchestration
+* Advanced incident timelines
+* AI-assisted incident investigation
+* Predictive incident detection
+* Automated low-risk containment with appropriate safeguards
+* Advanced third-party incident management
+* Security operations integrations
+
+Automation should always remain subject to appropriate safeguards and human oversight.
+
+---
+
+## 30.38 Incident Response Priority
+
+When responding to incidents, QubWatch should prioritize:
+
+1. Human safety and critical business impact
+2. Security
+3. Protection of sensitive information
+4. Data integrity
+5. Containment
+6. Evidence preservation
+7. Authentication and authorization
+8. Core system availability
+9. Business operations
+10. Investigation
+11. Recovery
+12. Lessons learned
+13. Future improvements
+
+---
+
+## 30.39 Core Incident Response Rule
+
+QubWatch should follow this rule:
+
+> **Detect important incidents early, contain them appropriately, preserve trustworthy evidence, investigate objectively, recover securely, document what happened, and improve the system afterward.**
+
+---
+
+## 30.40 Section Summary
+
+Incident response provides QubWatch with a structured method for dealing with security, data, application, infrastructure, AI, and third-party incidents.
+
+The overall process is:
+
+**Detect → Report → Triage → Contain → Preserve Evidence → Investigate → Eradicate → Recover → Validate → Monitor → Review → Improve**
+
+The central principle remains:
+
+> **Detect quickly. Contain appropriately. Preserve evidence. Investigate objectively. Recover securely. Learn from every incident.**
+
+And the fundamental QubWatch decision principle remains:
+
+> **AI assists. Evidence informs. Humans decide.**
+
+
+
+# SECTION 31 - COMPLIANCE, GOVERNANCE AND LEGAL/REGULATORY CONSIDERATIONS
+
+## 31.1 Purpose
+
+QubWatch should be designed and operated with appropriate consideration for:
+
+* Applicable laws and regulations
+* Data protection and privacy requirements
+* Information security obligations
+* Business governance
+* User accountability
+* Record keeping
+* Responsible AI
+* Contractual obligations
+* Industry-specific requirements
+
+This section establishes the product principles and requirements that help QubWatch operate responsibly.
+
+QubWatch should not claim that a business or user is legally compliant merely because the platform contains security, monitoring, or governance features.
+
+---
+
+## 31.2 Core Governance Principle
+
+QubWatch should follow this principle:
+
+> **Build responsibly, protect information, maintain accountability, respect applicable requirements, and preserve human oversight.**
+
+Compliance should support responsible business operations rather than become a substitute for professional legal, regulatory, security, or privacy advice.
+
+---
+
+## 31.3 Legal and Regulatory Awareness
+
+QubWatch should be designed with awareness that legal and regulatory requirements may differ according to:
+
+* Country
+* State or jurisdiction
+* Industry
+* Business size
+* Type of information processed
+* Type of customers
+* Type of transactions
+* Contractual obligations
+* Business activities
+
+The platform should therefore avoid assuming that one set of requirements applies to every business.
+
+Where specific legal or regulatory requirements are relevant, appropriate professional advice should be obtained.
+
+---
+
+## 31.4 Data Protection and Privacy
+
+QubWatch may process business and personal information.
+
+The platform should therefore support appropriate data protection principles, including:
+
+* Lawful and appropriate processing
+* Purpose limitation
+* Data minimization
+* Accuracy
+* Appropriate retention
+* Controlled access
+* Security
+* Transparency
+* Accountability
+
+QubWatch should collect and process only information reasonably necessary for its intended functions.
+
+---
+
+## 31.5 Personal Information
+
+Depending on the business and its use of QubWatch, information may include:
+
+* Names
+* Contact information
+* User account information
+* Employee information
+* Customer information
+* Transaction information
+* Authentication records
+* Audit information
+* Investigation information
+
+Personal information should be handled according to applicable privacy and data protection requirements.
+
+---
+
+## 31.6 Sensitive Business Information
+
+QubWatch may process information that is commercially sensitive even when it is not personal information.
+
+Examples include:
+
+* Sales information
+* Pricing
+* Discounts
+* Supplier information
+* Business strategies
+* Financial information
+* Investigation records
+* Internal procedures
+* Inventory information
+* Business performance data
+* Security information
+
+Access should be limited according to authorization and business need.
+
+---
+
+## 31.7 Data Minimization
+
+QubWatch should avoid collecting information simply because it may be useful in the future.
+
+The platform should ask:
+
+* Is this information necessary?
+* What function requires it?
+* Who needs access?
+* How long should it be retained?
+* Can the function operate with less information?
+
+Data minimization should apply to:
+
+* Business data
+* User information
+* Audit records
+* AI context
+* Integration data
+* Logs
+* Investigation information
+
+---
+
+## 31.8 Purpose Limitation
+
+Information collected for one purpose should not automatically be used for unrelated purposes.
+
+For example, transaction information collected for business monitoring should not automatically be used for unrelated analysis without appropriate authorization and justification.
+
+The same principle should apply to information provided to AI services.
+
+---
+
+## 31.9 User Consent and Authorization
+
+Where consent or another appropriate legal basis is required for processing information, the product and its operating organization should support appropriate mechanisms.
+
+However:
+
+> **Technical authorization is not automatically the same thing as legal consent.**
+
+QubWatch's role-based access controls determine what an authorized user may access within the system.
+
+Applicable legal requirements determine whether particular processing is permitted.
+
+---
+
+## 31.10 User Rights and Data Requests
+
+Where applicable, QubWatch should support appropriate processes for handling legitimate data-related requests.
+
+Potential requests may include:
+
+* Access to information
+* Correction of inaccurate information
+* Deletion where permitted
+* Data export
+* Information about processing
+* Restriction of processing where applicable
+
+The exact rights and procedures may depend on the applicable jurisdiction and circumstances.
+
+---
+
+## 31.11 Data Retention and Compliance
+
+Data should not be retained indefinitely without a legitimate reason.
+
+Retention should consider:
+
+* Business requirements
+* Investigation requirements
+* Audit requirements
+* Security requirements
+* Applicable legal obligations
+* Contractual obligations
+* Privacy requirements
+
+QubWatch should support configurable retention policies where practical.
+
+---
+
+## 31.12 Data Deletion
+
+When information reaches the end of its approved retention period, it should be appropriately deleted, anonymized, or otherwise disposed of according to the applicable policy.
+
+Deletion should consider:
+
+* Active investigations
+* Legal preservation requirements
+* Audit requirements
+* Backup copies
+* Regulatory requirements
+* Business needs
+
+Deletion should be controlled and auditable.
+
+---
+
+## 31.13 Business Data Isolation
+
+Each business using QubWatch must have its information logically separated from other businesses.
+
+A user authorized to access Business A must not automatically have access to Business B.
+
+Business data isolation should apply to:
+
+* Transactions
+* Products
+* Alerts
+* Investigations
+* Reports
+* AI context
+* Audit records
+* Notifications
+* Integrations
+* Backups where applicable
+
+This requirement is both a security and governance priority.
+
+---
+
+## 31.14 Role-Based Accountability
+
+Users should have clearly defined responsibilities.
+
+QubWatch should maintain accountability for important actions performed by:
+
+* Business Owners
+* Authorized Managers
+* Staff Users
+* Administrators
+* System processes
+* AI-assisted processes where appropriate
+
+Users should have individual accounts rather than shared accounts whenever practical.
+
+---
+
+## 31.15 Separation of Duties
+
+Important actions should not unnecessarily depend on one individual having unlimited control.
+
+Where appropriate, QubWatch may separate responsibilities such as:
+
+* Data entry
+* Transaction modification
+* Investigation
+* Investigation approval
+* User management
+* Security administration
+* Platform administration
+
+Separation of duties can reduce the risk of unauthorized activity and improve accountability.
+
+---
+
+## 31.16 Audit and Record Keeping
+
+Important activities should be appropriately traceable.
+
+QubWatch should maintain records of relevant:
+
+* Authentication events
+* Authorization events
+* Data changes
+* Transaction changes
+* Alert activity
+* Investigation activity
+* User-management actions
+* Security changes
+* Administrative actions
+* AI-related activities where appropriate
+
+Audit requirements should align with the principles established in **Section 26 — Audit, Accountability and Traceability Requirements**.
+
+---
+
+## 31.17 Governance of Detection Rules
+
+Detection rules should be controlled.
+
+Changes to important monitoring rules should:
+
+* Require appropriate authorization
+* Be validated
+* Be documented
+* Be auditable
+* Have an identifiable owner
+* Be reviewed when necessary
+
+Users should understand that changing a threshold can affect which activity generates an alert.
+
+---
+
+## 31.18 Governance of Alerts
+
+Alerts should be treated as risk indicators rather than automatic conclusions.
+
+The system must avoid presenting an alert as proof of:
+
+* Theft
+* Fraud
+* Employee misconduct
+* Dishonesty
+* Criminal activity
+
+Appropriate language should include terms such as:
+
+* Unusual activity
+* Potential risk
+* Activity requiring review
+* Possible explanation
+* Requires investigation
+
+This supports responsible use of the platform.
+
+---
+
+## 31.19 Governance of Investigations
+
+Investigations should be conducted objectively.
+
+QubWatch should encourage users to:
+
+* Review evidence
+* Consider alternative explanations
+* Document findings
+* Distinguish facts from assumptions
+* Record unresolved questions
+* Avoid premature conclusions
+
+Investigation records should be protected from unauthorized modification.
+
+---
+
+## 31.20 AI Governance
+
+AI usage must follow the requirements established in **Section 25 — AI Governance and Responsible AI**.
+
+The fundamental rule remains:
+
+> **AI assists. Evidence informs. Humans decide.**
+
+AI should not independently:
+
+* Determine guilt
+* Determine fraud
+* Determine theft
+* Make disciplinary decisions
+* Make employment decisions
+* Make legal conclusions
+* Close serious investigations without human review
+
+---
+
+## 31.21 AI Transparency
+
+Where AI contributes to an output, users should understand that the information was AI-assisted where appropriate.
+
+AI-generated information should be distinguishable from:
+
+* Recorded facts
+* Transaction records
+* Audit records
+* Human findings
+* Verified evidence
+
+The interface should avoid presenting AI-generated possibilities as confirmed facts.
+
+---
+
+## 31.22 AI Data Governance
+
+Before business information is sent to an external AI service, QubWatch should consider:
+
+* What information is being transmitted?
+* Is the information necessary?
+* Is sensitive information included?
+* Is the user authorized?
+* What service provider receives it?
+* How is the information handled?
+* What security controls are available?
+* Can sensitive information be minimized or removed?
+
+AI integration should follow data minimization and security principles.
+
+---
+
+## 31.23 Third-Party Governance
+
+External providers may create security, privacy, availability, and compliance risks.
+
+QubWatch should assess important providers based on factors such as:
+
+* Security capabilities
+* Data handling
+* Privacy practices
+* Availability
+* Reliability
+* Integration security
+* Contractual responsibilities
+* Data location where relevant
+* Incident notification capabilities
+* Vendor dependency
+
+Third-party access should be limited to what is necessary.
+
+---
+
+## 31.24 Vendor Risk Management
+
+Where practical, important vendors should be reviewed periodically.
+
+The review may consider:
+
+* Security posture
+* Service reliability
+* Data protection
+* Incident history
+* Contractual obligations
+* Pricing changes
+* Service changes
+* Dependency risk
+* Exit options
+
+QubWatch should avoid unnecessary vendor lock-in.
+
+---
+
+## 31.25 Integration Governance
+
+Each integration should have a defined purpose.
+
+Before enabling an integration, QubWatch should establish:
+
+* What information is exchanged?
+* Why is it exchanged?
+* Which system owns the information?
+* Who authorized the connection?
+* What permissions are required?
+* How are credentials protected?
+* How is activity monitored?
+* How can the integration be disabled?
+
+---
+
+## 31.26 Security Governance
+
+Security should be treated as an ongoing responsibility rather than a one-time implementation task.
+
+Security governance should include:
+
+* Access control
+* Vulnerability management
+* Dependency management
+* Secure development
+* Monitoring
+* Incident response
+* Backup and recovery
+* Security testing
+* Secret management
+* Configuration management
+* Security reviews
+
+---
+
+## 31.27 Policy Management
+
+As QubWatch grows, appropriate policies may be established for:
+
+* Acceptable use
+* Information security
+* Privacy
+* Access control
+* Data retention
+* Incident response
+* AI usage
+* Vendor management
+* Backup and recovery
+* Change management
+* Business continuity
+
+Policies should be reviewed and updated when requirements or risks change.
+
+---
+
+## 31.28 Change Governance
+
+Significant changes to QubWatch should be controlled.
+
+Changes may include:
+
+* New features
+* Database changes
+* Security configuration changes
+* Detection-rule changes
+* AI model changes
+* Integration changes
+* Permission changes
+* Infrastructure changes
+
+Important changes should be:
+
+* Documented
+* Tested
+* Reviewed
+* Approved where appropriate
+* Traceable
+* Reversible where practical
+
+---
+
+## 31.29 Compliance Evidence
+
+Where QubWatch is used to support governance or compliance activities, relevant records may include:
+
+* Audit trails
+* Access records
+* Security logs
+* Investigation records
+* Incident records
+* Policy records
+* Configuration records
+* Training records
+* Backup records
+* Security-test results
+* Change records
+
+QubWatch should not claim that these records alone prove legal or regulatory compliance.
+
+---
+
+## 31.30 Regulatory and Legal Change
+
+Legal and regulatory requirements can change.
+
+QubWatch governance should therefore support periodic review of relevant requirements.
+
+When applicable requirements change, the organization operating QubWatch should determine whether changes are needed to:
+
+* Data processing
+* Retention
+* Access control
+* Security
+* Notifications
+* Contracts
+* Policies
+* Documentation
+* User communication
+
+---
+
+## 31.31 Industry-Specific Requirements
+
+Different industries may have different requirements.
+
+Examples include:
+
+* Financial services
+* Healthcare
+* Education
+* Government
+* Manufacturing
+* Retail
+* Professional services
+
+QubWatch should not assume that one configuration satisfies every industry's requirements.
+
+Industry-specific configurations may be introduced in future versions.
+
+---
+
+## 31.32 Governance of Business Decisions
+
+QubWatch provides information to support business decisions.
+
+It should not replace:
+
+* Management judgment
+* Professional investigation
+* Legal advice
+* Financial advice
+* Human resources judgment
+* Security expertise
+* Regulatory assessment
+
+Users remain responsible for decisions made using QubWatch information.
+
+---
+
+## 31.33 Accountability for QubWatch Outputs
+
+Every important output should have an identifiable source where practical.
+
+Outputs may originate from:
+
+* A transaction
+* A detection rule
+* A system calculation
+* A human user
+* An AI model
+* An external integration
+
+The system should make it reasonably clear whether an output is:
+
+* Recorded fact
+* System-generated result
+* AI-generated analysis
+* Human-entered information
+* External information
+
+---
+
+## 31.34 Governance of Automated Actions
+
+Automation should be introduced carefully.
+
+Automated actions affecting important business operations should require appropriate safeguards.
+
+Examples requiring additional consideration include:
+
+* Automatically blocking a user
+* Automatically disabling an account
+* Automatically rejecting transactions
+* Automatically modifying business data
+* Automatically escalating an investigation
+* Automatically contacting external authorities
+
+QubWatch should prefer human review for high-impact decisions unless a future version establishes strong safeguards and authorization controls.
+
+---
+
+## 31.35 Compliance and Security by Design
+
+Compliance and governance considerations should be incorporated during product development rather than added only after implementation.
+
+This means considering:
+
+* Privacy during data design
+* Security during architecture
+* Authorization during feature development
+* Auditability during workflow design
+* Retention during database design
+* AI governance during AI integration
+* Incident response during deployment
+* Recovery during infrastructure design
+
+---
+
+## 31.36 Governance Review
+
+QubWatch governance should be reviewed periodically.
+
+Reviews may consider:
+
+* New risks
+* New features
+* New integrations
+* Security incidents
+* AI changes
+* User feedback
+* Legal or regulatory developments
+* Vendor changes
+* Business expansion
+* Changes in data processing
+
+---
+
+## 31.37 MVP Governance Requirements
+
+The MVP should establish basic governance capabilities including:
+
+* Role-based access
+* Business data isolation
+* Audit trail
+* Controlled investigation access
+* Basic data retention considerations
+* Secure handling of sensitive information
+* AI usage safeguards
+* Human oversight
+* Controlled administrative access
+* Basic incident documentation
+
+More advanced governance capabilities can be introduced as QubWatch grows.
+
+---
+
+## 31.38 Future Governance Capabilities
+
+Future versions may include:
+
+* Compliance dashboards
+* Policy management
+* Automated compliance evidence collection
+* Advanced vendor-risk management
+* Regulatory requirement mapping
+* Industry-specific governance templates
+* Privacy management tools
+* Data-subject request workflows
+* Advanced governance reporting
+* Compliance monitoring
+* Governance risk indicators
+* Enterprise governance controls
+
+---
+
+## 31.39 Governance Priority
+
+QubWatch governance should prioritize:
+
+1. Protection of people and sensitive information
+2. Security
+3. Privacy
+4. Data integrity
+5. Accountability
+6. Authorization
+7. Transparency
+8. Human oversight
+9. Auditability
+10. Applicable legal and regulatory requirements
+11. Business usefulness
+12. Automation
+
+---
+
+## 31.40 Core Governance Rule
+
+QubWatch should follow this rule:
+
+> **Protect information, respect applicable requirements, restrict access, maintain accountability, document important actions, govern AI responsibly, and keep humans responsible for important decisions.**
+
+---
+
+## 31.41 Section Summary
+
+Governance ensures that QubWatch is not simply technically functional but also responsibly designed and operated.
+
+The key governance areas are:
+
+**Privacy → Security → Authorization → Accountability → Auditability → Responsible AI → Risk Management → Compliance Awareness → Human Oversight**
+
+QubWatch should support responsible governance without claiming that the software itself guarantees legal or regulatory compliance.
+
+The central principle remains:
+
+> **QubWatch supports governance; it does not replace human responsibility, professional advice, or applicable legal and regulatory obligations.**
+
+
