@@ -21237,3 +21237,1727 @@ The objective is to build a platform where:
 ### Core Principle
 
 > **Spend deliberately. Measure continuously. Optimize intelligently. Never trade essential security, privacy, reliability, or data integrity for short-term savings.**
+
+
+# Section 39 — Product Lifecycle, Versioning and Release Management Requirements
+
+## 39.1 Purpose
+
+This section defines how QubWatch should be developed, versioned, released, updated, maintained, and eventually retired or replaced.
+
+As QubWatch develops from an MVP into a larger platform, changes will occur in:
+
+* Features
+* User interfaces
+* Detection rules
+* AI capabilities
+* Database structures
+* Security controls
+* Integrations
+* Infrastructure
+* APIs
+* Documentation
+* Business rules
+
+A controlled product lifecycle helps ensure that these changes do not unnecessarily introduce security, reliability, data-integrity, or usability problems.
+
+---
+
+## 39.2 Core Product Lifecycle Principle
+
+> **Every important QubWatch change should move through an appropriate lifecycle of planning, development, testing, release, monitoring, review, and improvement.**
+
+---
+
+## 39.3 Product Lifecycle Stages
+
+The general QubWatch product lifecycle is:
+
+**Plan → Design → Build → Test → Review → Release → Monitor → Learn → Improve → Retire**
+
+Not every small change requires the same level of process, but important changes should receive appropriate review and testing.
+
+---
+
+## 39.4 Product Development Stages
+
+QubWatch development should generally progress through:
+
+### Stage 1 — Product Definition
+
+Define:
+
+* Problem
+* User need
+* Business value
+* Requirements
+* Scope
+* Risks
+* Acceptance criteria
+
+### Stage 2 — Design
+
+Define:
+
+* User experience
+* Technical approach
+* Data requirements
+* Security requirements
+* Integration requirements
+* Testing approach
+
+### Stage 3 — Development
+
+Build the feature or change in the appropriate development environment.
+
+### Stage 4 — Testing
+
+Verify:
+
+* Functionality
+* Security
+* Data integrity
+* Usability
+* Performance
+* Compatibility
+
+### Stage 5 — Review
+
+Determine whether the change is ready for release.
+
+### Stage 6 — Release
+
+Deploy the approved change using an appropriate controlled process.
+
+### Stage 7 — Monitoring
+
+Monitor the change after release.
+
+### Stage 8 — Improvement
+
+Use feedback, analytics, incidents, and operational information to improve the product.
+
+---
+
+## 39.5 Product Versioning
+
+QubWatch should use a consistent approach to identifying important product versions.
+
+Versions should make it possible to determine:
+
+* What version is running
+* What changed
+* When it was released
+* What documentation applies
+* Whether known issues exist
+
+A versioning approach such as:
+
+**Major.Minor.Patch**
+
+may be used.
+
+Example:
+
+**1.0.0**
+
+Where:
+
+* **Major** represents significant product changes
+* **Minor** represents meaningful new functionality
+* **Patch** represents smaller fixes or improvements
+
+The exact versioning convention may evolve as the product develops.
+
+---
+
+## 39.6 MVP Version
+
+The first usable QubWatch MVP should have a clearly identifiable version.
+
+For example:
+
+> **QubWatch MVP — Version 1.0**
+
+The MVP version should correspond to a defined set of:
+
+* Features
+* Screens
+* Database structures
+* Detection rules
+* AI capabilities
+* Security controls
+* Acceptance criteria
+
+This makes it possible to distinguish the MVP from later releases.
+
+---
+
+## 39.7 Release Types
+
+QubWatch releases may be categorized as:
+
+### Major Release
+
+May introduce significant:
+
+* Architecture changes
+* Product capabilities
+* User workflows
+* Database changes
+* API changes
+
+### Minor Release
+
+May introduce:
+
+* New features
+* Improvements
+* Additional integrations
+* Enhanced analytics
+
+### Patch Release
+
+May contain:
+
+* Bug fixes
+* Security fixes
+* Small usability improvements
+* Performance improvements
+
+### Emergency Security Release
+
+May be released when immediate action is required to address a serious security problem.
+
+---
+
+## 39.8 Release Planning
+
+Important releases should have a defined plan.
+
+The plan should identify:
+
+* Purpose
+* Changes
+* Affected components
+* Risks
+* Dependencies
+* Testing requirements
+* Rollback approach
+* Documentation changes
+* Deployment requirements
+
+---
+
+## 39.9 Release Scope
+
+Every release should have clearly defined scope.
+
+The team should identify:
+
+### Included
+
+Features and fixes being released.
+
+### Excluded
+
+Features deliberately postponed.
+
+### Dependencies
+
+Services, libraries, integrations, or infrastructure required.
+
+This prevents accidental expansion of the release.
+
+---
+
+## 39.10 Release Readiness
+
+Before an important release, QubWatch should verify:
+
+* Required features are complete
+* Acceptance criteria are satisfied
+* Tests have passed
+* Security requirements have been reviewed
+* Database changes are ready
+* Configuration is correct
+* Documentation is updated
+* Monitoring is available
+* Backup/recovery considerations have been addressed
+* Rollback is understood
+* Known risks are documented
+
+---
+
+## 39.11 Definition of Release Ready
+
+A feature should not be considered complete merely because its interface has been built.
+
+Where applicable, release readiness requires that the feature:
+
+* Works
+* Has appropriate validation
+* Has authorization
+* Handles errors
+* Protects data
+* Is tested
+* Is documented
+* Produces required audit records
+* Meets acceptance criteria
+* Does not introduce unacceptable security risks
+
+---
+
+## 39.12 Database Versioning
+
+Database changes should be controlled.
+
+Examples include:
+
+* Adding a table
+* Adding a field
+* Removing a field
+* Changing a relationship
+* Changing constraints
+* Adding indexes
+* Changing data types
+
+Database changes should be tested before production deployment.
+
+Where possible, database changes should be reversible or have an appropriate recovery strategy.
+
+---
+
+## 39.13 Data Migration
+
+When a new version requires existing data to change, QubWatch should use an appropriate migration process.
+
+A migration should consider:
+
+* Data integrity
+* Backups
+* Compatibility
+* Downtime
+* Validation
+* Rollback
+* Large datasets
+* Security
+
+Data migration should not proceed without understanding its potential impact.
+
+---
+
+## 39.14 API Versioning
+
+If QubWatch exposes APIs to external systems, important API changes should be managed carefully.
+
+Changes may require:
+
+* Versioning
+* Documentation
+* Deprecation periods
+* Compatibility support
+* Migration guidance
+
+Breaking changes should not be introduced unexpectedly where users or integrations depend on the existing API.
+
+---
+
+## 39.15 Detection Rule Versioning
+
+Detection rules should be versioned or otherwise traceable when important changes occur.
+
+For example:
+
+> Large Transaction Rule — Version 2
+
+A rule change may include:
+
+* Threshold modification
+* Severity modification
+* Trigger-condition change
+* Scope change
+* Exception change
+
+Historical alert interpretation should consider which rule version generated the alert.
+
+---
+
+## 39.16 AI Model Versioning
+
+Where practical, QubWatch should record the AI model or model version used for important AI interactions.
+
+This is particularly useful when:
+
+* AI behavior changes
+* Model providers update models
+* Investigation summaries need review
+* AI quality changes
+* A model is retired
+
+AI model changes should be tested before significant production use.
+
+---
+
+## 39.17 AI Prompt and Instruction Versioning
+
+Important AI instructions, prompts, and guardrails should be controlled.
+
+Changes should be reviewed for:
+
+* Accuracy
+* Security
+* Privacy
+* Hallucination risk
+* Prompt injection resistance
+* Investigation behavior
+* Responsible AI compliance
+
+Important AI changes should not be made casually in production.
+
+---
+
+## 39.18 Security Update Management
+
+Security updates should receive appropriate priority.
+
+Security updates may involve:
+
+* Application code
+* Dependencies
+* Operating systems
+* Infrastructure
+* Databases
+* Authentication systems
+* AI integrations
+* Third-party services
+
+Critical security vulnerabilities should be addressed according to their severity and risk.
+
+---
+
+## 39.19 Dependency Updates
+
+QubWatch may depend on:
+
+* Frameworks
+* Libraries
+* APIs
+* SDKs
+* AI services
+* Cloud services
+
+Dependencies should be monitored and updated appropriately.
+
+Updates should be tested before production deployment where practical.
+
+---
+
+## 39.20 Dependency Risk
+
+Before major dependency updates, QubWatch should consider:
+
+* Security
+* Compatibility
+* Performance
+* License considerations
+* Breaking changes
+* Maintenance status
+* Provider support
+
+A dependency should not be retained indefinitely merely because changing it appears inconvenient.
+
+---
+
+## 39.21 Release Testing
+
+Testing should be appropriate to the change.
+
+Possible testing includes:
+
+* Unit testing
+* Integration testing
+* Functional testing
+* Security testing
+* Regression testing
+* Performance testing
+* Accessibility testing
+* User acceptance testing
+* AI testing
+* Data migration testing
+
+High-risk changes should receive more extensive testing.
+
+---
+
+## 39.22 Regression Testing
+
+A new release should not unintentionally break existing functionality.
+
+Important regression areas include:
+
+* Login
+* Authorization
+* Business setup
+* Products
+* Transactions
+* Dashboard
+* Alerts
+* Investigations
+* AI Assistant
+* Audit trail
+* Notifications
+* Security controls
+
+---
+
+## 39.23 Release Approval
+
+Important releases should have appropriate approval before production deployment.
+
+Approval should consider:
+
+* Scope
+* Testing
+* Security
+* Risks
+* Dependencies
+* Rollback
+* Operational readiness
+
+The level of approval should be proportional to the risk of the change.
+
+---
+
+## 39.24 Deployment Process
+
+The general deployment process should be:
+
+**Develop → Test → Review → Approve → Deploy → Verify → Monitor**
+
+Production deployment should not be treated as the testing environment.
+
+---
+
+## 39.25 Deployment Verification
+
+After deployment, QubWatch should verify important functions.
+
+Verification may include:
+
+* Application availability
+* Login
+* Database connection
+* Dashboard
+* Transactions
+* Alerts
+* Investigations
+* AI Assistant
+* Notifications
+* Monitoring
+* Security controls
+
+---
+
+## 39.26 Rollback
+
+Important releases should have a rollback strategy where practical.
+
+Rollback may involve:
+
+* Reverting application code
+* Reverting configuration
+* Disabling a feature
+* Restoring a previous deployment
+* Reversing a database migration where safe
+* Restoring from backup where necessary
+
+Rollback procedures should be tested where practical.
+
+---
+
+## 39.27 Feature Flags and Controlled Release
+
+Future versions may use feature flags to release functionality gradually.
+
+This can allow QubWatch to:
+
+* Test new features
+* Limit exposure
+* Release to selected users
+* Disable problematic features
+* Reduce deployment risk
+
+Feature flags must be controlled and audited appropriately.
+
+---
+
+## 39.28 Emergency Changes
+
+Emergency changes may be required for:
+
+* Critical security vulnerabilities
+* Serious production failures
+* Data-integrity problems
+* Major service disruptions
+
+Emergency changes may use an accelerated process, but should still be:
+
+* Documented
+* Authorized appropriately
+* Tested as much as circumstances permit
+* Monitored
+* Reviewed afterward
+
+Emergency status should not become an excuse for uncontrolled changes.
+
+---
+
+## 39.29 Post-Release Monitoring
+
+After release, QubWatch should monitor:
+
+* Errors
+* Performance
+* Security events
+* User behavior
+* Alerts
+* AI behavior
+* Integrations
+* Database health
+* Resource usage
+
+Monitoring should help identify problems that were not discovered during testing.
+
+---
+
+## 39.30 Release Metrics
+
+Release performance may be measured using:
+
+* Deployment frequency
+* Deployment success rate
+* Failed deployment rate
+* Rollback frequency
+* Time to recover
+* Number of production defects
+* Security incidents following release
+* Performance degradation
+* User feedback
+
+Metrics should be used for improvement rather than punishment.
+
+---
+
+## 39.31 Release Documentation
+
+Each significant release should have appropriate documentation.
+
+Release information may include:
+
+* Version
+* Release date
+* New features
+* Fixes
+* Security changes
+* Database changes
+* Configuration changes
+* Known issues
+* Migration requirements
+* Rollback information
+
+---
+
+## 39.32 Change Communication
+
+Users should receive appropriate communication about significant changes.
+
+Communication may include:
+
+* New features
+* Important workflow changes
+* Security changes
+* Planned downtime
+* Service interruptions
+* Important limitations
+
+Communication should be clear and understandable.
+
+---
+
+## 39.33 Backward Compatibility
+
+Where practical, QubWatch should preserve compatibility with existing functionality.
+
+Breaking changes should be introduced deliberately.
+
+Users should receive appropriate migration information when an important workflow changes.
+
+---
+
+## 39.34 Deprecation
+
+Features, APIs, integrations, or technologies may eventually become obsolete.
+
+Before removing an important feature, QubWatch should consider:
+
+* Current usage
+* Security
+* Maintenance cost
+* Business value
+* Replacement options
+* User impact
+* Migration requirements
+
+Where practical, users should receive appropriate notice.
+
+---
+
+## 39.35 Product Retirement
+
+A feature or component may eventually be retired.
+
+The retirement process should consider:
+
+1. Identify the component
+2. Assess dependencies
+3. Communicate the change
+4. Provide migration guidance where necessary
+5. Disable or remove functionality
+6. Preserve required records
+7. Update documentation
+8. Monitor for unexpected effects
+
+---
+
+## 39.36 Product Lifecycle and Data
+
+Product changes must not accidentally destroy important business data.
+
+Before significant changes, the team should consider:
+
+* Backup
+* Data migration
+* Retention
+* Audit records
+* Investigation records
+* Transaction history
+* Business configuration
+
+Historical records should remain usable where required.
+
+---
+
+## 39.37 Product Lifecycle and Security
+
+Security must be considered throughout the product lifecycle.
+
+Security should not be limited to the final testing stage.
+
+The lifecycle should consider security during:
+
+**Planning → Design → Development → Testing → Deployment → Monitoring → Maintenance → Retirement**
+
+---
+
+## 39.38 Product Lifecycle and AI Governance
+
+AI changes should follow the responsible AI requirements defined elsewhere in this PRD.
+
+Important AI changes should consider:
+
+* Accuracy
+* Security
+* Privacy
+* Bias
+* Explainability
+* Human oversight
+* Data grounding
+* Prompt injection
+* Model behavior
+* Cost
+* Reliability
+
+---
+
+## 39.39 Product Lifecycle and Documentation
+
+Important product changes should result in corresponding documentation updates.
+
+Affected documents may include:
+
+* PRD
+* Technical documentation
+* User documentation
+* Security documentation
+* AI documentation
+* API documentation
+* Runbooks
+* Release notes
+
+Documentation should remain aligned with the actual product.
+
+---
+
+## 39.40 MVP Lifecycle Requirements
+
+The MVP should have:
+
+* A clearly defined version
+* Defined release scope
+* Development environment
+* Testing process
+* Production deployment process
+* Basic release checklist
+* Security review
+* Acceptance testing
+* Backup consideration
+* Rollback consideration
+* Release documentation
+* Post-release monitoring
+
+The MVP does not need an elaborate enterprise release-management system.
+
+The process should be appropriate to the project's current size.
+
+---
+
+## 39.41 Future Product Lifecycle Capabilities
+
+Future versions may include:
+
+* Automated CI/CD pipelines
+* Automated security testing
+* Automated deployment
+* Feature flags
+* Canary releases
+* Blue-green deployments
+* Advanced release dashboards
+* Automated rollback
+* Infrastructure-as-code
+* Advanced dependency management
+* Automated compliance checks
+* Formal change advisory processes
+* Advanced release analytics
+
+These capabilities should be introduced as the product grows.
+
+---
+
+## 39.42 Product Governance
+
+Important product decisions should have clear ownership.
+
+Governance should cover:
+
+* Product direction
+* Feature prioritization
+* Security
+* AI governance
+* Data governance
+* Architecture
+* Release decisions
+* Risk management
+* Major changes
+
+The level of governance should grow with the size and importance of QubWatch.
+
+---
+
+## 39.43 Product Lifecycle Priority
+
+QubWatch product lifecycle decisions should prioritize:
+
+1. Security
+2. Data integrity
+3. Privacy
+4. Business continuity
+5. Reliability
+6. Core business functionality
+7. User experience
+8. Performance
+9. New features
+10. Convenience
+
+New functionality should not automatically take priority over fixing serious security or reliability problems.
+
+---
+
+## 39.44 Core Product Lifecycle Rule
+
+> **Every important QubWatch change must be understood, appropriately designed, tested, reviewed, released, monitored, documented, and recoverable where practical.**
+
+---
+
+## 39.45 Summary
+
+QubWatch should evolve deliberately rather than through uncontrolled changes.
+
+The product lifecycle is:
+
+**Plan → Design → Build → Test → Review → Release → Monitor → Learn → Improve → Retire**
+
+This approach helps ensure that QubWatch can grow from its MVP into a reliable platform without losing control of:
+
+* Security
+* Data
+* AI behavior
+* User experience
+* Technical quality
+* Operational reliability
+* Product direction
+
+### Core Principle
+
+> **Build deliberately. Release responsibly. Monitor continuously. Learn from every release. Improve without losing control.**
+
+
+
+# Section 40 — Product Success, Evaluation and Continuous Improvement Requirements
+
+## 40.1 Purpose
+
+This section defines how QubWatch will determine whether the product is achieving its intended purpose and how the product will continuously improve based on evidence, user feedback, system performance, security findings, business outcomes, and operational experience.
+
+Building QubWatch successfully does not end when the MVP is launched.
+
+The product should continuously be evaluated to determine:
+
+* Whether it solves the problem it was designed to solve
+* Whether users understand and trust it
+* Whether alerts are useful
+* Whether investigations are effective
+* Whether the AI Assistant provides meaningful assistance
+* Whether the platform is secure and reliable
+* Whether users are actually adopting the product
+* What should be improved, changed, expanded, or removed
+
+---
+
+## 40.2 Core Success Principle
+
+> **QubWatch should be evaluated by the value it provides to users and businesses, not simply by the number of features it contains.**
+
+---
+
+## 40.3 Product Success Objectives
+
+QubWatch success should be evaluated across several dimensions:
+
+1. User adoption
+2. User engagement
+3. Business usefulness
+4. Alert effectiveness
+5. Investigation effectiveness
+6. AI usefulness
+7. Security
+8. Reliability
+9. Usability
+10. Performance
+11. Data quality
+12. Operational sustainability
+13. Customer satisfaction
+14. Product improvement
+
+---
+
+## 40.4 MVP Success Definition
+
+The MVP should be considered successful if it demonstrates that a business owner can use QubWatch to:
+
+**Set up a business → Add products → Record transactions → Monitor activity → Receive an alert → Review the alert → Start an investigation → Review evidence → Use the AI Assistant for support → Record a finding → Resolve the investigation.**
+
+The MVP does not need to contain every future QubWatch capability.
+
+It needs to demonstrate that the core problem can be addressed effectively.
+
+---
+
+## 40.5 Product Success Questions
+
+QubWatch should continuously ask:
+
+* Are users actually using the product?
+* Are they able to understand the alerts?
+* Are alerts helping them identify activity worth reviewing?
+* Are investigations easier to conduct?
+* Does the AI Assistant save useful time?
+* Are users able to make better-informed decisions?
+* Are users experiencing unnecessary friction?
+* Is the platform reliable?
+* Is the platform secure?
+* Are users confident in the information presented?
+* What problems remain unsolved?
+
+---
+
+## 40.6 User Adoption Metrics
+
+Possible adoption metrics include:
+
+* Number of registered businesses
+* Number of active businesses
+* Number of active users
+* New-user activation
+* Business setup completion
+* Product setup completion
+* Transaction entry activity
+* Alert review activity
+* Investigation activity
+* AI Assistant usage
+
+These measurements should help determine whether QubWatch is being adopted.
+
+---
+
+## 40.7 Activation
+
+A user or business may be considered activated when they successfully complete an appropriate set of meaningful actions.
+
+For example:
+
+**Create Business → Add Product → Record Transaction → View Dashboard**
+
+A future definition may include receiving and reviewing the first alert.
+
+Activation criteria should be based on actual product behavior rather than arbitrary registration numbers.
+
+---
+
+## 40.8 User Engagement
+
+Engagement should measure meaningful product use rather than simply counting logins.
+
+Useful engagement indicators may include:
+
+* Transactions recorded
+* Alerts reviewed
+* Investigations created
+* Investigations resolved
+* AI questions asked
+* Dashboard usage
+* Monitoring activity
+
+A user who logs in frequently but does not accomplish meaningful business tasks should not automatically be considered highly engaged.
+
+---
+
+## 40.9 Business Value
+
+QubWatch should ultimately provide measurable business value.
+
+Potential indicators include:
+
+* Faster identification of unusual activity
+* Faster review of important transactions
+* Reduced manual monitoring effort
+* Improved visibility into business activity
+* More organized investigations
+* Better record keeping
+* Improved management awareness
+* Reduced response time to important events
+
+Where possible, these outcomes should be measured rather than assumed.
+
+---
+
+## 40.10 Alert Effectiveness
+
+The success of QubWatch's detection system should not be measured simply by the number of alerts generated.
+
+Important measurements include:
+
+* Alerts generated
+* Alerts reviewed
+* Alerts dismissed
+* Alerts escalated
+* Alerts converted into investigations
+* Time to review
+* Time to resolve
+* User feedback
+* False-positive indications
+* Repeated alert patterns
+
+A system that generates thousands of unnecessary alerts may be less useful than a system generating fewer but more meaningful alerts.
+
+---
+
+## 40.11 Detection Quality
+
+Detection rules should be periodically reviewed.
+
+The review should consider:
+
+* Whether thresholds remain appropriate
+* Whether rules generate excessive alerts
+* Whether important activity is being missed
+* Whether rules are understandable
+* Whether rule explanations are clear
+* Whether users find the rules useful
+
+Detection rules should be improved based on evidence.
+
+---
+
+## 40.12 Investigation Effectiveness
+
+Investigation success may be evaluated through:
+
+* Time from alert to investigation
+* Investigation completion rate
+* Investigation duration
+* Evidence review activity
+* Findings recorded
+* Investigation reopening
+* User feedback
+* Quality of investigation documentation
+
+The purpose is to determine whether QubWatch makes investigations more organized and useful.
+
+---
+
+## 40.13 AI Assistant Success
+
+The AI Assistant should be evaluated on more than how frequently it is used.
+
+Important criteria include:
+
+* Accuracy
+* Relevance
+* Usefulness
+* Response time
+* Grounding in available business information
+* Appropriate uncertainty
+* Low hallucination rate
+* Appropriate recommendations
+* User feedback
+* Compliance with AI guardrails
+
+The AI Assistant should be considered successful when it meaningfully assists users without encouraging unsupported conclusions.
+
+---
+
+## 40.14 AI Human-Oversight Success
+
+QubWatch should evaluate whether users continue to exercise appropriate judgment when using AI.
+
+The system should avoid encouraging:
+
+* Blind acceptance of AI recommendations
+* Automatic accusations
+* Automatic disciplinary decisions
+* Automatic conclusions of fraud
+* Automatic legal conclusions
+
+The objective is:
+
+> **AI assists. Evidence informs. Humans decide.**
+
+---
+
+## 40.15 Security Success
+
+QubWatch success must include security.
+
+Security evaluation should consider:
+
+* Unauthorized access
+* Authentication failures
+* Authorization failures
+* Security vulnerabilities
+* Data exposure
+* Security incidents
+* Incident response
+* Dependency vulnerabilities
+* Secrets protection
+* Auditability
+
+A feature that improves usability while creating an unacceptable security weakness should not be considered successful.
+
+---
+
+## 40.16 Reliability Success
+
+QubWatch should evaluate:
+
+* Availability
+* Error rates
+* Failed transactions
+* Failed alerts
+* Database failures
+* Integration failures
+* AI failures
+* Backup failures
+* Recovery performance
+
+The platform should remain dependable as usage increases.
+
+---
+
+## 40.17 Usability Success
+
+Usability should be evaluated by whether users can complete important tasks without unnecessary difficulty.
+
+Examples include:
+
+* Login
+* Business setup
+* Product creation
+* Transaction entry
+* Alert review
+* Investigation
+* AI interaction
+* Investigation closure
+
+Useful indicators may include:
+
+* Task completion rate
+* Time to complete tasks
+* User errors
+* Abandoned workflows
+* Support requests
+* User feedback
+
+---
+
+## 40.18 Accessibility Success
+
+QubWatch should evaluate whether users with different accessibility needs can effectively use important functions.
+
+Evaluation may include:
+
+* Keyboard navigation
+* Screen-reader compatibility
+* Text readability
+* Color/contrast
+* Responsive behavior
+* Form accessibility
+* Accessible alerts
+* Accessible charts
+
+Accessibility should be continuously improved rather than treated as a one-time task.
+
+---
+
+## 40.19 Performance Success
+
+Performance should be measured against established requirements.
+
+Possible indicators include:
+
+* Login response time
+* Dashboard loading time
+* Transaction processing time
+* Search performance
+* Alert processing
+* Investigation loading
+* AI response time
+* API response time
+
+Performance should be monitored as user and transaction volumes increase.
+
+---
+
+## 40.20 Data Quality Success
+
+QubWatch depends on accurate business information.
+
+Data quality should therefore be evaluated for:
+
+* Accuracy
+* Completeness
+* Consistency
+* Timeliness
+* Validity
+* Duplicate records
+* Missing information
+
+Poor input data can reduce the usefulness of monitoring and AI analysis.
+
+---
+
+## 40.21 Customer Satisfaction
+
+Where appropriate, QubWatch may collect user feedback through:
+
+* Surveys
+* Feedback forms
+* Support requests
+* Feature requests
+* User interviews
+* Product reviews
+* Usability sessions
+
+Feedback should be analyzed for recurring themes.
+
+One isolated complaint should not automatically determine product direction, but repeated problems should receive attention.
+
+---
+
+## 40.22 Net Promoter or Similar Metrics
+
+Future versions may use customer satisfaction metrics such as:
+
+* Net Promoter Score
+* Customer Satisfaction Score
+* Customer Effort Score
+
+Such metrics should complement, rather than replace, actual product usage and business outcome measurements.
+
+---
+
+## 40.23 Support Metrics
+
+Support information can reveal product weaknesses.
+
+Useful measurements include:
+
+* Number of support requests
+* Support categories
+* Resolution time
+* Repeated problems
+* Account-access issues
+* Alert-related questions
+* AI-related questions
+* Usability complaints
+
+Repeated support requests may indicate that a product workflow needs improvement.
+
+---
+
+## 40.24 Product Feedback Loop
+
+QubWatch should establish a continuous improvement loop:
+
+**User Experience → Feedback → Analysis → Product Decision → Development → Testing → Release → Measurement → New Feedback**
+
+This prevents product development from becoming disconnected from actual user needs.
+
+---
+
+## 40.25 Feature Evaluation
+
+Features should be evaluated after release.
+
+The evaluation may consider:
+
+* Usage
+* Business value
+* User satisfaction
+* Security
+* Performance
+* Maintenance cost
+* Support burden
+
+A feature that is rarely used and provides little value may eventually be redesigned or removed.
+
+---
+
+## 40.26 Feature Prioritization
+
+Future features should be prioritized according to factors such as:
+
+* User need
+* Business value
+* Security importance
+* Risk reduction
+* Number of users affected
+* Implementation effort
+* Technical complexity
+* Cost
+* Strategic importance
+
+A feature should not be prioritized simply because it sounds technologically impressive.
+
+---
+
+## 40.27 Product Experiments
+
+QubWatch may conduct controlled product experiments where appropriate.
+
+Examples include testing:
+
+* Different dashboard layouts
+* Alert wording
+* Notification approaches
+* User onboarding
+* AI response formats
+
+Experiments should respect:
+
+* Privacy
+* Security
+* User expectations
+* Data integrity
+* Responsible AI principles
+
+---
+
+## 40.28 Product Decisions Based on Evidence
+
+Important product decisions should use multiple sources of evidence.
+
+Possible evidence includes:
+
+* User feedback
+* Product analytics
+* Security findings
+* Support data
+* Performance data
+* Business outcomes
+* Investigation feedback
+* AI evaluation
+* Cost information
+
+No single metric should automatically determine the product roadmap.
+
+---
+
+## 40.29 Continuous Improvement
+
+Continuous improvement should address:
+
+* Defects
+* Security weaknesses
+* Usability problems
+* Performance issues
+* Detection quality
+* AI quality
+* Documentation gaps
+* Operational inefficiencies
+* Customer needs
+
+Improvement should be deliberate and measurable.
+
+---
+
+## 40.30 Root-Cause Analysis
+
+Repeated problems should receive appropriate root-cause analysis.
+
+For example:
+
+If users repeatedly fail to record transactions correctly, the team should determine whether the underlying problem is:
+
+* Poor interface design
+* Unclear instructions
+* Missing validation
+* User training
+* System errors
+* Workflow complexity
+
+The objective is to solve the underlying problem rather than repeatedly treating its symptoms.
+
+---
+
+## 40.31 Product Health Dashboard
+
+Future versions may provide an internal product-health dashboard containing indicators such as:
+
+* Active businesses
+* Active users
+* System availability
+* Error rate
+* Alert volume
+* Investigation volume
+* AI usage
+* AI failures
+* Security events
+* Support requests
+* Infrastructure usage
+* Cost indicators
+
+Access to such a dashboard should be appropriately restricted.
+
+---
+
+## 40.32 Success Thresholds
+
+Important metrics should have reasonable target ranges where appropriate.
+
+For example:
+
+* Availability target
+* Response-time target
+* Alert review target
+* Investigation completion target
+* AI response target
+* Support response target
+
+Targets should be based on actual business needs and technical capability rather than arbitrary numbers.
+
+---
+
+## 40.33 Avoiding Vanity Metrics
+
+QubWatch should avoid relying excessively on metrics that look impressive but do not demonstrate real value.
+
+Examples of potentially misleading metrics include:
+
+* Total registered users without active usage
+* Total alerts without useful-alert measurement
+* Number of AI questions without quality measurement
+* Number of features without adoption
+* Number of transactions without meaningful monitoring outcomes
+
+The product should prioritize meaningful outcomes.
+
+---
+
+## 40.34 Success and Responsible AI
+
+AI success should never be defined as:
+
+> "The AI makes more decisions."
+
+Instead, successful AI should mean:
+
+* Better analysis
+* Better explanations
+* Faster information retrieval
+* Better investigation support
+* Appropriate recommendations
+* Clear uncertainty
+* Human oversight
+
+Automation should not be pursued merely for its own sake.
+
+---
+
+## 40.35 Success and Human Decision-Making
+
+QubWatch should measure whether the platform helps people make better-informed decisions.
+
+It should not attempt to replace legitimate human responsibility in:
+
+* Employee investigations
+* Fraud determinations
+* Disciplinary decisions
+* Legal decisions
+* Financial decisions
+* Security incident decisions
+
+The platform provides information and support.
+
+Authorized humans remain responsible for important decisions.
+
+---
+
+## 40.36 Product Risk Review
+
+Success evaluation should also examine whether new features introduce new risks.
+
+Reviews should consider:
+
+* Security risk
+* Privacy risk
+* AI risk
+* Data risk
+* Operational risk
+* Financial risk
+* User trust risk
+* Compliance risk
+
+A feature that improves one metric while creating serious risk elsewhere should be reconsidered.
+
+---
+
+## 40.37 Product Review Cycle
+
+QubWatch should periodically review:
+
+* Product performance
+* User feedback
+* Security
+* Reliability
+* Costs
+* Detection effectiveness
+* AI quality
+* Roadmap progress
+
+The review frequency may change as the product grows.
+
+---
+
+## 40.38 MVP Success Criteria
+
+The MVP should demonstrate that:
+
+1. A business can be created.
+2. Products can be added.
+3. Transactions can be recorded.
+4. Business activity can be monitored.
+5. Detection rules can identify defined unusual patterns.
+6. Alerts can be generated.
+7. Users can review alerts.
+8. Investigations can be created.
+9. Evidence can be reviewed.
+10. Findings can be recorded.
+11. The AI Assistant can provide controlled assistance.
+12. Important actions can be audited.
+13. Unauthorized access is appropriately restricted.
+14. Core data remains isolated and protected.
+15. The complete core workflow can be demonstrated successfully.
+
+---
+
+## 40.39 MVP Demonstration Scenario
+
+A successful MVP demonstration should be able to show:
+
+**Business Owner Logs In**
+
+↓
+
+**Creates Business**
+
+↓
+
+**Adds Products**
+
+↓
+
+**Records Normal Transactions**
+
+↓
+
+**Records an Unusual Transaction**
+
+↓
+
+**QubWatch Detection Rule Triggers**
+
+↓
+
+**Alert Appears**
+
+↓
+
+**Owner Reviews Alert**
+
+↓
+
+**Owner Opens Investigation**
+
+↓
+
+**Related Transactions and Evidence Are Reviewed**
+
+↓
+
+**Owner Asks AI Assistant for Analysis**
+
+↓
+
+**AI Provides Evidence-Based Assistance**
+
+↓
+
+**Owner Records Finding**
+
+↓
+
+**Investigation Is Resolved**
+
+↓
+
+**Audit Trail Records Important Actions**
+
+This scenario demonstrates the central QubWatch concept.
+
+---
+
+## 40.40 Product Success Does Not Mean Zero Problems
+
+A successful QubWatch product will still experience:
+
+* Errors
+* False positives
+* User mistakes
+* AI limitations
+* Security threats
+* Downtime
+* Changing business requirements
+
+Success means that the platform can identify, manage, learn from, and improve these problems responsibly.
+
+---
+
+## 40.41 Product Improvement Governance
+
+Product improvements should follow the governance principles already established in this PRD.
+
+Important improvements should be:
+
+* Justified
+* Prioritized
+* Designed
+* Tested
+* Reviewed
+* Documented
+* Released appropriately
+* Monitored afterward
+
+---
+
+## 40.42 Future Product Success Capabilities
+
+Future versions may include:
+
+* Advanced customer analytics
+* Business outcome measurement
+* Automated product-health reporting
+* Advanced experimentation
+* Predictive product analytics
+* AI-assisted product analysis
+* Advanced customer segmentation
+* Automated feedback classification
+* Advanced feature-impact analysis
+* Product maturity scoring
+
+These capabilities should be introduced only when they provide meaningful value.
+
+---
+
+## 40.43 Product Success Priority
+
+Product success should prioritize:
+
+1. Security
+2. Data integrity
+3. User trust
+4. Business usefulness
+5. Reliability
+6. Privacy
+7. Usability
+8. Accessibility
+9. Performance
+10. Adoption
+11. Growth
+12. Advanced automation
+
+Growth should never be pursued by compromising the fundamental principles of QubWatch.
+
+---
+
+## 40.44 Core Product Success Rule
+
+> **QubWatch is successful when it helps authorized users gain better visibility into business activity, identify activity requiring attention, investigate it using reliable information, and make better-informed decisions while maintaining security, privacy, accountability, and human oversight.**
+
+---
+
+## 40.45 Summary
+
+QubWatch should continuously learn from its users, its data, its operational experience, and its failures.
+
+The continuous improvement cycle is:
+
+**Measure → Understand → Prioritize → Improve → Test → Release → Monitor → Learn**
+
+The ultimate goal is not to build the largest possible feature set.
+
+The goal is to build a platform that genuinely helps businesses improve visibility, identify unusual activity, investigate responsibly, and make informed decisions.
+
+### Final Principle
+
+> **Build for value. Measure honestly. Learn continuously. Improve deliberately. Protect trust.**
