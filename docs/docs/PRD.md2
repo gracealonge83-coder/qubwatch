@@ -6322,3 +6322,614 @@ The following principle should guide interpretation of the terminology used thro
 **QubWatch identifies activity that may require attention. It provides information, alerts, analysis, and investigation support. It does not automatically determine guilt, fraud, theft, or wrongdoing.**
 
 **AI assists. Evidence informs. Humans decide.**
+
+
+## Section 19 — Business Rules and Logic
+
+### 19.1 Purpose
+
+Business rules define the conditions and logic that QubWatch must follow when processing business information, transactions, monitoring activity, generating alerts, supporting investigations, and providing AI-assisted analysis.
+
+The purpose of these rules is to ensure that QubWatch behaves consistently, transparently, securely, and predictably.
+
+Business rules must be implemented independently from the user interface where practical so that the same rules apply regardless of how information is entered or accessed.
+
+---
+
+### 19.2 Core Business Rules
+
+QubWatch shall apply the following fundamental rules:
+
+1. A user must be authenticated before accessing protected QubWatch functions.
+2. A user may only access information they are authorized to access.
+3. Business data must remain isolated between different businesses.
+4. Every transaction must belong to a specific business.
+5. Every product must belong to a specific business.
+6. Transactions must contain sufficient information to support accurate monitoring.
+7. Monitoring rules must operate using defined conditions or thresholds.
+8. An alert must be generated when configured detection conditions are satisfied.
+9. An alert must contain enough information to explain why it was generated.
+10. An unusual activity alert must not automatically be treated as proof of fraud, theft, misconduct, or wrongdoing.
+11. Investigations must be based on available evidence and recorded information.
+12. Important user actions must be recorded in the audit trail.
+13. AI-generated responses must not be treated as definitive evidence.
+14. AI must not make final accusations or determinations of guilt.
+15. Users remain responsible for decisions made using information provided by QubWatch.
+16. Deleted or modified information must be handled according to defined data-retention and audit requirements.
+
+---
+
+### 19.3 Business Account Rules
+
+Each QubWatch business account shall represent a distinct business entity or operating environment.
+
+The system shall:
+
+* Require an authenticated user to create or access a business.
+* Associate business information with the appropriate business account.
+* Prevent unauthorized users from accessing another business's information.
+* Maintain the identity of the business owner or authorized administrator.
+* Allow authorized users to update permitted business information.
+* Record important business-account changes in the audit trail.
+
+A user may belong to one or more businesses in future versions, but the MVP/general architecture should maintain clear separation between business environments.
+
+---
+
+### 19.4 Product Rules
+
+Products recorded in QubWatch shall belong to a specific business.
+
+A product should contain, where applicable:
+
+* Product name
+* Product code or identifier
+* Category
+* Selling price
+* Cost price
+* Available quantity
+* Reorder information
+* Product status
+* Creation date
+* Last updated date
+
+The system should prevent:
+
+* Duplicate product identifiers within the same business where uniqueness is required.
+* Negative quantities where the business rules do not permit them.
+* Invalid prices.
+* Unauthorized product modification.
+* A user from one business viewing or modifying another business's products.
+
+Product information may be used by the monitoring system when evaluating transactions and inventory-related activity.
+
+---
+
+### 19.5 Transaction Rules
+
+Every transaction shall be associated with:
+
+* A business
+* A date/time
+* One or more products or transaction items where applicable
+* Quantity
+* Price
+* Total amount
+* Transaction status
+* User who recorded the transaction
+
+Where applicable, the transaction may also contain:
+
+* Discount
+* Refund information
+* Payment method
+* Customer reference
+* Transaction reference
+* Notes
+
+The system should validate transactions before saving them.
+
+Examples of validation include:
+
+* Quantity must be valid.
+* Transaction amount must be valid.
+* Required fields must not be empty.
+* Product references must exist.
+* Transaction must belong to the current business.
+* Unauthorized users must not be allowed to modify restricted transaction information.
+
+---
+
+### 19.6 Transaction Modification Rules
+
+Changes to important transaction information should be controlled.
+
+Where a transaction is edited, QubWatch should:
+
+1. Verify that the user has permission to make the change.
+2. Validate the new information.
+3. Preserve appropriate audit information.
+4. Record who made the change.
+5. Record when the change occurred.
+6. Where practical, record what information was changed.
+
+For sensitive transaction changes, the original transaction history should not simply disappear.
+
+This supports investigation and accountability.
+
+---
+
+### 19.7 Refund Rules
+
+Refunds shall be treated as a distinct type of transaction activity where supported.
+
+QubWatch may monitor:
+
+* Number of refunds
+* Refund frequency
+* Refund value
+* Refund percentage
+* Refund activity associated with a user
+* Refund activity associated with particular products
+* Repeated refunds within a defined period
+
+A refund may generate an alert when it satisfies a configured monitoring rule.
+
+However, a refund alert does not establish that the refund was improper.
+
+---
+
+### 19.8 Discount Rules
+
+QubWatch may monitor discount activity.
+
+Possible monitoring conditions include:
+
+* Discount above a defined percentage
+* Discount above a defined monetary amount
+* Repeated high-value discounts
+* Unusual discount frequency
+* Discount activity outside normal business patterns
+
+The system should provide the reason for the alert.
+
+For example:
+
+> “A transaction used a 35% discount, which is above the configured 20% monitoring threshold.”
+
+The system should avoid presenting the alert as an accusation.
+
+---
+
+### 19.9 Monitoring Rules
+
+Monitoring rules shall define conditions under which QubWatch identifies activity that may require attention.
+
+A monitoring rule may contain:
+
+* Rule name
+* Rule description
+* Rule type
+* Threshold
+* Measurement period
+* Severity
+* Applicable business
+* Active/inactive status
+* Creation date
+* Modification date
+
+Examples include:
+
+**Large Transaction Rule**
+
+> Generate an alert when a transaction exceeds the configured amount.
+
+**Repeated Refund Rule**
+
+> Generate an alert when the number of refunds associated with a defined period exceeds the configured threshold.
+
+**High Discount Rule**
+
+> Generate an alert when a discount exceeds the configured threshold.
+
+**High Transaction Frequency Rule**
+
+> Generate an alert when transaction activity exceeds a defined frequency within a specified period.
+
+**Inventory Discrepancy Rule**
+
+> Generate an alert when recorded inventory differs significantly from expected inventory.
+
+---
+
+### 19.10 Alert Generation Rules
+
+When a monitoring condition is satisfied, QubWatch shall:
+
+1. Evaluate the relevant activity.
+2. Identify the rule that was triggered.
+3. Generate an alert.
+4. Assign the appropriate severity.
+5. Record the triggering information.
+6. Provide an explanation.
+7. Make the alert available to authorized users.
+8. Record the alert creation event where appropriate.
+
+An alert should contain enough information for the user to understand:
+
+* What happened
+* When it happened
+* Which business activity was involved
+* Which rule was triggered
+* Why the activity was flagged
+* The severity
+* Relevant transaction or product information
+
+---
+
+### 19.11 Alert Severity Rules
+
+Alerts may be classified as:
+
+* **Low** — activity that may require routine review.
+* **Medium** — activity that warrants closer attention.
+* **High** — activity that may require timely investigation.
+* **Critical** — activity requiring urgent review according to the business's configured risk criteria.
+
+Severity should be based on defined rules rather than arbitrary AI judgment.
+
+Future versions may allow businesses to configure severity criteria.
+
+---
+
+### 19.12 Duplicate Alert Rules
+
+QubWatch should avoid generating excessive duplicate alerts for the same underlying event.
+
+Where appropriate, the system may:
+
+* Identify duplicate triggering events.
+* Group related alerts.
+* Reference an existing alert.
+* Prevent repeated alerts within a defined period.
+
+However, the system should not suppress alerts when doing so could cause important activity to be missed.
+
+---
+
+### 19.13 Investigation Rules
+
+An investigation may be created from:
+
+* An alert
+* A transaction
+* A group of transactions
+* Inventory activity
+* Other business activity requiring review
+
+An investigation should contain:
+
+* Investigation ID
+* Title
+* Description
+* Related alert(s)
+* Related transaction(s)
+* Priority
+* Status
+* Assigned user where applicable
+* Evidence
+* Notes
+* Findings
+* Outcome
+* Creation date
+* Last updated date
+* Closure information
+
+Investigations should follow a controlled lifecycle:
+
+**Open → Under Investigation → Resolved → Closed**
+
+Authorized users may update investigation information according to their permissions.
+
+---
+
+### 19.14 Investigation Evidence Rules
+
+Evidence entered into an investigation should be:
+
+* Relevant
+* Traceable
+* Clearly described
+* Associated with the appropriate investigation
+* Protected from unauthorized modification
+
+Where evidence is uploaded or attached, QubWatch should apply appropriate security controls.
+
+The system should distinguish between:
+
+* Recorded facts
+* User observations
+* Analysis
+* AI-generated suggestions
+* Final findings
+
+This distinction is important for maintaining investigation integrity.
+
+---
+
+### 19.15 AI Business Rules
+
+The QubWatch AI Assistant shall operate as a support tool rather than an autonomous decision-maker.
+
+The AI may:
+
+* Explain alerts
+* Summarize transactions
+* Identify patterns
+* Help organize investigation information
+* Suggest questions for further review
+* Summarize evidence
+* Suggest possible explanations
+* Recommend areas requiring additional attention
+
+The AI must not:
+
+* Automatically accuse a person of theft or fraud
+* Declare a user guilty
+* Invent transaction information
+* Present assumptions as verified facts
+* Override user permissions
+* Access information the user is not authorized to access
+* Make irreversible business decisions without appropriate human approval
+
+---
+
+### 19.16 AI Response Rules
+
+Where appropriate, AI responses should distinguish between:
+
+**Known information**
+Information directly available in the QubWatch data.
+
+**Analysis**
+Interpretation based on the available information.
+
+**Possible explanation**
+A potential explanation that has not been confirmed.
+
+**Recommendation**
+A suggested next step for the user.
+
+For example:
+
+> **Known:** Three refunds were recorded within two hours.
+> **Analysis:** This is higher than the configured monitoring threshold.
+> **Possible explanation:** The refunds may be legitimate customer returns, but additional review may be useful.
+> **Recommendation:** Review the related transactions and refund reasons.
+
+This structure supports responsible use of AI.
+
+---
+
+### 19.17 User Permission Rules
+
+QubWatch shall enforce role-based access control.
+
+Permissions should determine whether a user can:
+
+* View information
+* Create information
+* Edit information
+* Delete information
+* Manage users
+* Configure monitoring rules
+* Review alerts
+* Create investigations
+* Close investigations
+* Use AI features
+* View audit records
+* Manage business settings
+
+Users should receive only the permissions necessary for their responsibilities.
+
+---
+
+### 19.18 Audit Rules
+
+Important business and security actions should be recorded.
+
+Audit events may include:
+
+* Login
+* Logout
+* Failed login
+* Business creation
+* Product creation
+* Product modification
+* Transaction creation
+* Transaction modification
+* Alert generation
+* Alert status changes
+* Investigation creation
+* Investigation updates
+* Investigation closure
+* Permission changes
+* Important configuration changes
+* AI-assisted investigation actions where appropriate
+
+Audit records should include sufficient information to establish:
+
+**Who did what, when, and to what business information.**
+
+---
+
+### 19.19 Data Deletion Rules
+
+Deletion of important business information should be controlled.
+
+Where deletion is permitted:
+
+1. The user's permission must be verified.
+2. The deletion must be validated.
+3. The action should be recorded in the audit trail.
+4. Related data should be handled according to defined data-integrity rules.
+5. Information required for legal, security, or audit purposes should not be improperly destroyed.
+
+Future versions may implement configurable retention policies.
+
+---
+
+### 19.20 Notification Rules
+
+QubWatch may notify authorized users when important events occur.
+
+Examples include:
+
+* High-severity alert
+* Critical alert
+* New investigation
+* Investigation assignment
+* Investigation update
+* System/security event
+* Important business notification
+
+Notifications should not expose unnecessary sensitive information.
+
+---
+
+### 19.21 Error Handling Rules
+
+When an operation fails, QubWatch should:
+
+* Clearly communicate that the operation failed.
+* Provide a useful explanation where safe.
+* Avoid exposing sensitive technical information.
+* Avoid exposing database details, credentials, API keys, or internal system information.
+* Allow the user to retry where appropriate.
+* Record technical errors in appropriate system logs.
+
+---
+
+### 19.22 Rule Configuration
+
+Where configurable monitoring rules are introduced, only authorized users should be able to:
+
+* Create rules
+* Edit rules
+* Disable rules
+* Enable rules
+* Change thresholds
+* Change severity
+* Review rule history
+
+Changes to important monitoring rules should be auditable.
+
+This prevents unauthorized users from weakening the monitoring system.
+
+---
+
+### 19.23 Data Consistency Rules
+
+QubWatch shall maintain consistency between related business information.
+
+For example:
+
+If a transaction records the sale of five units of a product, the system should ensure that the transaction and product/inventory information remain logically consistent where inventory tracking is enabled.
+
+The system should prevent or appropriately handle:
+
+* Invalid product references
+* Impossible quantities
+* Inconsistent totals
+* Duplicate transaction identifiers where uniqueness is required
+* Orphaned records
+* Cross-business data references
+
+---
+
+### 19.24 Time and Date Rules
+
+QubWatch shall consistently record important timestamps.
+
+Relevant timestamps may include:
+
+* Record creation
+* Record modification
+* Transaction time
+* Alert creation
+* Investigation creation
+* Investigation update
+* Investigation closure
+* Audit event time
+
+The system should use a consistent internal time standard while displaying dates and times appropriately for the user's configured locale or business location.
+
+---
+
+### 19.25 Human Decision Rule
+
+One of the most important business rules in QubWatch is:
+
+> **QubWatch identifies activity that may require attention. It provides information, alerts, analysis, and investigation support. It does not automatically determine guilt, fraud, theft, or wrongdoing.**
+
+Therefore:
+
+**Alert ≠ Proof**
+
+**Unusual Activity ≠ Fraud**
+
+**AI Analysis ≠ Final Decision**
+
+**Investigation Evidence + Human Judgment = Final Business Decision**
+
+This rule shall guide the design of the monitoring engine, alert system, investigation module, AI Assistant, user interface, and future automated features.
+
+---
+
+### 19.26 Business Rule Priority
+
+Where business rules conflict, the following priorities shall apply:
+
+1. **Security and privacy**
+2. **Data integrity**
+3. **Authorization and access control**
+4. **Auditability and traceability**
+5. **Business rules**
+6. **User convenience**
+7. **Automation**
+
+Convenience or automation must not override security, privacy, authorization, or data integrity.
+
+---
+
+### 19.27 Future Business Logic
+
+Future versions of QubWatch may introduce:
+
+* Machine-learning anomaly detection
+* Personalized business baselines
+* Risk scoring
+* Predictive analytics
+* Cross-location analysis
+* Automated report generation
+* Advanced fraud-risk indicators
+* Accounting integration
+* Inventory integration
+* Payment integration
+* Configurable business-specific rules
+* Advanced workflow automation
+
+These features must continue to follow the core principle of **human oversight and responsible decision-making**.
+
+---
+
+### 19.28 Section 19 Summary
+
+The business rules establish how QubWatch should behave when processing business activity.
+
+The most important principle is:
+
+> **QubWatch detects and explains activity that may require attention; it does not make accusations or final decisions.**
+
+This ensures that QubWatch remains a **business monitoring and investigation support platform**, rather than becoming an automated system that makes unsupported judgments about people.
+
