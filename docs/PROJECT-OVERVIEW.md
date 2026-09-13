@@ -1,20 +1,16 @@
-Absolutely. This is the **first real project document** for QubWatch, so we'll make it clear enough that you can use it later when building the app.
-
-Paste the following into the large editing area:
-
 # QubWatch
 
 ## AI-Powered Business Monitoring and Investigation Platform
 
-QubWatch is a business monitoring and investigation platform designed to help business owners detect unusual transactions, identify potential losses, monitor operational activities, and investigate suspicious patterns.
+QubWatch is a business monitoring and investigation platform designed to help business owners detect unusual transactions, identify potential losses, monitor operational activities and investigate suspicious patterns.
 
-The platform is designed to give business owners greater visibility and control over what happens in their business, especially when they are away from the business or unable to personally supervise daily operations.
+The platform is designed to give business owners greater visibility and control over what happens in their businesses, especially when they are away from the business or unable to personally supervise daily operations.
 
 ## 1. The Problem
 
-Many business owners rely heavily on employees to manage sales, inventory, cash, products, and daily transactions.
+Many business owners rely heavily on employees to manage sales, inventory, cash, products and daily transactions.
 
-When the owner is absent, sick, travelling, or otherwise unable to supervise the business, losses may occur through:
+When the owner is absent, sick, travelling or otherwise unable to supervise the business, losses may occur through:
 
 * Unrecorded sales
 * Unauthorized discounts
@@ -27,7 +23,7 @@ When the owner is absent, sick, travelling, or otherwise unable to supervise the
 
 Traditional business records may show what happened without helping the owner understand what deserves attention.
 
-QubWatch aims to help solve this problem by continuously analysing business activity and bringing unusual patterns to the owner's attention.
+QubWatch aims to help solve this problem by continuously analysing business activities and bringing unusual patterns to the owner's attention.
 
 ## 2. The Goal
 
@@ -65,7 +61,7 @@ Allows authorized users to securely access their QubWatch account.
 
 ### Business Setup
 
-Allows a business owner to create and configure their business profile, including basic business information, products, and users.
+Allows a business owner to create and configure their business profile, including basic business information, products and users.
 
 ### Dashboard
 
@@ -170,7 +166,7 @@ Login
 
 ## 6. Core Principle
 
-QubWatch is intended to assist business owners with **visibility, detection, and investigation**.
+QubWatch is intended to assist business owners with **visibility, detection and investigation**.
 
 QubWatch should not automatically accuse an employee of theft or wrongdoing simply because an activity appears unusual.
 
@@ -192,7 +188,7 @@ The first Minimum Viable Product (MVP) will focus on:
 * Basic investigation workflow
 * Initial AI assistant
 
-More advanced analytics, integrations, automated detection models, reporting, and additional business features can be introduced in later versions.
+More advanced analytics, integrations, automated detection models, reporting and additional business features can be introduced in later versions.
 
 ## 8. Future Direction
 
@@ -213,6 +209,6 @@ Future versions of QubWatch may include:
 
 ## 9. Project Vision
 
-QubWatch aims to become an intelligent business monitoring system that helps business owners see what is happening in their businesses, identify what deserves attention, and investigate unusual activity before small problems become major losses.
+QubWatch aims to become an intelligent business monitoring system that helps business owners see what is happening in their businesses, identify what deserves attention and investigate unusual activity before small problems become major losses.
 
 
