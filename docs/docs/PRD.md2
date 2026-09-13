@@ -15604,3 +15604,5636 @@ The central principle remains:
 > **QubWatch supports governance; it does not replace human responsibility, professional advice, or applicable legal and regulatory obligations.**
 
 
+
+# Section 32 — Documentation, Change Management and Product Governance Requirements
+
+## 32.1 Purpose
+
+QubWatch should be supported by clear, accurate, and maintained documentation.
+
+As the platform grows, changes to:
+
+* Features
+* Code
+* Database structures
+* Security controls
+* Detection rules
+* AI behavior
+* Integrations
+* User permissions
+* Infrastructure
+* Policies
+* Business rules
+
+must be controlled and traceable.
+
+The purpose of this section is to establish requirements for documenting, reviewing, approving, implementing, testing, and tracking changes to QubWatch.
+
+---
+
+## 32.2 Core Product Governance Principle
+
+QubWatch should follow this principle:
+
+> **Document what matters. Control important changes. Test before release. Record what changed. Keep the product understandable.**
+
+The platform should evolve deliberately rather than through uncontrolled changes.
+
+---
+
+## 32.3 Documentation Objectives
+
+QubWatch documentation should help:
+
+* Developers understand the system
+* Users understand the product
+* Administrators operate the platform
+* Security personnel understand controls
+* Investigators understand relevant workflows
+* Future developers maintain the system
+* Business stakeholders understand product capabilities
+* AI systems be integrated responsibly
+* Teams troubleshoot problems
+* Organizations understand important decisions
+
+Documentation should be accurate, accessible, and maintained.
+
+---
+
+## 32.4 Documentation Categories
+
+QubWatch should maintain appropriate documentation in several categories.
+
+### Product Documentation
+
+Describes:
+
+* Product purpose
+* Features
+* Users
+* Workflows
+* Business rules
+* Product roadmap
+
+### Technical Documentation
+
+Describes:
+
+* Architecture
+* Application structure
+* APIs
+* Database
+* Integrations
+* Deployment
+* Configuration
+* Dependencies
+
+### Security Documentation
+
+Describes:
+
+* Authentication
+* Authorization
+* RBAC
+* Data isolation
+* Security controls
+* Secrets management
+* Incident response
+* Security testing
+
+### AI Documentation
+
+Describes:
+
+* AI purpose
+* AI data flow
+* AI permissions
+* AI guardrails
+* AI providers
+* AI limitations
+* AI evaluation
+* AI governance
+
+### Operational Documentation
+
+Describes:
+
+* Deployment
+* Monitoring
+* Backup
+* Recovery
+* Troubleshooting
+* Maintenance
+
+### User Documentation
+
+Describes:
+
+* Login
+* Business setup
+* Products
+* Transactions
+* Alerts
+* Investigations
+* AI Assistant
+* Reports
+
+---
+
+## 32.5 Master Product Documentation
+
+The master PRD should remain the primary product-definition document.
+
+It should describe:
+
+* Product vision
+* Problem
+* Users
+* Requirements
+* Features
+* Security
+* AI
+* Governance
+* Future direction
+
+Changes to major product requirements should be reflected in the PRD when appropriate.
+
+---
+
+## 32.6 Documentation Version Control
+
+Important documentation should be version controlled.
+
+Version control should allow the team to determine:
+
+* What changed
+* When it changed
+* Who changed it
+* Why it changed
+* Which version introduced the change
+
+The QubWatch Git repository should serve as the primary version-control environment for product and technical documentation where appropriate.
+
+---
+
+## 32.7 Git Repository Governance
+
+The QubWatch repository should be managed carefully.
+
+Important practices should include:
+
+* Meaningful commits
+* Clear commit messages
+* Organized folders
+* Controlled branches where appropriate
+* Review of important changes
+* Protection of sensitive information
+* Avoidance of unnecessary files
+* Documentation of significant architectural decisions
+
+---
+
+## 32.8 Sensitive Information in the Repository
+
+The repository must not contain secrets such as:
+
+* Passwords
+* API keys
+* Access tokens
+* Private credentials
+* Database passwords
+* Encryption keys
+* Production secrets
+
+Sensitive configuration should be stored using appropriate secret-management mechanisms.
+
+Example configuration files should use placeholders rather than real secrets.
+
+---
+
+## 32.9 Change Management
+
+Changes should be evaluated before implementation.
+
+A change may include:
+
+* New feature
+* Feature modification
+* Bug fix
+* Security fix
+* Database change
+* API change
+* Detection-rule change
+* AI behavior change
+* Permission change
+* Integration change
+* Infrastructure change
+* Documentation change
+
+The level of review should depend on the potential impact.
+
+---
+
+## 32.10 Change Classification
+
+Changes may be classified as:
+
+### Standard Change
+
+A routine, low-risk, well-understood change.
+
+### Normal Change
+
+A change requiring appropriate review and testing.
+
+### High-Risk Change
+
+A change that could significantly affect:
+
+* Security
+* Data
+* User access
+* Business operations
+* AI behavior
+* Infrastructure
+* Integrations
+
+High-risk changes should receive additional review and testing.
+
+---
+
+## 32.11 Change Request Information
+
+Significant changes should document:
+
+* Change description
+* Reason for change
+* Business purpose
+* Systems affected
+* Users affected
+* Security impact
+* Data impact
+* AI impact where applicable
+* Integration impact
+* Testing requirements
+* Rollback plan
+* Approval
+* Implementation status
+
+---
+
+## 32.12 Change Impact Assessment
+
+Before an important change is implemented, the team should consider:
+
+* What could break?
+* What data could be affected?
+* Could permissions change?
+* Could business isolation be affected?
+* Could security be weakened?
+* Could AI outputs change?
+* Could alerts change?
+* Could investigations be affected?
+* Could integrations stop working?
+* Could performance change?
+* Is rollback possible?
+
+---
+
+## 32.13 Security Impact Assessment
+
+Changes affecting security should receive particular attention.
+
+Examples include:
+
+* Authentication changes
+* Authorization changes
+* Password changes
+* Session changes
+* Encryption changes
+* API security changes
+* Database access changes
+* Administrator permissions
+* Data-isolation changes
+* Secret-management changes
+
+Security-impacting changes should be tested before production deployment.
+
+---
+
+## 32.14 Data and Database Changes
+
+Database changes should be controlled.
+
+Examples include:
+
+* Adding fields
+* Removing fields
+* Changing data types
+* Adding tables
+* Removing tables
+* Changing relationships
+* Adding indexes
+* Changing retention behavior
+
+Database changes should consider:
+
+* Existing data
+* Data integrity
+* Backups
+* Migration safety
+* Rollback
+* Application compatibility
+
+---
+
+## 32.15 Detection Rule Changes
+
+Changes to detection rules can affect alerts and investigations.
+
+Therefore, important rule changes should document:
+
+* Rule name
+* Previous logic
+* New logic
+* Reason for change
+* Expected impact
+* Testing
+* Approval
+* Effective date
+
+The system should preserve appropriate history of important rule changes.
+
+---
+
+## 32.16 AI Model and Prompt Changes
+
+Changes to AI behavior should be controlled.
+
+Examples include:
+
+* Changing AI provider
+* Changing AI model
+* Changing system instructions
+* Changing prompts
+* Changing AI tools
+* Changing retrieved context
+* Changing AI permissions
+* Changing response format
+* Changing AI guardrails
+
+AI changes should be evaluated for:
+
+* Accuracy
+* Security
+* Privacy
+* Hallucination
+* Bias
+* Prompt injection resistance
+* Data leakage
+* Cost
+* Performance
+
+---
+
+## 32.17 User Permission Changes
+
+Changes to user permissions should be carefully controlled.
+
+Examples include:
+
+* Adding a new role
+* Changing role permissions
+* Giving managers additional access
+* Changing administrator privileges
+* Changing investigation access
+* Changing AI access
+
+Permission changes should be tested against the access-control matrix defined in Section 20.
+
+---
+
+## 32.18 Integration Changes
+
+Changes to external integrations should consider:
+
+* API compatibility
+* Authentication
+* Permissions
+* Data mapping
+* Data security
+* Rate limits
+* Failure handling
+* Vendor changes
+* Data synchronization
+
+Integration changes should be tested before production use.
+
+---
+
+## 32.19 Testing Before Release
+
+Significant changes should be tested before release.
+
+Testing may include:
+
+* Unit testing
+* Integration testing
+* Functional testing
+* Security testing
+* Permission testing
+* Data-integrity testing
+* AI testing
+* Performance testing
+* Regression testing
+* User acceptance testing
+
+The required level of testing should depend on the change's risk.
+
+---
+
+## 32.20 Development, Testing and Production
+
+QubWatch should maintain appropriate separation between:
+
+**Development → Testing → Production**
+
+Changes should preferably be developed and tested before reaching production.
+
+Production should not be used as an uncontrolled development environment.
+
+---
+
+## 32.21 Release Management
+
+A release should have a defined version or identifiable release reference.
+
+Release information may include:
+
+* Version
+* Release date
+* Changes
+* Bug fixes
+* Security fixes
+* Known limitations
+* Database changes
+* AI changes
+* Integration changes
+* Documentation updates
+
+---
+
+## 32.22 Release Approval
+
+Important releases should receive appropriate review before deployment.
+
+The review should consider:
+
+* Functionality
+* Security
+* Data integrity
+* Performance
+* Testing
+* Documentation
+* Deployment readiness
+* Backup readiness
+* Rollback capability
+
+---
+
+## 32.23 Rollback Planning
+
+Important changes should have an appropriate rollback strategy where practical.
+
+Rollback may involve:
+
+* Reverting application code
+* Reverting configuration
+* Restoring a previous deployment
+* Reversing a database migration where safe
+* Disabling a feature
+* Disabling an integration
+* Reverting a detection rule
+
+Rollback procedures should be tested where appropriate.
+
+---
+
+## 32.24 Feature Flags
+
+Future versions may use feature flags to safely introduce functionality.
+
+Feature flags may allow QubWatch to:
+
+* Enable features gradually
+* Test features with limited users
+* Disable problematic functionality
+* Perform controlled releases
+* Reduce deployment risk
+
+Feature flags must themselves be controlled and audited where they affect important behavior.
+
+---
+
+## 32.25 Emergency Changes
+
+Sometimes a change may need to be implemented urgently.
+
+Examples include:
+
+* Critical security vulnerability
+* Active attack
+* Major data problem
+* Critical service failure
+
+Emergency changes should still be:
+
+* Authorized where practical
+* Documented
+* Tested to the extent possible
+* Monitored
+* Reviewed afterward
+
+An emergency should not become a reason to permanently bypass change-management controls.
+
+---
+
+## 32.26 Change Audit Trail
+
+Important changes should be traceable.
+
+The record should identify, where appropriate:
+
+* Who requested the change
+* Who approved it
+* Who implemented it
+* What changed
+* When it changed
+* Why it changed
+* Test results
+* Deployment result
+* Rollback information
+
+---
+
+## 32.27 Product Decision Records
+
+Important product or architectural decisions should be documented.
+
+Examples include:
+
+* Why a technology was selected
+* Why a feature was excluded
+* Why a detection rule was designed a certain way
+* Why an AI provider was selected
+* Why a particular security control was implemented
+* Why a workflow changed
+
+A decision record should capture:
+
+* Decision
+* Context
+* Options considered
+* Selected option
+* Reason
+* Consequences
+
+---
+
+## 32.28 Architecture Decision Records
+
+For significant technical decisions, QubWatch may maintain Architecture Decision Records (ADRs).
+
+Examples:
+
+* Database architecture
+* Authentication approach
+* AI architecture
+* Hosting architecture
+* Integration architecture
+* Data-isolation strategy
+* Detection-engine design
+
+ADRs should prevent important architectural knowledge from being lost as the project grows.
+
+---
+
+## 32.29 Product Roadmap Governance
+
+The product roadmap should be reviewed periodically.
+
+Feature decisions should consider:
+
+* User value
+* Security
+* Risk
+* Development effort
+* Cost
+* Technical dependencies
+* Business impact
+* Data requirements
+* AI implications
+* Scalability
+* Maintenance requirements
+
+Not every requested feature should automatically be added.
+
+---
+
+## 32.30 Feature Prioritization
+
+Features should generally be prioritized according to:
+
+1. Security
+2. Data integrity
+3. Core business value
+4. User safety
+5. Reliability
+6. Compliance/governance needs
+7. Usability
+8. Scalability
+9. Advanced automation
+10. Nice-to-have functionality
+
+---
+
+## 32.31 Deprecation and Feature Removal
+
+Features may eventually become obsolete.
+
+Before removing a feature, QubWatch should consider:
+
+* Users affected
+* Data affected
+* Integrations affected
+* Security implications
+* Migration requirements
+* Documentation
+* Alternative functionality
+
+Important removals should be communicated appropriately.
+
+---
+
+## 32.32 API and Interface Versioning
+
+APIs and important interfaces should be versioned where necessary.
+
+Changes should consider:
+
+* Existing applications
+* Integrations
+* Data compatibility
+* Authentication
+* Security
+* Deprecation
+* Migration
+
+Breaking changes should be carefully managed.
+
+---
+
+## 32.33 Dependency Management
+
+Software dependencies should be tracked and maintained.
+
+The team should monitor:
+
+* Dependency versions
+* Security vulnerabilities
+* Compatibility
+* Licensing considerations
+* Maintenance status
+* Abandoned dependencies
+
+Critical security updates should be assessed promptly.
+
+---
+
+## 32.34 Open-Source Governance
+
+Where open-source software is used, QubWatch should maintain awareness of:
+
+* License requirements
+* Security vulnerabilities
+* Dependency relationships
+* Attribution requirements
+* Maintenance status
+
+Open-source software should be evaluated before being introduced into important parts of the platform.
+
+---
+
+## 32.35 Documentation Quality
+
+Documentation should be:
+
+* Accurate
+* Clear
+* Current
+* Consistent
+* Searchable
+* Organized
+* Understandable
+* Version controlled
+
+Outdated documentation should be corrected rather than allowed to remain misleading.
+
+---
+
+## 32.36 User Documentation
+
+User documentation should explain important workflows such as:
+
+* Logging in
+* Setting up a business
+* Adding products
+* Recording transactions
+* Understanding dashboard information
+* Reviewing alerts
+* Starting investigations
+* Using the AI Assistant
+* Understanding AI limitations
+* Managing users
+* Understanding notifications
+
+---
+
+## 32.37 Security Documentation
+
+Security documentation should explain, as appropriate:
+
+* Authentication
+* Authorization
+* Roles
+* Data isolation
+* Secrets
+* Encryption
+* Monitoring
+* Incident response
+* Backup
+* Recovery
+* Security testing
+
+Sensitive implementation details should not be unnecessarily exposed to unauthorized users.
+
+---
+
+## 32.38 Operational Runbooks
+
+QubWatch should eventually maintain operational runbooks for recurring tasks.
+
+Examples:
+
+* Deployment
+* Rollback
+* Backup restoration
+* Database recovery
+* Service restart
+* Incident response
+* Credential rotation
+* Integration failure
+* AI service failure
+* Security incident
+
+Runbooks should be tested and updated.
+
+---
+
+## 32.39 Knowledge Transfer
+
+Important product knowledge should not exist only in one person's memory.
+
+Documentation should support knowledge transfer when:
+
+* Team members change
+* Developers leave
+* New developers join
+* Responsibilities change
+* Vendors change
+* The product scales
+
+---
+
+## 32.40 Product Ownership
+
+QubWatch should have clear ownership of:
+
+* Product decisions
+* Technical decisions
+* Security
+* Data governance
+* AI governance
+* Infrastructure
+* User support
+* Documentation
+
+Responsibilities may evolve as the organization grows.
+
+---
+
+## 32.41 Governance Review Board
+
+In future versions, QubWatch may establish a formal product or governance review group responsible for reviewing:
+
+* Major product changes
+* Security risks
+* AI changes
+* Privacy issues
+* High-risk integrations
+* Major incidents
+* Compliance considerations
+
+For the MVP, this may remain an organizational process rather than a software feature.
+
+---
+
+## 32.42 Documentation and AI
+
+AI may assist in creating or maintaining documentation, but AI-generated documentation should be reviewed before being treated as authoritative.
+
+AI should not automatically change critical technical, security, legal, or governance documentation without appropriate human review.
+
+---
+
+## 32.43 Documentation and Security
+
+Documentation itself may contain sensitive information.
+
+Therefore:
+
+* Access should be controlled.
+* Secrets must never be documented in plaintext.
+* Sensitive architecture details should be protected.
+* Production credentials must never be included.
+* Confidential business information should be minimized.
+* Security documentation should follow appropriate access restrictions.
+
+---
+
+## 32.44 MVP Documentation Requirements
+
+The MVP should have, at minimum:
+
+* Product requirements
+* Project overview
+* Basic technical documentation
+* Repository documentation
+* Setup instructions
+* Environment/configuration guidance
+* Basic security documentation
+* Basic AI documentation
+* Basic deployment guidance
+* Basic troubleshooting information
+
+The documentation should be sufficient for the project to be understood and maintained.
+
+---
+
+## 32.45 Future Documentation Capabilities
+
+Future versions may include:
+
+* Interactive user help
+* In-app documentation
+* Developer portal
+* API documentation
+* Automated documentation generation
+* Architecture diagrams
+* Security knowledge base
+* Governance dashboard
+* Change-management dashboard
+* AI documentation assistant
+* Automated documentation-quality checks
+
+---
+
+## 32.46 Product Governance Metrics
+
+QubWatch may track:
+
+* Number of releases
+* Change failure rate
+* Rollbacks
+* Security-related changes
+* Emergency changes
+* Unresolved documentation issues
+* Dependency vulnerabilities
+* Feature adoption
+* Major incidents following releases
+* Time to resolve critical defects
+
+Metrics should be used to improve product quality rather than encourage unnecessary activity.
+
+---
+
+## 32.47 Governance Priority
+
+QubWatch product governance should prioritize:
+
+1. Security
+2. Data integrity
+3. Privacy
+4. Reliability
+5. Accountability
+6. Controlled change
+7. Testing
+8. Documentation
+9. Maintainability
+10. Product improvement
+11. Innovation
+12. Automation
+
+---
+
+## 32.48 Core Change Management Rule
+
+QubWatch should follow this rule:
+
+> **Important changes must be understood, appropriately reviewed, tested, documented, traceable, and recoverable where practical.**
+
+---
+
+## 32.49 Section Summary
+
+QubWatch should not be treated as a one-time application that is built and forgotten.
+
+It should be managed as a continuously evolving product.
+
+The governance cycle is:
+
+**Plan → Document → Review → Build → Test → Approve → Release → Monitor → Review → Improve**
+
+The core principle is:
+
+> **Document what matters. Control important changes. Test before release. Record what changed. Keep the product understandable.**
+
+
+# Section 33 — Support, Maintenance and User Operations Requirements
+
+## 33.1 Purpose
+
+QubWatch should provide appropriate support and maintenance processes to ensure that users can continue to use the platform effectively after deployment.
+
+Support and maintenance should help:
+
+* Resolve user problems
+* Maintain system reliability
+* Address defects
+* Respond to incidents
+* Maintain security
+* Manage updates
+* Protect data
+* Improve usability
+* Support future product growth
+
+QubWatch should be designed for ongoing operation rather than only initial development.
+
+---
+
+## 33.2 Core Support Principle
+
+QubWatch should follow this principle:
+
+> **Keep the platform available, secure, understandable, maintainable, and useful throughout its operational life.**
+
+Support should resolve problems while maintaining security, privacy, accountability, and data integrity.
+
+---
+
+## 33.3 Support Objectives
+
+The support process should help users:
+
+* Understand how to use QubWatch
+* Resolve common problems
+* Report errors
+* Report suspicious activity
+* Report security concerns
+* Understand alerts
+* Understand investigations
+* Use the AI Assistant appropriately
+* Recover from common account problems
+* Obtain appropriate assistance when self-service is insufficient
+
+---
+
+## 33.4 Types of Support
+
+QubWatch may provide several levels of support.
+
+### Self-Service Support
+
+Users may access:
+
+* Help documentation
+* Frequently asked questions
+* User guides
+* Explanations
+* Troubleshooting instructions
+* In-app guidance
+
+### Basic Support
+
+Support personnel may help with:
+
+* Login problems
+* Basic navigation
+* Configuration questions
+* User-management questions
+* Feature explanations
+
+### Technical Support
+
+Technical support may address:
+
+* Application errors
+* Integration failures
+* Performance problems
+* Database issues
+* Deployment problems
+
+### Security Support
+
+Security support may address:
+
+* Suspicious access
+* Compromised accounts
+* Security incidents
+* Data exposure
+* Unauthorized activity
+
+---
+
+## 33.5 User Support Channels
+
+Depending on the deployment model, support may be provided through:
+
+* In-app support
+* Email
+* Support portal
+* Help documentation
+* Contact forms
+* Internal organizational channels
+
+Future versions may support additional communication channels.
+
+---
+
+## 33.6 Support Request
+
+A support request should capture appropriate information such as:
+
+* User
+* Business
+* Date and time
+* Problem description
+* Affected feature
+* Error message
+* Relevant transaction or alert where appropriate
+* Steps already attempted
+* Supporting information
+
+Users should not be asked to provide passwords, API keys, or other secret credentials as part of normal support.
+
+---
+
+## 33.7 Support Ticket Identification
+
+Where a formal support system is implemented, each request should receive a unique identifier.
+
+Example:
+
+**SUP-2026-0001**
+
+The identifier should allow support personnel to track:
+
+* Request status
+* Assigned support person
+* Communications
+* Actions taken
+* Resolution
+* Closure
+
+---
+
+## 33.8 Support Request Categories
+
+Requests may be categorized as:
+
+* Account
+* Authentication
+* Business setup
+* Product management
+* Transactions
+* Dashboard
+* Alerts
+* Investigations
+* AI Assistant
+* Notifications
+* Integration
+* Performance
+* Security
+* Data
+* Billing where applicable
+* General product support
+
+---
+
+## 33.9 Support Priority
+
+Support requests may be prioritized according to impact.
+
+### Low
+
+General questions or minor usability issues.
+
+### Medium
+
+A feature is not working correctly but the business can continue operating.
+
+### High
+
+A significant feature or business process is affected.
+
+### Critical
+
+A serious security, availability, data-integrity, or business-impacting problem exists.
+
+Security incidents should follow the incident-response process rather than being treated only as ordinary support requests.
+
+---
+
+## 33.10 Support Status
+
+Support requests may have statuses such as:
+
+**New → Assigned → In Progress → Waiting for Information → Resolved → Closed**
+
+A reopened request may return to **In Progress**.
+
+---
+
+## 33.11 Support Escalation
+
+Support issues should be escalated when:
+
+* The issue cannot be resolved at the current level.
+* A security issue is suspected.
+* Sensitive data may be affected.
+* Multiple businesses are affected.
+* A critical service is unavailable.
+* The problem appears to be a system-wide defect.
+* Specialist technical knowledge is required.
+* The issue may require a product change.
+
+---
+
+## 33.12 Security-Related Support
+
+Support personnel should recognize that some requests may actually represent security incidents.
+
+Examples include:
+
+* "Someone logged into my account."
+* "My password was changed without me."
+* "I see transactions I did not create."
+* "Someone changed my user permissions."
+* "Sensitive information was exposed."
+* "The system is behaving strangely."
+
+Such cases should be escalated according to Section 30.
+
+---
+
+## 33.13 Account Recovery
+
+QubWatch should provide a secure account-recovery process.
+
+Account recovery may include:
+
+* Password reset
+* Identity/account verification
+* Session revocation
+* Security checks
+* Recovery confirmation
+
+The recovery process must not create an easier path for attackers to take over accounts.
+
+---
+
+## 33.14 Password Reset
+
+Password-reset functionality should:
+
+* Verify the appropriate account
+* Use secure reset mechanisms
+* Avoid revealing unnecessary account information
+* Use time-limited reset mechanisms
+* Prevent reuse of expired reset mechanisms
+* Record important reset events
+* Notify the user where appropriate
+
+---
+
+## 33.15 Session Management Support
+
+Support personnel should not casually request or receive user session credentials.
+
+Where an account is suspected of compromise, appropriate actions may include:
+
+* Revoking sessions
+* Resetting credentials
+* Reviewing login activity
+* Reviewing audit records
+* Re-authentication
+
+---
+
+## 33.16 User Education
+
+QubWatch should help users understand:
+
+* What alerts mean
+* What alerts do not mean
+* How investigations work
+* How AI assistance works
+* AI limitations
+* Appropriate security practices
+* How to protect credentials
+* How to report suspicious activity
+* How to interpret dashboard information
+
+---
+
+## 33.17 Alert Support
+
+Users should be able to obtain enough information to understand an alert.
+
+An alert explanation should identify, where available:
+
+* What triggered the alert
+* Relevant transaction or activity
+* Detection rule
+* Threshold or condition
+* Severity
+* Date and time
+* Related activity
+* Suggested next step
+
+The explanation must not automatically accuse a person of wrongdoing.
+
+---
+
+## 33.18 Investigation Support
+
+Users should receive appropriate guidance when conducting an investigation.
+
+QubWatch may help users:
+
+* Review related transactions
+* Review alerts
+* Examine timelines
+* Record evidence
+* Add notes
+* Ask the AI Assistant questions
+* Record findings
+* Record outcomes
+* Close investigations
+
+Users remain responsible for final decisions.
+
+---
+
+## 33.19 AI Assistant Support
+
+Users should understand that the AI Assistant:
+
+* May make mistakes
+* May lack important information
+* Should not be treated as the final authority
+* Should be used with appropriate judgment
+* Should not replace evidence
+* Should not independently determine guilt or fraud
+
+The interface should provide appropriate guidance when users interact with AI-generated information.
+
+---
+
+## 33.20 AI Failure Handling
+
+If the AI service becomes unavailable:
+
+* The core QubWatch application should remain usable where practical.
+* Existing business data should remain accessible according to permissions.
+* Transactions should continue where possible.
+* Alerts should continue where they do not depend on the AI service.
+* Investigations should remain accessible.
+* Users should receive a clear message that AI functionality is temporarily unavailable.
+
+The AI service should not become an unnecessary single point of failure for the entire platform.
+
+---
+
+## 33.21 Maintenance
+
+QubWatch should undergo regular maintenance.
+
+Maintenance may include:
+
+* Software updates
+* Security patches
+* Dependency updates
+* Database maintenance
+* Infrastructure maintenance
+* Performance optimization
+* Backup verification
+* Log management
+* Monitoring improvements
+* Bug fixes
+* Documentation updates
+
+---
+
+## 33.22 Preventive Maintenance
+
+Preventive maintenance should attempt to identify problems before they become major incidents.
+
+Activities may include:
+
+* Reviewing system health
+* Reviewing capacity
+* Reviewing vulnerabilities
+* Testing backups
+* Reviewing dependencies
+* Checking certificate expiration
+* Reviewing logs
+* Checking monitoring
+* Reviewing failed jobs
+* Reviewing integration health
+
+---
+
+## 33.23 Corrective Maintenance
+
+Corrective maintenance addresses identified problems.
+
+Examples include:
+
+* Fixing software defects
+* Correcting database errors
+* Fixing broken workflows
+* Repairing integrations
+* Correcting configuration problems
+* Resolving performance degradation
+
+Corrective changes should follow appropriate change-management procedures.
+
+---
+
+## 33.24 Adaptive Maintenance
+
+Adaptive maintenance allows QubWatch to respond to changes in its environment.
+
+Examples include:
+
+* New operating environments
+* New browsers
+* New cloud services
+* New AI providers
+* New APIs
+* New security requirements
+* New business needs
+* Changes to external systems
+
+---
+
+## 33.25 Perfective Maintenance
+
+Perfective maintenance improves existing functionality without necessarily fixing a defect.
+
+Examples include:
+
+* Improving dashboard usability
+* Improving search
+* Improving alert explanations
+* Improving performance
+* Improving AI responses
+* Simplifying workflows
+* Improving accessibility
+
+---
+
+## 33.26 Security Maintenance
+
+Security maintenance should include:
+
+* Vulnerability management
+* Security patching
+* Dependency updates
+* Credential rotation
+* Secret management
+* Access reviews
+* Security testing
+* Monitoring improvements
+* Incident-response improvements
+
+Security maintenance should be treated as continuous.
+
+---
+
+## 33.27 Dependency Management
+
+Dependencies should be reviewed regularly.
+
+The team should identify:
+
+* Outdated libraries
+* Vulnerable packages
+* Unsupported software
+* Deprecated APIs
+* Vulnerable AI components
+* Infrastructure dependencies
+
+Critical vulnerabilities should receive appropriate priority.
+
+---
+
+## 33.28 Database Maintenance
+
+Database maintenance may include:
+
+* Performance monitoring
+* Index maintenance
+* Backup verification
+* Data integrity checks
+* Storage management
+* Migration management
+* Retention management
+* Archiving
+
+Database changes must preserve business data integrity.
+
+---
+
+## 33.29 Storage Management
+
+QubWatch should monitor storage usage.
+
+Storage considerations include:
+
+* Transaction growth
+* Audit-log growth
+* Investigation records
+* AI conversation data
+* Backup storage
+* Application logs
+* Uploaded files where applicable
+
+Storage should be managed according to retention and business requirements.
+
+---
+
+## 33.30 Log Management
+
+Logs should be maintained according to the requirements established in Section 29.
+
+Maintenance may include:
+
+* Retention
+* Rotation
+* Archiving
+* Secure deletion
+* Storage optimization
+* Access review
+
+Logs should not be deleted simply to hide an incident or user activity.
+
+---
+
+## 33.31 Backup Maintenance
+
+Backups should be monitored and tested.
+
+Maintenance should verify:
+
+* Backup completion
+* Backup integrity
+* Storage availability
+* Retention
+* Restoration capability
+
+A backup that repeatedly fails should generate an appropriate operational alert.
+
+---
+
+## 33.32 Monitoring Maintenance
+
+Monitoring itself should be maintained.
+
+The team should periodically review:
+
+* Monitoring coverage
+* Alert quality
+* False alerts
+* Missing alerts
+* System-health indicators
+* Performance metrics
+* Security events
+
+Monitoring should evolve as QubWatch evolves.
+
+---
+
+## 33.33 Incident and Support Relationship
+
+Support and incident response should remain connected but distinct.
+
+### Support
+
+Generally addresses:
+
+* User questions
+* Minor defects
+* Configuration problems
+* Usability problems
+
+### Incident Response
+
+Addresses:
+
+* Security incidents
+* Significant data problems
+* Major outages
+* Serious system compromise
+* Major operational events
+
+A support request should be escalated into incident response when appropriate.
+
+---
+
+## 33.34 Problem Management
+
+Repeated incidents should be treated as problems requiring deeper investigation.
+
+For example:
+
+If users repeatedly experience the same integration failure, QubWatch should not simply resolve each individual occurrence.
+
+The underlying cause should be investigated.
+
+The process may be:
+
+**Incident → Identify Pattern → Investigate Root Cause → Correct → Monitor → Confirm Improvement**
+
+---
+
+## 33.35 Root Cause Analysis
+
+For significant recurring problems, QubWatch may perform root-cause analysis.
+
+The analysis should distinguish between:
+
+* Immediate cause
+* Contributing factors
+* Underlying cause
+* Control failure
+* Detection failure
+* Process failure
+
+The purpose should be improvement rather than inappropriate blame.
+
+---
+
+## 33.36 Known Issues
+
+QubWatch may maintain a known-issues list.
+
+A known issue may include:
+
+* Description
+* Affected feature
+* Impact
+* Workaround
+* Current status
+* Planned fix
+* Version affected
+
+Known issues should be reviewed and updated.
+
+---
+
+## 33.37 Maintenance Windows
+
+Where planned maintenance could affect users, appropriate notice should be provided when practical.
+
+Maintenance communication should explain:
+
+* Date
+* Expected duration
+* Affected services
+* Expected impact
+* Recovery expectations
+
+Emergency maintenance may require shorter or no advance notice where necessary.
+
+---
+
+## 33.38 Availability During Maintenance
+
+QubWatch should aim to minimize disruption during maintenance.
+
+Where practical:
+
+* Non-critical maintenance should be scheduled during lower-use periods.
+* Backups should be considered before significant changes.
+* Maintenance should be monitored.
+* Recovery plans should be available.
+
+---
+
+## 33.39 User Communication During Outages
+
+When a significant service disruption occurs, users should receive appropriate information.
+
+Communication should state, where known:
+
+* That a problem exists
+* What service is affected
+* Whether user action is required
+* Whether data is affected
+* Expected next update
+* When service has been restored
+
+Communication should avoid speculation.
+
+---
+
+## 33.40 Service Restoration
+
+After a service outage, restoration should include:
+
+1. Restore service.
+2. Validate functionality.
+3. Validate data integrity.
+4. Verify authentication.
+5. Verify authorization.
+6. Verify monitoring.
+7. Confirm important integrations.
+8. Monitor for recurrence.
+9. Document the event.
+
+---
+
+## 33.41 User Feedback
+
+QubWatch should provide appropriate ways for users to provide feedback.
+
+Feedback may cover:
+
+* Usability
+* Features
+* Alerts
+* Investigations
+* AI responses
+* Performance
+* Documentation
+* Support
+* Accessibility
+
+Feedback should inform product improvement.
+
+---
+
+## 33.42 Feedback and AI
+
+Users should be able to indicate when an AI response is:
+
+* Helpful
+* Incorrect
+* Unclear
+* Missing information
+* Potentially unsafe
+* Irrelevant
+
+AI feedback should be reviewed appropriately before being used to change AI behavior.
+
+---
+
+## 33.43 Product Improvement
+
+Support data should help identify:
+
+* Frequently misunderstood features
+* Common errors
+* Repeated user problems
+* Missing functionality
+* Training needs
+* Documentation gaps
+* Performance problems
+
+Support should therefore contribute to continuous product improvement.
+
+---
+
+## 33.44 Operational Metrics
+
+QubWatch may monitor operational metrics such as:
+
+* Number of support requests
+* Average response time
+* Average resolution time
+* Number of escalations
+* Number of recurring issues
+* Number of security-related requests
+* Number of outages
+* Service availability
+* Incident frequency
+* User satisfaction
+* AI support issues
+
+Metrics should be used to improve service quality.
+
+---
+
+## 33.45 Maintenance Priorities
+
+Maintenance should generally prioritize:
+
+1. Security
+2. Data integrity
+3. Critical incidents
+4. System availability
+5. Authentication and authorization
+6. Core business functionality
+7. Performance
+8. User experience
+9. Documentation
+10. Enhancement and optimization
+
+---
+
+## 33.46 MVP Support Requirements
+
+The MVP should provide basic:
+
+* User guidance
+* Error messages
+* Basic troubleshooting information
+* Account recovery
+* Security incident reporting path
+* Basic system monitoring
+* Basic maintenance procedures
+* Backup and recovery procedures
+* Documentation for core workflows
+
+A sophisticated customer-support platform is not required for the first MVP.
+
+---
+
+## 33.47 Future Support Capabilities
+
+Future versions may include:
+
+* In-app support center
+* Support ticketing
+* AI-powered support assistant
+* Automated troubleshooting
+* Knowledge base
+* User community
+* Advanced service-status page
+* Automated incident communication
+* Customer-support analytics
+* Proactive problem detection
+* Predictive maintenance
+
+Any AI support system should follow QubWatch's responsible-AI requirements.
+
+---
+
+## 33.48 Support and Security Priority
+
+Support personnel must never bypass security controls simply to resolve a user problem quickly.
+
+For example, support should not:
+
+* Request a user's password
+* Share another user's information
+* Bypass authorization without appropriate controls
+* Expose confidential business data
+* Disable security controls unnecessarily
+
+Support convenience must not override security.
+
+---
+
+## 33.49 Support and Human Accountability
+
+QubWatch support should maintain human accountability for important actions.
+
+Where support personnel make changes on behalf of a user, the system should record:
+
+* Who performed the action
+* Why it was performed
+* Which account/business was affected
+* What was changed
+* When it occurred
+
+Where possible, users should perform sensitive actions themselves through secure workflows.
+
+---
+
+## 33.50 Section Summary
+
+QubWatch should be operated as a continuously maintained service rather than a finished piece of software.
+
+The operational cycle is:
+
+**Support → Detect Problems → Investigate → Fix → Test → Deploy → Monitor → Learn → Improve**
+
+The central principle is:
+
+> **Keep QubWatch secure, available, understandable, maintainable and useful throughout its operational life.**
+
+The distinction between support and security response must remain clear:
+
+> **Not every problem is a security incident, but every suspected security incident must be treated seriously and escalated appropriately.**
+
+
+Yes. **Section 34** continues directly after Section 33 in the same `docs/PRD.md`.
+
+At this stage, the master PRD has become quite comprehensive. A logical next area is **Business Continuity, Service Availability and Resilience**, bringing together the availability, failure-handling, dependency, recovery, and continuity requirements already defined across earlier sections.
+
+# Section 34 — Business Continuity, Service Availability and Resilience Requirements
+
+## 34.1 Purpose
+
+QubWatch should remain usable and recoverable when unexpected failures, disruptions, attacks, infrastructure problems, or third-party service failures occur.
+
+Business continuity focuses on keeping important business functions operating, while resilience focuses on the ability of QubWatch to withstand disruption, recover from failure, and continue operating appropriately.
+
+This section defines requirements for:
+
+* Service availability
+* Operational resilience
+* Failure handling
+* Graceful degradation
+* Business continuity
+* Dependency resilience
+* Recovery priorities
+* Continuity planning
+* Resilience testing
+
+---
+
+## 34.2 Core Resilience Principle
+
+QubWatch should follow this principle:
+
+> **Expect failure, reduce its impact, recover safely, and keep critical business functions available whenever reasonably possible.**
+
+A failure should not automatically result in loss of business data or complete loss of platform functionality.
+
+---
+
+## 34.3 Availability Objectives
+
+QubWatch should aim to provide reliable access to important functions.
+
+Availability should be considered for:
+
+* Login
+* Authentication
+* Business setup
+* Dashboard
+* Products
+* Transactions
+* Alerts
+* Investigations
+* Audit records
+* Notifications
+* AI Assistant
+* Integrations
+
+Critical functions should receive higher availability priority than non-critical future features.
+
+---
+
+## 34.4 Critical Business Functions
+
+The following functions should generally receive high continuity priority:
+
+1. Authentication
+2. Authorization
+3. Business data access
+4. Transaction recording
+5. Transaction viewing
+6. Monitoring
+7. Alert generation
+8. Investigation access
+9. Audit recording
+10. Core security controls
+
+AI assistance, advanced analytics, and other non-essential services should not unnecessarily prevent these core functions from operating.
+
+---
+
+## 34.5 Service Availability Levels
+
+Future versions may define formal availability targets for different services.
+
+For example:
+
+### Critical
+
+Functions required for core business operation.
+
+### Important
+
+Functions that significantly improve operations but whose temporary unavailability does not stop core business activity.
+
+### Non-Critical
+
+Optional or future capabilities that can temporarily be unavailable without significant business disruption.
+
+---
+
+## 34.6 Failure Scenarios
+
+QubWatch should be designed with possible failures in mind.
+
+Examples include:
+
+* Application failure
+* Database failure
+* Network failure
+* Hosting failure
+* Storage failure
+* Authentication-service failure
+* AI-service failure
+* Payment-service failure
+* Notification-service failure
+* Integration failure
+* Software defect
+* Security incident
+* Data corruption
+* Power or infrastructure disruption
+* Unexpected traffic increase
+* Configuration error
+* Human error
+
+---
+
+## 34.7 Single Points of Failure
+
+Where practical, QubWatch should identify important single points of failure.
+
+Examples may include:
+
+* One database
+* One hosting service
+* One authentication provider
+* One AI provider
+* One notification provider
+* One integration endpoint
+
+The platform should assess whether failure of a dependency could prevent critical business operations.
+
+---
+
+## 34.8 Graceful Degradation
+
+When a non-critical service fails, QubWatch should continue operating other functions where practical.
+
+For example:
+
+If the AI Assistant becomes unavailable:
+
+* Users should still be able to log in.
+* Users should still be able to view transactions.
+* Users should still be able to view alerts.
+* Users should still be able to conduct investigations.
+* Users should still be able to record appropriate findings.
+* The system should clearly indicate that AI functionality is unavailable.
+
+This is preferable to making the entire platform unavailable.
+
+---
+
+## 34.9 AI Dependency Resilience
+
+QubWatch should not become completely dependent on an AI service for core business functionality.
+
+The platform should be designed so that:
+
+**AI unavailable ≠ QubWatch unavailable**
+
+Core business functions should continue where technically practical.
+
+---
+
+## 34.10 Authentication Dependency Resilience
+
+Authentication is a critical service.
+
+If an external authentication provider is used, QubWatch should consider:
+
+* Provider availability
+* Recovery procedures
+* Session behavior
+* Account recovery
+* Security implications
+* Alternative recovery mechanisms where appropriate
+
+Authentication resilience must not weaken security.
+
+---
+
+## 34.11 Database Resilience
+
+The database is a critical component of QubWatch.
+
+Database resilience should consider:
+
+* Backups
+* Recovery
+* Data replication where appropriate
+* Data integrity
+* Failure detection
+* Restoration
+* Capacity
+* Migration safety
+
+Database recovery should follow the requirements in Section 27.
+
+---
+
+## 34.12 Data Integrity During Failure
+
+A system failure must not unnecessarily result in:
+
+* Duplicate transactions
+* Lost transactions
+* Corrupted records
+* Incorrect balances
+* Incomplete investigations
+* Broken audit trails
+
+Where possible, operations should be designed to maintain consistency even when failures occur.
+
+---
+
+## 34.13 Transaction Failure Handling
+
+If a transaction operation fails, QubWatch should provide a clear result.
+
+The system should avoid situations where:
+
+* The user believes a transaction failed when it succeeded.
+* The user believes a transaction succeeded when it failed.
+* A transaction is accidentally recorded twice.
+
+Where appropriate, transaction operations should use mechanisms that support reliable processing and duplicate prevention.
+
+---
+
+## 34.14 Alert Resilience
+
+Alert generation is an important monitoring function.
+
+If a temporary failure affects the alert system, QubWatch should:
+
+* Detect the failure
+* Record the failure
+* Attempt appropriate recovery
+* Avoid silently losing important alerts
+* Notify authorized personnel where appropriate
+* Restore alert processing when possible
+
+---
+
+## 34.15 Investigation Resilience
+
+Investigation information should remain protected during system failures.
+
+QubWatch should prioritize preservation of:
+
+* Investigation records
+* Evidence references
+* Findings
+* Notes
+* Timelines
+* Related alerts
+* Audit records
+
+---
+
+## 34.16 Audit Resilience
+
+Important actions should remain traceable even during operational problems.
+
+Where immediate audit recording is temporarily unavailable, the system should use an appropriate controlled mechanism to prevent important events from being silently lost.
+
+Audit integrity should take priority over convenience.
+
+---
+
+## 34.17 Notification Resilience
+
+If an external notification service fails:
+
+* Important in-app notifications should continue where practical.
+* Failed external notifications should be recorded.
+* Appropriate retry mechanisms may be used.
+* Duplicate notifications should be controlled.
+* Users should not be falsely told that a notification was successfully delivered.
+
+---
+
+## 34.18 Integration Resilience
+
+External integrations should not unnecessarily bring down QubWatch when they fail.
+
+Integration failures should be:
+
+* Detected
+* Logged
+* Classified
+* Retried where appropriate
+* Escalated when necessary
+* Recovered safely
+
+The core application should continue operating where possible.
+
+---
+
+## 34.19 Network Failure
+
+QubWatch should handle temporary network problems appropriately.
+
+The application should provide clear feedback rather than:
+
+* Appearing to freeze indefinitely
+* Repeatedly submitting the same request
+* Creating duplicate transactions
+* Displaying misleading success messages
+
+---
+
+## 34.20 Infrastructure Resilience
+
+The hosting environment should consider:
+
+* Compute availability
+* Storage availability
+* Database availability
+* Network availability
+* Capacity
+* Monitoring
+* Backup
+* Recovery
+
+Infrastructure choices should be appropriate for the expected scale of the product.
+
+---
+
+## 34.21 Capacity Resilience
+
+QubWatch should be able to handle reasonable increases in:
+
+* Users
+* Businesses
+* Products
+* Transactions
+* Alerts
+* Investigations
+* AI requests
+* API traffic
+
+Capacity planning should identify when additional resources are required.
+
+---
+
+## 34.22 Traffic Spikes
+
+Unexpected increases in traffic should not automatically cause complete system failure.
+
+Appropriate controls may include:
+
+* Rate limiting
+* Queues
+* Request throttling
+* Caching
+* Background processing
+* Resource scaling
+* Temporary restriction of non-critical operations
+
+Security must remain a priority during traffic spikes.
+
+---
+
+## 34.23 Security Resilience
+
+QubWatch should remain resilient against attempts to disrupt or compromise the platform.
+
+Controls may include:
+
+* Rate limiting
+* Authentication controls
+* Authorization
+* Monitoring
+* Secure configurations
+* Dependency management
+* Backup
+* Incident response
+* Vulnerability management
+
+Security controls should be tested periodically.
+
+---
+
+## 34.24 Ransomware Resilience
+
+QubWatch should consider the possibility of ransomware or destructive attacks.
+
+Resilience measures should include:
+
+* Secure backups
+* Backup isolation where appropriate
+* Recovery testing
+* Access controls
+* Credential protection
+* Monitoring
+* Incident response
+* Evidence preservation
+
+Backups should not be treated as fully protective unless they can actually be restored.
+
+---
+
+## 34.25 Backup Independence
+
+Where practical, backup systems should have sufficient separation from production systems to reduce the possibility that a single incident destroys both production data and its backups.
+
+Access to backups should be restricted.
+
+---
+
+## 34.26 Recovery Point Objective
+
+QubWatch should define an appropriate **Recovery Point Objective (RPO)**.
+
+RPO answers:
+
+> **How much recent data could reasonably be lost after a serious failure?**
+
+The appropriate value may change as QubWatch grows.
+
+---
+
+## 34.27 Recovery Time Objective
+
+QubWatch should define an appropriate **Recovery Time Objective (RTO)**.
+
+RTO answers:
+
+> **How quickly should an important service be restored after a serious failure?**
+
+Critical services should generally have higher recovery priority.
+
+---
+
+## 34.28 Business Continuity Plan
+
+QubWatch should eventually maintain a documented business continuity plan.
+
+The plan should describe:
+
+* Critical services
+* Critical data
+* Important dependencies
+* Recovery priorities
+* Responsible personnel
+* Communication methods
+* Backup locations
+* Recovery procedures
+* Alternative operating procedures
+* Escalation procedures
+
+---
+
+## 34.29 Continuity During Partial Failure
+
+If only part of QubWatch is unavailable, the system should preserve unaffected functionality where practical.
+
+For example:
+
+**AI unavailable → core platform continues**
+
+**Email unavailable → in-app notifications continue**
+
+**One integration unavailable → unrelated business functions continue**
+
+**Advanced analytics unavailable → transaction monitoring continues**
+
+---
+
+## 34.30 Offline and Intermittent Connectivity Considerations
+
+Future versions may consider limited functionality during intermittent connectivity.
+
+However, offline functionality must carefully protect:
+
+* Data integrity
+* Authorization
+* Duplicate transactions
+* Synchronization
+* Security
+
+Offline operation should not be introduced simply for convenience without appropriate controls.
+
+---
+
+## 34.31 Disaster Recovery
+
+Disaster recovery should address major events that significantly disrupt QubWatch.
+
+Examples include:
+
+* Major infrastructure failure
+* Severe security incident
+* Data corruption
+* Hosting outage
+* Destructive attack
+* Major dependency failure
+
+The recovery process should follow:
+
+**Detect → Assess → Contain → Recover → Validate → Resume → Monitor**
+
+---
+
+## 34.32 Recovery Priorities
+
+During a major disruption, recovery should generally prioritize:
+
+1. Security
+2. Data integrity
+3. Authentication
+4. Authorization
+5. Core business data
+6. Transactions
+7. Monitoring
+8. Alerts
+9. Investigations
+10. Audit
+11. Notifications
+12. AI Assistant
+13. Advanced analytics
+14. Non-critical features
+
+---
+
+## 34.33 Data Recovery Validation
+
+Restoring data does not automatically mean recovery is complete.
+
+After restoration, QubWatch should verify:
+
+* Data exists
+* Data relationships are correct
+* Transactions are intact
+* User permissions remain correct
+* Business data remains isolated
+* Audit records are intact
+* Important application functions work
+
+---
+
+## 34.34 Fail-Safe Behavior
+
+When the system cannot safely determine whether an operation should be permitted, it should generally fail closed for security-sensitive actions.
+
+For example:
+
+If authorization cannot be verified, QubWatch should not assume permission.
+
+However, fail-safe behavior should be designed carefully so that it does not unnecessarily destroy data or prevent safe recovery.
+
+---
+
+## 34.35 Recovery Access
+
+Emergency recovery access should be:
+
+* Restricted
+* Authenticated
+* Authorized
+* Audited
+* Used only when necessary
+
+Emergency access should not become a permanent unrestricted administrator pathway.
+
+---
+
+## 34.36 Resilience and Human Oversight
+
+Automation should not create uncontrolled actions during a failure.
+
+For example, if an AI service or detection system behaves unexpectedly during an outage, QubWatch should not automatically make high-impact business decisions.
+
+Human review should remain available for important decisions.
+
+---
+
+## 34.37 Resilience Testing
+
+QubWatch should periodically test its ability to recover from failure.
+
+Tests may include:
+
+* Database restoration
+* Backup restoration
+* Application restart
+* Integration failure
+* AI service failure
+* Notification failure
+* Authentication failure
+* Network disruption
+* Traffic spike
+* Security incident
+* Data corruption scenario
+
+Testing should identify weaknesses before actual incidents occur.
+
+---
+
+## 34.38 Disaster Recovery Exercises
+
+Future versions should conduct structured recovery exercises.
+
+An exercise may simulate:
+
+> **The production database becomes unavailable.**
+
+The team should then determine:
+
+* How the failure is detected
+* Who responds
+* Which backup is selected
+* How recovery is performed
+* How data integrity is validated
+* How users are informed
+* How normal service is restored
+
+---
+
+## 34.39 Resilience Documentation
+
+Important resilience procedures should be documented.
+
+Documentation should include:
+
+* Failure scenarios
+* Recovery procedures
+* Contact responsibilities
+* Dependencies
+* Backup locations
+* Recovery priorities
+* Validation procedures
+* Communication procedures
+
+---
+
+## 34.40 Service Status
+
+Future versions may provide a service-status mechanism showing whether major services are:
+
+* Operational
+* Degraded
+* Partially unavailable
+* Unavailable
+* Under maintenance
+
+Status information should avoid exposing sensitive technical details that could assist attackers.
+
+---
+
+## 34.41 User Communication During Disruption
+
+During significant disruptions, users should receive clear communication.
+
+Messages should explain, where appropriate:
+
+* What is affected
+* Whether business data is affected
+* What users should do
+* Whether transactions can continue
+* Whether recovery is in progress
+* When another update is expected
+
+Messages should not speculate about causes that have not been confirmed.
+
+---
+
+## 34.42 Third-Party Resilience
+
+QubWatch should assess critical external dependencies.
+
+For each important provider, the team should consider:
+
+* Availability
+* Recovery capabilities
+* Security
+* Data protection
+* Failure handling
+* Alternatives
+* Exit strategy
+
+Critical dependency failures should not be allowed to create unnecessary total platform failure.
+
+---
+
+## 34.43 Vendor Lock-In and Resilience
+
+QubWatch should avoid unnecessary dependency on a single vendor where practical.
+
+This is particularly relevant to:
+
+* AI providers
+* Cloud infrastructure
+* Authentication
+* Payment providers
+* Databases
+* Notification services
+
+The architecture should allow important components to be replaced when reasonably necessary.
+
+---
+
+## 34.44 Resilience Monitoring
+
+QubWatch should monitor indicators such as:
+
+* Availability
+* Error rates
+* Recovery time
+* Backup status
+* Database health
+* Integration health
+* Queue health
+* Resource usage
+* AI availability
+* Notification delivery
+* Failed transactions
+
+---
+
+## 34.45 Resilience Metrics
+
+Potential metrics include:
+
+* Availability percentage
+* Mean time to detect
+* Mean time to respond
+* Mean time to recover
+* Number of outages
+* Number of repeated failures
+* Backup success rate
+* Recovery-test success rate
+* Failed transactions
+* Failed integrations
+* AI availability
+* Notification failure rate
+
+Metrics should be used to improve resilience rather than create unrealistic targets.
+
+---
+
+## 34.46 MVP Resilience Requirements
+
+The MVP should include basic resilience through:
+
+* Reliable database backups
+* Basic recovery procedures
+* Application error handling
+* Authentication failure handling
+* Transaction error handling
+* Basic monitoring
+* AI failure handling
+* Basic integration failure handling where integrations exist
+* Audit protection
+* Security incident response
+* Clear user-facing error messages
+
+The MVP does not need complex enterprise-level high-availability architecture.
+
+---
+
+## 34.47 Future Resilience Capabilities
+
+Future versions may include:
+
+* Multi-region deployment
+* Automated failover
+* Database replication
+* Advanced disaster recovery
+* Multi-provider architecture
+* Advanced traffic management
+* Automated scaling
+* Advanced service-status monitoring
+* Automated recovery for low-risk failures
+* Advanced chaos testing
+* Resilience scoring
+* Predictive capacity management
+
+Any automated recovery should be carefully controlled and tested.
+
+---
+
+## 34.48 Resilience Priority
+
+QubWatch resilience should prioritize:
+
+1. Human safety
+2. Security
+3. Data integrity
+4. Authentication and authorization
+5. Core business data
+6. Transaction processing
+7. Monitoring
+8. Alerts
+9. Investigations
+10. Auditability
+11. Notifications
+12. AI services
+13. Advanced analytics
+14. Non-critical features
+
+---
+
+## 34.49 Core Resilience Rule
+
+QubWatch should follow this rule:
+
+> **A failure should be expected, its impact should be contained where possible, important data should be protected, critical functions should be prioritized, and recovery should be tested rather than assumed.**
+
+---
+
+## 34.50 Section Summary
+
+QubWatch should be designed to continue providing important business functions even when individual components fail.
+
+The resilience cycle is:
+
+**Prepare → Detect → Contain → Continue Where Possible → Recover → Validate → Monitor → Improve**
+
+The key principle is:
+
+> **QubWatch should remain secure and useful during disruption, recover important information safely, and never sacrifice security or data integrity merely to appear available.**
+
+
+
+# Section 35 — Accessibility, Inclusivity and Usability Requirements
+
+## 35.1 Purpose
+
+This section defines the requirements for making QubWatch accessible, understandable, inclusive, and easy to use for different categories of users.
+
+QubWatch is intended to be used by business owners, managers, staff, administrators, and potentially users with different levels of technical knowledge, digital literacy, physical abilities, devices, and internet conditions.
+
+The platform should therefore not only be technically functional but also understandable and usable by its intended users.
+
+---
+
+## 35.2 Core Usability Principle
+
+QubWatch should be:
+
+* Easy to understand
+* Easy to navigate
+* Easy to learn
+* Easy to operate
+* Accessible to users with different abilities
+* Responsive across supported devices
+* Clear when something goes wrong
+* Consistent across screens
+* Designed around real business tasks
+
+The platform should not require users to have technical or cybersecurity expertise to perform normal business operations.
+
+---
+
+## 35.3 Accessibility Objectives
+
+QubWatch should aim to support accessibility principles commonly associated with recognized web accessibility guidelines.
+
+The product should consider accessibility from the design and development stages rather than treating accessibility as an afterthought.
+
+Accessibility improvements should cover:
+
+* Visual accessibility
+* Keyboard accessibility
+* Screen-reader compatibility
+* Motor accessibility
+* Cognitive accessibility
+* Text readability
+* Color and contrast
+* Responsive design
+* Forms and error messages
+* Notifications
+* Charts and data visualization
+* AI Assistant interaction
+
+QubWatch should not claim formal accessibility certification unless such certification has actually been obtained.
+
+---
+
+## 35.4 Navigation Requirements
+
+Navigation should be consistent throughout the platform.
+
+Users should be able to easily locate:
+
+* Dashboard
+* Products
+* Transactions
+* Alerts
+* Investigations
+* AI Assistant
+* Notifications
+* Business settings
+* User management where authorized
+* Audit information where authorized
+* Account/logout functions
+
+Navigation should use clear labels rather than unnecessarily technical terminology.
+
+For example:
+
+**Good:**
+
+> View Alerts
+
+**Less desirable:**
+
+> Detection Event Repository
+
+---
+
+## 35.5 Keyboard Accessibility
+
+Important QubWatch functions should be usable through a keyboard where practical.
+
+Users should be able to:
+
+* Move between interactive elements
+* Open menus
+* Complete forms
+* Submit forms
+* Navigate tables
+* Review alerts
+* Navigate investigations
+* Use important controls
+* Close dialogs
+* Access important actions
+
+Keyboard focus should be visually identifiable.
+
+The interface should avoid situations where a keyboard user becomes trapped inside a component.
+
+---
+
+## 35.6 Screen Reader Considerations
+
+Important interface elements should have meaningful labels and structure for assistive technologies.
+
+Examples include:
+
+* Buttons
+* Form fields
+* Navigation elements
+* Tables
+* Alerts
+* Notifications
+* Dialog boxes
+* Charts
+* Status indicators
+* Investigation information
+* AI responses
+
+Icons should not be the only way of communicating important information.
+
+Where an icon represents an action, an accessible label should communicate its purpose.
+
+---
+
+## 35.7 Color and Contrast
+
+Color should not be the only method used to communicate meaning.
+
+For example, an alert should not communicate severity only through:
+
+* Red
+* Yellow
+* Green
+
+Instead, the interface should combine color with:
+
+* Text
+* Labels
+* Icons where appropriate
+* Severity indicators
+
+Example:
+
+**High — Unusually Large Transaction**
+
+rather than relying only on a red indicator.
+
+Text and important interface elements should have sufficient contrast to remain readable.
+
+---
+
+## 35.8 Typography and Readability
+
+QubWatch should use readable typography.
+
+Requirements include:
+
+* Clear fonts
+* Appropriate font sizes
+* Adequate spacing
+* Clear headings
+* Short paragraphs where appropriate
+* Readable tables
+* Avoidance of unnecessarily dense screens
+* Clear distinction between labels and values
+
+Users should be able to understand important business information without excessive visual effort.
+
+---
+
+## 35.9 Forms and Data Entry
+
+Forms should be designed to minimize user errors.
+
+Forms should:
+
+* Clearly identify required fields
+* Use understandable labels
+* Provide appropriate instructions
+* Validate information
+* Explain errors clearly
+* Preserve entered information where practical
+* Avoid unnecessary fields
+* Provide meaningful confirmation after successful submission
+
+For example:
+
+Instead of:
+
+> Error 422
+
+The system should provide a useful message such as:
+
+> Transaction amount must be greater than ₦0.
+
+---
+
+## 35.10 Error Messages
+
+Error messages should help users understand:
+
+1. What happened
+2. Why it happened where appropriate
+3. What they can do next
+
+Errors should not unnecessarily expose:
+
+* Database information
+* API keys
+* Passwords
+* System internals
+* Stack traces
+* Sensitive security information
+
+Error messages should remain understandable to non-technical users.
+
+---
+
+## 35.11 Responsive Design
+
+QubWatch should support different screen sizes where practical.
+
+The interface should adapt to:
+
+* Desktop computers
+* Laptops
+* Tablets
+* Mobile phones
+
+Important functions should remain usable on smaller screens.
+
+Responsive design should not simply shrink the desktop interface.
+
+Where necessary, layouts should be reorganized for smaller screens.
+
+---
+
+## 35.12 Mobile Usability
+
+On mobile devices:
+
+* Buttons should be easy to tap
+* Important information should remain visible
+* Tables should be appropriately adapted
+* Navigation should remain understandable
+* Forms should be easy to complete
+* Alerts should remain readable
+* Investigation information should remain accessible
+* AI responses should remain readable
+
+Touch targets should be large enough to reduce accidental selections.
+
+---
+
+## 35.13 Support for Different Levels of Digital Literacy
+
+QubWatch should be designed for users who may have limited technical knowledge.
+
+The system should avoid unnecessary technical terminology.
+
+Where technical terms are necessary, they should be explained in understandable language.
+
+For example:
+
+Instead of presenting:
+
+> Anomaly threshold exceeded
+
+The interface could say:
+
+> This transaction is significantly higher than the business's usual transaction pattern.
+
+This approach helps users understand what QubWatch is communicating without requiring cybersecurity expertise.
+
+---
+
+## 35.14 Cognitive Accessibility
+
+The interface should reduce unnecessary mental effort.
+
+QubWatch should:
+
+* Use consistent layouts
+* Use predictable navigation
+* Group related information
+* Avoid unnecessary steps
+* Provide clear instructions
+* Use meaningful headings
+* Avoid excessive notifications
+* Avoid unnecessary animations
+* Provide confirmation for important actions
+* Clearly distinguish information from recommendations
+
+Important decisions should not depend on users remembering information from another screen.
+
+---
+
+## 35.15 Alerts and Accessibility
+
+Alerts should communicate important information clearly.
+
+Each alert should, where appropriate, provide:
+
+* Alert title
+* Severity
+* Date/time
+* Triggering event
+* Relevant transaction or activity
+* Reason the alert was generated
+* Recommended next action
+* Link to related information
+* Investigation option where authorized
+
+Example:
+
+> **High — Repeated Refund Activity**
+> Five refunds were recorded for the same product within a short period.
+> Review the related transactions before reaching a conclusion.
+
+The wording must not automatically accuse a person of fraud or theft.
+
+---
+
+## 35.16 Accessibility of Investigations
+
+Investigation screens should present evidence in a structured and readable manner.
+
+Important information should include:
+
+* Investigation status
+* Priority
+* Related alert
+* Related transactions
+* Evidence
+* Timeline
+* Notes
+* Findings
+* AI suggestions where available
+* Final outcome
+
+Users should be able to distinguish clearly between:
+
+* Recorded facts
+* Observations
+* AI analysis
+* Possible explanations
+* Human findings
+* Final decisions
+
+---
+
+## 35.17 Accessibility of Charts and Analytics
+
+Charts and visual analytics should have alternative ways of understanding the information.
+
+Where practical, important charts should also provide:
+
+* Titles
+* Descriptions
+* Labels
+* Legends
+* Numerical summaries
+* Tables or accessible data representations
+
+A user should not be required to visually interpret a chart to understand an important business event.
+
+---
+
+## 35.18 Accessibility of the AI Assistant
+
+The AI Assistant should be easy to interact with.
+
+Users should be able to:
+
+* Enter questions clearly
+* Read AI responses easily
+* Understand uncertainty
+* Review relevant business context
+* Distinguish AI analysis from confirmed facts
+* Navigate long responses
+* Ask follow-up questions
+* Understand when information is unavailable
+
+AI responses should avoid unnecessary technical language when communicating with non-technical users.
+
+---
+
+## 35.19 Notifications
+
+Notifications should be:
+
+* Clear
+* Concise
+* Relevant
+* Actionable
+* Accessible
+
+Notifications should not rely solely on sound, color, or animation.
+
+Important notifications should contain enough information for the user to understand why they matter.
+
+Users should also be able to manage notification preferences where the relevant permission exists.
+
+---
+
+## 35.20 Motion and Animation
+
+Animations should be used carefully.
+
+The system should avoid unnecessary:
+
+* Flashing
+* Rapid movement
+* Excessive transitions
+* Distracting animations
+
+Important information should remain available even when animation is disabled or unavailable.
+
+---
+
+## 35.21 Language and Communication
+
+QubWatch should use simple, professional language.
+
+The interface should prioritize:
+
+* Clarity
+* Consistency
+* Accuracy
+* Neutral wording
+* Action-oriented instructions
+
+Security and investigation-related communication should avoid emotionally charged or accusatory language.
+
+For example:
+
+> **Unusual Activity Detected**
+
+is preferable to:
+
+> **Employee Theft Detected**
+
+unless a properly authorized human investigation has established such a finding outside the automated detection process.
+
+---
+
+## 35.22 Accessibility of Security Controls
+
+Security controls should also remain understandable.
+
+Users should be able to understand:
+
+* Why they are being asked to authenticate
+* Why an action is restricted
+* When access has been denied
+* When a session has expired
+* What action they need to take
+
+Security should not be implemented in a way that unnecessarily makes normal business operations confusing.
+
+---
+
+## 35.23 Accessibility and Authorization
+
+Accessibility must not bypass security controls.
+
+Making the platform easier to use does not mean giving users additional permissions.
+
+Users should only see or perform actions that their role authorizes.
+
+The system should maintain:
+
+* Authentication
+* Authorization
+* Role-based access control
+* Business data isolation
+* Least privilege
+
+---
+
+## 35.24 Usability Testing
+
+Usability should be tested with realistic tasks.
+
+Testing should consider whether users can successfully:
+
+* Log in
+* Set up a business
+* Add a product
+* Record a transaction
+* Find a transaction
+* Understand the dashboard
+* Understand an alert
+* Start an investigation
+* Review evidence
+* Ask the AI Assistant a question
+* Record findings
+* Complete important actions
+
+Testing should identify confusing terminology, unnecessary steps, unclear messages, navigation problems, and accessibility barriers.
+
+---
+
+## 35.25 Accessibility Testing
+
+Where practical, accessibility testing should include:
+
+* Keyboard testing
+* Screen-reader testing
+* Color/contrast testing
+* Responsive testing
+* Mobile testing
+* Form testing
+* Error-message testing
+* Focus-state testing
+* Zoom/text-scaling testing
+* Accessibility testing of important workflows
+
+Accessibility defects should be documented and prioritized according to their impact.
+
+---
+
+## 35.26 User Feedback
+
+QubWatch should provide appropriate ways for users to report:
+
+* Usability problems
+* Accessibility problems
+* Confusing terminology
+* Incorrect interface behavior
+* Difficult workflows
+* AI communication problems
+* Notification problems
+
+Feedback should contribute to future product improvement.
+
+---
+
+## 35.27 MVP Accessibility Requirements
+
+The MVP should, at minimum:
+
+* Use clear navigation
+* Use readable text
+* Provide clear form labels
+* Provide understandable error messages
+* Avoid color-only communication
+* Support basic keyboard navigation
+* Provide visible focus indicators where practical
+* Use accessible labels for important controls
+* Be responsive on supported screen sizes
+* Use simple language
+* Clearly distinguish alerts from conclusions
+* Make important dashboard information understandable
+* Make AI responses readable
+* Avoid unnecessary animations
+* Maintain accessibility without weakening authorization or security
+
+---
+
+## 35.28 Future Accessibility Capabilities
+
+Future versions may include:
+
+* More comprehensive accessibility testing
+* Advanced screen-reader optimization
+* Improved keyboard workflows
+* User-configurable text sizing
+* Additional language support
+* Voice interaction where appropriate
+* Advanced accessibility preferences
+* Improved accessible data visualization
+* Accessibility analytics
+* Formal accessibility assessment
+* Support for additional assistive technologies
+
+---
+
+## 35.29 Accessibility and Product Priority
+
+Accessibility should be considered alongside:
+
+1. Security
+2. Data integrity
+3. Authorization
+4. Reliability
+5. Core business functionality
+6. Usability
+7. Accessibility
+8. Performance
+9. Advanced automation
+
+Accessibility improvements must not introduce security or data-integrity weaknesses.
+
+---
+
+## 35.30 Core Accessibility Rule
+
+> **QubWatch should be understandable and usable by as many intended users as reasonably possible, regardless of their level of technical knowledge, device, or accessibility needs, while maintaining security and proper authorization.**
+
+---
+
+## 35.31 Summary
+
+QubWatch should not only detect unusual business activity; it should communicate that information in a way that users can understand and act upon responsibly.
+
+The platform should therefore follow this accessibility and usability approach:
+
+**Understand → Navigate → Operate → Interpret → Investigate → Decide**
+
+The goal is to ensure that QubWatch remains:
+
+**Accessible. Understandable. Usable. Secure. Inclusive.**
+
+### Core Principle
+
+> **Good security protects the system. Good usability helps people use it correctly. Good accessibility ensures more people can use it effectively. QubWatch must provide all three.**
+
+
+
+# Section 36 — Product Analytics, Metrics and Telemetry Requirements
+
+## 36.1 Purpose
+
+This section defines how QubWatch should collect, measure, interpret, and use information about product usage, system performance, business activity, alerts, investigations, AI usage, and operational outcomes.
+
+Product analytics should help the QubWatch team understand:
+
+* How the platform is being used
+* Which features are useful
+* Where users experience difficulties
+* Whether alerts are useful
+* How investigations progress
+* How the AI Assistant is being used
+* Whether the system is performing reliably
+* Where improvements are required
+
+Analytics must not become a means of unnecessarily collecting personal or sensitive information.
+
+---
+
+## 36.2 Core Analytics Principle
+
+> **Measure what matters, collect only what is necessary, protect analytics data, and use measurements to improve QubWatch rather than to create unnecessary surveillance.**
+
+---
+
+## 36.3 Analytics Objectives
+
+QubWatch analytics should support:
+
+* Product improvement
+* User experience improvement
+* System reliability
+* Security monitoring
+* Performance monitoring
+* Alert effectiveness
+* Investigation effectiveness
+* AI quality improvement
+* Capacity planning
+* Operational decision-making
+* Business intelligence
+* Feature prioritization
+
+Analytics should provide useful evidence for product decisions rather than relying entirely on assumptions.
+
+---
+
+## 36.4 Types of Metrics
+
+QubWatch may maintain several categories of metrics.
+
+### 1. Product Metrics
+
+Measure how users interact with QubWatch.
+
+Examples:
+
+* Number of active businesses
+* Number of active users
+* Login frequency
+* Feature usage
+* Dashboard usage
+* Product management usage
+* Transaction activity
+* Alert review activity
+* Investigation activity
+* AI Assistant usage
+
+### 2. Operational Metrics
+
+Measure system health.
+
+Examples:
+
+* System availability
+* API response time
+* Error rate
+* Database performance
+* Background-job failures
+* Integration failures
+* Backup success rate
+
+### 3. Security Metrics
+
+Measure security-related events.
+
+Examples:
+
+* Failed login attempts
+* Authorization failures
+* Suspicious access patterns
+* Security alerts
+* Account lockouts
+* Security incidents
+
+### 4. Business Monitoring Metrics
+
+Measure activity relevant to QubWatch's purpose.
+
+Examples:
+
+* Number of transactions
+* Refund frequency
+* Discount frequency
+* Alert frequency
+* Alert severity distribution
+* Investigation volume
+* Investigation resolution time
+
+### 5. AI Metrics
+
+Measure AI usage and quality.
+
+Examples:
+
+* AI questions submitted
+* AI response time
+* AI failure rate
+* AI service availability
+* AI response feedback
+* AI-assisted investigations
+* AI recommendation usage
+
+---
+
+## 36.5 Data Minimization
+
+QubWatch should collect only analytics information necessary for legitimate product, security, operational, or business purposes.
+
+The platform should avoid collecting unnecessary:
+
+* Personal information
+* Sensitive employee information
+* Customer information
+* Passwords
+* Authentication secrets
+* API keys
+* Payment credentials
+* Investigation secrets
+* Private business information
+
+Analytics systems must never become a hidden repository for sensitive information.
+
+---
+
+## 36.6 Personally Identifiable Information
+
+Where analytics involve identifiable users, QubWatch should consider whether identification is actually necessary.
+
+Where practical, analytics should use:
+
+* Aggregated data
+* Pseudonymous identifiers
+* Business-level statistics
+* Event categories
+* Non-sensitive metadata
+
+Sensitive information should not be included in analytics events merely because it is available in the application.
+
+---
+
+## 36.7 Business Data Isolation
+
+Analytics must respect QubWatch's business data isolation requirements.
+
+A business should not be able to view another business's analytics data unless a properly authorized system-level function specifically requires it.
+
+Analytics queries must therefore enforce:
+
+* Business ownership
+* User permissions
+* Role-based access
+* Data isolation
+* Appropriate administrative controls
+
+---
+
+## 36.8 Event Tracking
+
+Important product actions may generate structured events.
+
+Examples:
+
+* User logged in
+* Product created
+* Product updated
+* Transaction recorded
+* Transaction modified
+* Alert generated
+* Alert reviewed
+* Investigation created
+* Investigation updated
+* Investigation closed
+* AI question submitted
+* AI response generated
+* Notification delivered
+* User preference changed
+
+Events should contain only information necessary for the intended purpose.
+
+---
+
+## 36.9 Analytics Event Structure
+
+Where appropriate, an analytics event may contain:
+
+* Event ID
+* Event type
+* Date/time
+* Business identifier
+* User or pseudonymous identifier where necessary
+* Application/module
+* Object type
+* Object identifier where appropriate
+* Result/status
+* Relevant non-sensitive metadata
+
+Sensitive values should not automatically be placed inside event records.
+
+---
+
+## 36.10 Product Usage Analytics
+
+Product usage analytics should help answer questions such as:
+
+* Which features are used most?
+* Which features are rarely used?
+* Where do users stop during workflows?
+* Which screens cause confusion?
+* How frequently are alerts reviewed?
+* How often are investigations created?
+* Which features require improvement?
+
+Usage analytics should support product decisions rather than unnecessarily tracking individual users.
+
+---
+
+## 36.11 User Journey Analytics
+
+QubWatch may measure important user journeys.
+
+Example:
+
+**Login → Dashboard → Alert → Investigation → AI Assistant → Finding → Closure**
+
+The purpose is to understand whether users can successfully complete important workflows.
+
+The system should identify:
+
+* Successful completion
+* Abandoned workflows
+* Errors
+* Repeated attempts
+* Long delays
+* Common failure points
+
+---
+
+## 36.12 Dashboard Analytics
+
+QubWatch should measure appropriate dashboard activity and performance.
+
+Possible metrics include:
+
+* Dashboard loading time
+* Number of dashboard views
+* Most-used dashboard components
+* Alert interaction
+* Transaction summary interaction
+* Filtering activity
+
+The objective is to ensure that the dashboard provides useful information without creating unnecessary complexity.
+
+---
+
+## 36.13 Alert Effectiveness Metrics
+
+QubWatch should measure whether alerts are useful.
+
+Possible metrics include:
+
+* Number of alerts generated
+* Alerts by severity
+* Alerts reviewed
+* Alerts dismissed
+* Alerts resolved
+* Alerts converted into investigations
+* Average time to review
+* Average time to resolve
+* Repeated alert frequency
+* False-positive feedback where available
+
+These measurements should be used to improve detection rules.
+
+---
+
+## 36.14 Detection Rule Performance
+
+QubWatch should monitor the effectiveness of individual detection rules.
+
+For each rule, where practical, the system may track:
+
+* Number of times triggered
+* Number of alerts generated
+* Severity distribution
+* Number reviewed
+* Number escalated
+* Number dismissed
+* Number associated with investigations
+* User feedback
+* False-positive indications
+
+This information can help identify rules that are too sensitive or insufficiently useful.
+
+---
+
+## 36.15 Investigation Metrics
+
+Investigation analytics may include:
+
+* Number of investigations
+* Investigations by status
+* Investigation priority
+* Time from alert to investigation
+* Investigation duration
+* Number of evidence items
+* Number of related transactions
+* Number of AI-assisted investigations
+* Resolution outcomes
+* Reopened investigations
+
+These metrics should support operational improvement without automatically judging individual employees.
+
+---
+
+## 36.16 AI Assistant Metrics
+
+AI analytics should measure system quality and operational performance.
+
+Possible metrics include:
+
+* Number of questions
+* Response time
+* Failed requests
+* Service availability
+* User feedback
+* Frequently asked question categories
+* Number of investigations supported
+* AI-generated summaries
+* AI recommendation usage
+
+The system should avoid storing complete sensitive conversations unnecessarily.
+
+Where conversations must be retained for legitimate reasons, access and retention must be controlled.
+
+---
+
+## 36.17 AI Quality Measurement
+
+AI performance should not be measured only by usage volume.
+
+QubWatch should also consider:
+
+* Accuracy
+* Relevance
+* Grounding
+* Transparency
+* Appropriate uncertainty
+* Hallucination rate
+* User feedback
+* Safety
+* Compliance with AI guardrails
+
+A highly used AI feature is not necessarily a good AI feature.
+
+---
+
+## 36.18 Performance Metrics
+
+QubWatch should monitor technical performance including:
+
+* Login response time
+* Dashboard response time
+* Transaction processing time
+* Search response time
+* Alert-generation processing time
+* Investigation loading time
+* API response time
+* Database query performance
+* AI response time
+
+Performance metrics should be compared with the requirements defined in the performance and scalability section.
+
+---
+
+## 36.19 Reliability Metrics
+
+Reliability metrics may include:
+
+* Availability
+* Uptime
+* Error rate
+* Failed requests
+* Failed background jobs
+* Failed integrations
+* Database failures
+* Recovery events
+* Backup failures
+
+Reliability measurements should help identify recurring problems before they become major incidents.
+
+---
+
+## 36.20 Security Metrics
+
+Security metrics should support security monitoring and incident response.
+
+Examples include:
+
+* Failed authentication attempts
+* Repeated authorization failures
+* Suspicious login patterns
+* Account lockouts
+* Security events
+* Security incidents
+* Vulnerability findings
+* Dependency-related security findings
+* Security response times
+
+Security analytics must themselves be protected from unauthorized access.
+
+---
+
+## 36.21 Availability and Resilience Metrics
+
+QubWatch should measure whether important services remain available.
+
+Possible measurements include:
+
+* Service uptime
+* Authentication availability
+* Database availability
+* Transaction availability
+* Alert-processing availability
+* Investigation availability
+* AI availability
+* Recovery time
+* Recovery success rate
+
+AI availability should not be treated as equivalent to overall QubWatch availability.
+
+---
+
+## 36.22 Capacity Metrics
+
+Capacity analytics should help determine when the platform needs additional resources.
+
+Metrics may include:
+
+* Number of businesses
+* Number of users
+* Number of products
+* Number of transactions
+* Database size
+* Storage consumption
+* API traffic
+* Background-job volume
+* AI requests
+* Notification volume
+
+Capacity planning should occur before system limits create unacceptable performance problems.
+
+---
+
+## 36.23 Cost Metrics
+
+Where practical, QubWatch should monitor operational costs.
+
+Potential cost categories include:
+
+* Hosting
+* Database
+* Storage
+* AI usage
+* Notifications
+* Email
+* Third-party services
+* Monitoring
+* Backups
+* Data transfer
+
+Cost analytics should support responsible product growth.
+
+---
+
+## 36.24 Analytics Dashboards
+
+Authorized administrators or product operators may have access to appropriate analytics dashboards.
+
+Different dashboards may focus on:
+
+* Product usage
+* System health
+* Security
+* Alerts
+* Investigations
+* AI
+* Infrastructure
+* Costs
+
+Access must follow the relevant permissions.
+
+---
+
+## 36.25 Analytics Accuracy
+
+Analytics should be sufficiently accurate for their intended purpose.
+
+The system should account for:
+
+* Duplicate events
+* Missing events
+* Delayed events
+* Failed event processing
+* Incorrect timestamps
+* Data synchronization problems
+* Deleted records
+* Changes to business data
+
+Analytics should not be presented with unjustified precision.
+
+---
+
+## 36.26 Analytics and Audit Trail
+
+Product analytics and audit trails serve different purposes.
+
+### Analytics
+
+Primarily answer:
+
+> **What patterns and trends are occurring?**
+
+### Audit Trail
+
+Primarily answers:
+
+> **What important action occurred, who performed it, and when?**
+
+Analytics should not replace the formal audit trail.
+
+Important security, transaction, investigation, permission, and administrative actions must continue to use the appropriate audit mechanisms.
+
+---
+
+## 36.27 Analytics and Privacy
+
+Analytics must follow QubWatch privacy requirements.
+
+The system should consider:
+
+* Purpose limitation
+* Data minimization
+* Appropriate access
+* Retention
+* Secure storage
+* Controlled sharing
+* Deletion where appropriate
+* Protection of personal information
+
+Analytics should not be collected simply because technical capability exists.
+
+---
+
+## 36.28 Analytics Retention
+
+Analytics information should have appropriate retention periods.
+
+Retention should depend on:
+
+* Purpose
+* Sensitivity
+* Operational usefulness
+* Security requirements
+* Legal or regulatory requirements where applicable
+* Cost
+
+Old analytics data should be archived or deleted when it is no longer required, subject to applicable retention obligations.
+
+---
+
+## 36.29 Analytics Security
+
+Analytics systems should be protected against:
+
+* Unauthorized access
+* Data modification
+* Data leakage
+* Credential compromise
+* Injection attacks
+* Improper exports
+* Excessive administrative access
+
+Analytics data should be protected with appropriate authentication, authorization, encryption, and monitoring.
+
+---
+
+## 36.30 Export and Reporting
+
+Where analytics export is provided, users must only be able to export information they are authorized to access.
+
+Exports should:
+
+* Clearly identify their contents
+* Avoid unnecessary sensitive information
+* Be appropriately protected
+* Be logged where appropriate
+* Follow retention and privacy requirements
+
+Future versions may support scheduled analytics reports.
+
+---
+
+## 36.31 Analytics and Product Decisions
+
+Analytics should be used to support evidence-based product decisions.
+
+Examples:
+
+If users frequently abandon a transaction workflow, the workflow may require improvement.
+
+If a detection rule generates thousands of alerts but very few are considered useful, the rule may require review.
+
+If AI responses receive repeated negative feedback, the AI implementation may require investigation.
+
+Analytics should inform decisions rather than automatically making high-impact decisions.
+
+---
+
+## 36.32 Analytics and Human Oversight
+
+Analytics must not automatically determine:
+
+* Employee guilt
+* Fraud
+* Theft
+* Misconduct
+* Employment action
+* Legal liability
+
+Analytics can identify patterns requiring human review.
+
+The same principle applies to AI-generated analytics.
+
+---
+
+## 36.33 Analytics Monitoring
+
+QubWatch should monitor the analytics system itself.
+
+The platform should detect where practical:
+
+* Event-processing failures
+* Missing events
+* Excessive event volume
+* Data-quality problems
+* Analytics pipeline failures
+* Unauthorized analytics access
+* Storage problems
+
+Analytics should not silently fail without appropriate detection.
+
+---
+
+## 36.34 MVP Analytics Requirements
+
+The MVP should provide enough measurement to understand whether the core product works.
+
+At minimum, the MVP should measure appropriate:
+
+* Login activity
+* Transaction activity
+* Alert generation
+* Alert review
+* Investigation creation
+* Investigation resolution
+* AI usage
+* Application errors
+* Core performance
+* Important security events
+* Backup/recovery status where supported
+
+The MVP should avoid building a complex analytics platform before the core QubWatch product has been validated.
+
+---
+
+## 36.35 Future Analytics Capabilities
+
+Future versions may include:
+
+* Advanced product analytics
+* Custom analytics dashboards
+* Advanced alert effectiveness analysis
+* Detection-rule optimization
+* Predictive analytics
+* Business benchmarking
+* Advanced AI quality analytics
+* Cost analytics
+* Customer/business-level reporting
+* Automated operational reports
+* Advanced capacity forecasting
+* Real-time analytics
+* Anomaly detection within system telemetry
+
+These features should be introduced based on actual product needs.
+
+---
+
+## 36.36 Analytics Governance
+
+Analytics definitions should be documented.
+
+Important metrics should have clearly defined:
+
+* Name
+* Purpose
+* Calculation
+* Data source
+* Owner
+* Frequency
+* Retention
+* Access permissions
+* Limitations
+
+Different teams should not use the same metric name to mean different things.
+
+---
+
+## 36.37 Analytics Priority
+
+Analytics implementation should prioritize:
+
+1. Security
+2. Data privacy
+3. Data integrity
+4. Core business functionality
+5. Reliability
+6. Product usefulness
+7. User experience
+8. Performance
+9. Advanced analytics
+
+Analytics must never weaken the security or reliability of QubWatch.
+
+---
+
+## 36.38 Core Analytics Rule
+
+> **QubWatch should measure meaningful activity, protect the information it collects, respect user and business privacy, and use reliable measurements to improve security, usability, performance, and business value.**
+
+---
+
+## 36.39 Summary
+
+QubWatch should use analytics to understand the platform and continuously improve it.
+
+The overall analytics cycle is:
+
+**Collect → Validate → Protect → Measure → Interpret → Improve → Review**
+
+Analytics should help answer:
+
+* Is QubWatch working?
+* Are users able to use it?
+* Are alerts useful?
+* Are investigations effective?
+* Is the AI Assistant helping?
+* Is the system secure?
+* Is the platform reliable?
+* Is the platform ready to scale?
+
+### Core Principle
+
+> **Measure what matters. Protect what is measured. Learn from the evidence. Improve deliberately.**
+
+
+
+# Section 37 — Configuration, Environment and Secrets Management Requirements
+
+## 37.1 Purpose
+
+This section defines how QubWatch configuration, environments, credentials, secrets, API keys, system settings, and deployment-specific information should be managed.
+
+Proper configuration management is important because QubWatch will eventually contain sensitive business information and may connect to external services such as AI providers, email services, databases, authentication services, payment systems, and other integrations.
+
+The goal is to ensure that configuration changes are controlled and that sensitive information is never unnecessarily exposed.
+
+---
+
+## 37.2 Core Configuration Principle
+
+> **Configuration should be controlled, environment-specific, secure, documented, and separated from application code wherever appropriate.**
+
+---
+
+## 37.3 Environment Separation
+
+QubWatch should separate its environments.
+
+The primary environments should be:
+
+1. **Development**
+2. **Testing/Staging**
+3. **Production**
+
+Each environment should have appropriate configuration.
+
+Development settings should not automatically be used in production.
+
+Production credentials should never be placed in development configuration.
+
+---
+
+## 37.4 Development Environment
+
+The development environment is used for:
+
+* Building features
+* Testing code
+* Debugging
+* Experimentation
+* Local development
+* Developer learning
+
+Development should use non-production credentials and test data wherever practical.
+
+Real sensitive business information should not be copied into development unnecessarily.
+
+---
+
+## 37.5 Testing/Staging Environment
+
+The testing or staging environment should be used to validate:
+
+* New features
+* Security controls
+* Database changes
+* Detection rules
+* AI changes
+* Integrations
+* Performance
+* User workflows
+* Deployment processes
+
+Staging should resemble production sufficiently to identify important deployment problems before release.
+
+---
+
+## 37.6 Production Environment
+
+Production is the live QubWatch environment used by actual users and businesses.
+
+Production should have:
+
+* Strong access controls
+* Secure configuration
+* Production credentials
+* Appropriate monitoring
+* Backup and recovery
+* Audit logging
+* Security monitoring
+* Controlled deployments
+* Appropriate secrets management
+
+Production access should be restricted to authorized personnel.
+
+---
+
+## 37.7 Configuration Categories
+
+QubWatch configuration may include:
+
+* Application settings
+* Database settings
+* Authentication settings
+* Session settings
+* Security settings
+* Detection-rule settings
+* Notification settings
+* AI settings
+* Integration settings
+* Logging settings
+* Monitoring settings
+* Backup settings
+* Feature flags
+* Performance settings
+* Environment-specific settings
+
+Configuration should be organized so that important settings can be identified and managed safely.
+
+---
+
+## 37.8 Environment-Specific Configuration
+
+Some settings should differ between environments.
+
+Examples:
+
+| Configuration     | Development    | Testing          | Production     |
+| ----------------- | -------------- | ---------------- | -------------- |
+| Database          | Development DB | Test DB          | Production DB  |
+| AI credentials    | Test key       | Test/staging key | Production key |
+| Logging           | Detailed       | Detailed         | Controlled     |
+| Debug mode        | May be enabled | Controlled       | Disabled       |
+| Test data         | Allowed        | Allowed          | Not preferred  |
+| Security settings | Development    | Near-production  | Production     |
+
+Production should never rely on development-only settings.
+
+---
+
+## 37.9 Secrets Management
+
+Sensitive credentials must be treated as secrets.
+
+Examples include:
+
+* Passwords
+* Database credentials
+* API keys
+* AI provider keys
+* Authentication secrets
+* Encryption keys
+* Access tokens
+* Refresh tokens
+* Webhook secrets
+* Private certificates
+* Cloud credentials
+
+Secrets should be stored using appropriate secure mechanisms rather than directly inside source code.
+
+---
+
+## 37.10 Secrets Must Not Be Hard-Coded
+
+QubWatch source code should not contain hard-coded production secrets.
+
+For example, developers should avoid placing an API key directly inside application code.
+
+Instead, secrets should be provided through an appropriate secure configuration mechanism.
+
+---
+
+## 37.11 Secrets Must Not Be Committed to Git
+
+Sensitive credentials must not be committed to the Git repository.
+
+Files that may contain secrets should be excluded through appropriate repository configuration.
+
+Examples may include:
+
+* `.env`
+* Local credential files
+* Private keys
+* Cloud credential files
+* Secret configuration files
+
+A safe example configuration file may be provided with placeholder values, but real secrets should remain outside the repository.
+
+---
+
+## 37.12 Environment Variables
+
+Environment variables may be used for appropriate configuration and secrets.
+
+Examples:
+
+* Database connection information
+* AI API key
+* Application environment
+* Authentication secret
+* Notification service configuration
+
+Environment variables must still be protected.
+
+Using an environment variable does not automatically make a secret secure if the environment itself is improperly protected.
+
+---
+
+## 37.13 Secret Rotation
+
+Sensitive credentials should be capable of being changed without requiring unnecessary application redesign.
+
+QubWatch should support appropriate rotation of:
+
+* API keys
+* Database passwords
+* Authentication secrets
+* Integration credentials
+* Access tokens
+
+If a secret is suspected to be compromised, it should be replaced promptly.
+
+---
+
+## 37.14 Compromised Secret Response
+
+If a QubWatch secret is exposed:
+
+1. Identify the exposed secret
+2. Determine where it was exposed
+3. Revoke or disable it
+4. Generate a replacement
+5. Update the affected environment
+6. Investigate possible unauthorized use
+7. Review logs
+8. Remove unnecessary exposure
+9. Document the incident
+10. Improve controls to prevent recurrence
+
+A secret accidentally committed to Git should be treated as potentially compromised even if the commit is later deleted.
+
+---
+
+## 37.15 Configuration Change Control
+
+Important configuration changes should be controlled.
+
+Examples include:
+
+* Detection thresholds
+* Alert severity rules
+* Authentication settings
+* Permission settings
+* AI configuration
+* Database configuration
+* Notification settings
+* Integration settings
+* Security controls
+
+Important changes should be:
+
+* Understood
+* Reviewed
+* Tested where appropriate
+* Documented
+* Auditable
+* Reversible where practical
+
+---
+
+## 37.16 Detection Rule Configuration
+
+Detection rules are an important part of QubWatch.
+
+Configuration may include:
+
+* Rule name
+* Trigger condition
+* Threshold
+* Severity
+* Business scope
+* Enabled/disabled state
+* Effective date
+* Owner
+* Version
+
+Changes to detection rules should be traceable.
+
+A change in a detection threshold could significantly affect the number of alerts generated and therefore should not occur without appropriate control.
+
+---
+
+## 37.17 AI Configuration
+
+AI-related configuration may include:
+
+* AI provider
+* Model
+* Model version
+* System instructions
+* Safety controls
+* Context limits
+* Timeout settings
+* Rate limits
+* Cost limits
+* Allowed AI features
+
+Changes to important AI configuration should be tested and documented.
+
+AI configuration should not weaken the AI governance requirements defined in Section 25.
+
+---
+
+## 37.18 Feature Flags
+
+Future versions of QubWatch may use feature flags to control the release of features.
+
+Feature flags may allow the team to:
+
+* Enable a feature
+* Disable a feature
+* Test a feature
+* Release gradually
+* Roll back a feature
+* Restrict a feature to selected users
+
+Feature flags must themselves be protected and audited where appropriate.
+
+---
+
+## 37.19 Configuration Validation
+
+QubWatch should validate important configuration when the application starts or when configuration is changed.
+
+The system should detect problems such as:
+
+* Missing required configuration
+* Invalid values
+* Incorrect database settings
+* Invalid API credentials
+* Unsupported model configuration
+* Invalid URLs
+* Invalid security settings
+
+The application should fail safely rather than silently operating with unsafe configuration.
+
+---
+
+## 37.20 Secure Defaults
+
+QubWatch should use secure defaults wherever practical.
+
+Examples include:
+
+* Debug mode disabled in production
+* Secure cookies
+* Appropriate session expiration
+* Strong authentication settings
+* Restricted administrative access
+* Safe error messages
+* HTTPS
+* Restricted CORS configuration where applicable
+* Least-privilege integration permissions
+
+Users or administrators should not need to manually enable basic security protections.
+
+---
+
+## 37.21 Configuration and Database
+
+Database configuration should be managed carefully.
+
+Important settings include:
+
+* Database connection
+* Credentials
+* Connection limits
+* Migration settings
+* Backup settings
+* Encryption settings where applicable
+* Environment identification
+
+Production database configuration should not be exposed to development users unnecessarily.
+
+---
+
+## 37.22 Configuration and Integrations
+
+Each external integration should have clearly defined configuration.
+
+Examples:
+
+* Integration name
+* Provider
+* Endpoint
+* Authentication method
+* Required permissions
+* Credentials
+* Timeout
+* Retry policy
+* Rate limit
+* Enabled/disabled state
+
+Each integration should receive only the permissions it requires.
+
+---
+
+## 37.23 Configuration and Notifications
+
+Notification services may require configuration for:
+
+* Email provider
+* SMS provider
+* Push notification service
+* Sender information
+* Templates
+* Rate limits
+* Retry settings
+
+Sensitive notification credentials must be protected.
+
+---
+
+## 37.24 Configuration and Monitoring
+
+Monitoring configuration may include:
+
+* Health-check intervals
+* Error thresholds
+* Alert thresholds
+* Log levels
+* Monitoring destinations
+* Notification destinations
+* Retention settings
+
+Monitoring configuration should not expose sensitive credentials.
+
+---
+
+## 37.25 Logging Configuration
+
+Logging should be configured differently according to environment.
+
+Development may permit more detailed diagnostic logging.
+
+Production should avoid unnecessary sensitive or verbose logging.
+
+Production logs should not contain:
+
+* Passwords
+* API keys
+* Authentication tokens
+* Payment credentials
+* Private encryption keys
+* Unnecessary sensitive business information
+
+---
+
+## 37.26 Configuration Access Control
+
+Not every user should be allowed to change configuration.
+
+Access should follow:
+
+* Role-based access control
+* Least privilege
+* Separation of duties
+* Business ownership
+* Administrative authorization
+
+Particularly sensitive settings should require stronger authorization.
+
+---
+
+## 37.27 Administrative Configuration Changes
+
+Important administrative configuration changes should generate appropriate audit records.
+
+The audit record should identify, where appropriate:
+
+* Who made the change
+* What changed
+* When it changed
+* Previous value where appropriate
+* New value where appropriate
+* Reason or change reference where appropriate
+* Result
+
+Secrets themselves should not be written into audit logs.
+
+---
+
+## 37.28 Configuration Backup and Recovery
+
+Important configuration should be recoverable where necessary.
+
+This may include:
+
+* Application configuration
+* Detection rules
+* Feature flags
+* Integration configuration
+* Database configuration
+* Deployment configuration
+
+Secrets should not simply be copied into ordinary backups without appropriate protection.
+
+---
+
+## 37.29 Configuration Versioning
+
+Important non-secret configuration should be version-controlled where appropriate.
+
+This makes it possible to understand:
+
+* What changed
+* When it changed
+* Why it changed
+* Who changed it
+* Which version is currently active
+
+Secret values should not be stored in version control merely for the purpose of versioning.
+
+---
+
+## 37.30 Configuration Documentation
+
+Important configuration should be documented.
+
+Documentation should explain:
+
+* What the setting controls
+* Why it exists
+* Valid values
+* Default value where appropriate
+* Which environment uses it
+* Security considerations
+* Dependencies
+* Who may change it
+
+Documentation should not reveal sensitive secret values.
+
+---
+
+## 37.31 Configuration Testing
+
+Configuration changes should be tested before production deployment where appropriate.
+
+Testing should verify:
+
+* Application startup
+* Authentication
+* Database connection
+* Detection rules
+* Alerts
+* Notifications
+* AI functionality
+* Integrations
+* Security controls
+* Monitoring
+* Backup processes
+
+---
+
+## 37.32 Configuration Failure Handling
+
+If required configuration is missing or invalid, QubWatch should:
+
+* Detect the problem
+* Provide an appropriate error
+* Avoid exposing secrets
+* Prevent unsafe operation
+* Record appropriate diagnostic information
+* Alert the responsible operator where appropriate
+
+The system should not silently substitute insecure defaults for critical security settings.
+
+---
+
+## 37.33 Local Development Security
+
+Developers building QubWatch locally should protect their development environment.
+
+Development machines should use:
+
+* Strong account protection
+* Appropriate operating-system security
+* Updated software
+* Protected credentials
+* Secure network practices
+* No unnecessary production access
+
+Development credentials should have the minimum permissions necessary.
+
+---
+
+## 37.34 Configuration and the Git Repository
+
+The QubWatch Git repository should contain:
+
+* Source code
+* Documentation
+* Safe configuration templates
+* Infrastructure definitions where appropriate
+* Database migration files where applicable
+* Tests
+* Project documentation
+
+It should not contain:
+
+* Production passwords
+* API keys
+* Private keys
+* Authentication secrets
+* Database passwords
+* Sensitive customer data
+* Confidential investigation evidence
+
+---
+
+## 37.35 Configuration and Deployment
+
+The deployment process should ensure that the correct configuration is supplied to the correct environment.
+
+A deployment should verify:
+
+**Application → Configuration → Dependencies → Database → Security → Monitoring → Verification**
+
+Incorrect environment configuration should prevent or stop deployment where necessary.
+
+---
+
+## 37.36 Configuration Drift
+
+Configuration drift occurs when environments gradually become different from their intended configuration.
+
+QubWatch should monitor important configuration for unexpected differences where practical.
+
+Examples:
+
+* Production setting changed unexpectedly
+* Security setting disabled
+* Detection rule changed
+* Integration configuration modified
+* Monitoring disabled
+
+Important unexpected changes should generate appropriate alerts or audit events.
+
+---
+
+## 37.37 Configuration and Incident Response
+
+Configuration changes may be relevant during security incidents.
+
+During an investigation, authorized personnel may need to determine:
+
+* What configuration was active
+* When it changed
+* Who changed it
+* Whether it contributed to the incident
+* Whether it needs to be reverted
+
+Configuration history should therefore support incident investigation.
+
+---
+
+## 37.38 Configuration and Business Continuity
+
+Critical configuration should be included in appropriate recovery planning.
+
+QubWatch should be capable of restoring important configuration after:
+
+* System failure
+* Database failure
+* Infrastructure failure
+* Security incident
+* Accidental deletion
+* Deployment failure
+
+Recovery should be validated rather than assumed.
+
+---
+
+## 37.39 MVP Configuration Requirements
+
+The MVP should at minimum:
+
+* Separate development from production configuration
+* Keep secrets outside source code
+* Prevent production secrets from being committed to Git
+* Use appropriate environment configuration
+* Protect AI API credentials
+* Protect database credentials
+* Disable debug behavior in production
+* Use secure defaults
+* Restrict configuration access
+* Audit important configuration changes
+* Document important configuration
+* Provide a safe way to configure the application
+
+The MVP does not need a complex enterprise secrets-management platform if a simpler secure approach is sufficient for its scale.
+
+---
+
+## 37.40 Future Configuration Capabilities
+
+Future versions may include:
+
+* Dedicated secrets-management services
+* Automated secret rotation
+* Infrastructure-as-code
+* Configuration dashboards
+* Advanced configuration validation
+* Configuration drift detection
+* Environment provisioning
+* Automated deployment configuration
+* Advanced feature-flag management
+* Centralized configuration management
+* Automated compliance checks
+
+These capabilities should be introduced as QubWatch grows.
+
+---
+
+## 37.41 Configuration Governance
+
+Configuration should have clear ownership.
+
+Important configuration should have:
+
+* An identified owner
+* Defined purpose
+* Appropriate access
+* Change history
+* Documentation
+* Review requirements
+* Recovery considerations
+
+Configuration should not become an uncontrolled collection of undocumented settings.
+
+---
+
+## 37.42 Configuration Priority
+
+Configuration management should prioritize:
+
+1. Security
+2. Secrets protection
+3. Data integrity
+4. Environment isolation
+5. Availability
+6. Authorization
+7. Deployment reliability
+8. Maintainability
+9. Convenience
+
+Convenience should never justify exposing secrets or weakening security.
+
+---
+
+## 37.43 Core Configuration Rule
+
+> **QubWatch configuration must be secure, controlled, documented, environment-aware, and recoverable where necessary. Secrets must remain protected and must never be treated as ordinary application data.**
+
+---
+
+## 37.44 Summary
+
+QubWatch should maintain a clear separation between its application code, configuration, environments, and secrets.
+
+The overall configuration lifecycle is:
+
+**Define → Configure → Validate → Protect → Test → Deploy → Monitor → Review → Rotate/Update → Recover**
+
+Good configuration management ensures that:
+
+* The right settings are used in the right environment.
+* Secrets remain protected.
+* Configuration changes are traceable.
+* Deployments are safer.
+* Security controls remain effective.
+* The system can be recovered when necessary.
+
+### Core Principle
+
+> **Code defines how QubWatch works. Configuration defines how it operates. Secrets enable trusted connections. All three must be managed deliberately and securely.**
+
+
+
+# Section 38 — Cost Management, Resource Optimization and Financial Sustainability Requirements
+
+## 38.1 Purpose
+
+This section defines how QubWatch should manage the financial and technical resources required to build, operate, maintain, and scale the platform.
+
+QubWatch should be designed so that its costs remain understandable and controllable as the number of users, businesses, transactions, alerts, investigations, AI requests, integrations, storage requirements, and infrastructure resources increase.
+
+Cost management is particularly important because AI services, cloud infrastructure, databases, storage, notifications, monitoring, and third-party integrations may introduce usage-based costs.
+
+---
+
+## 38.2 Core Cost Management Principle
+
+> **QubWatch should provide meaningful business value while using technical and financial resources responsibly, efficiently, transparently, and sustainably.**
+
+---
+
+## 38.3 Cost Management Objectives
+
+Cost management should help QubWatch:
+
+* Understand operational costs
+* Control unnecessary spending
+* Prevent unexpected usage charges
+* Optimize infrastructure
+* Manage AI usage
+* Plan for growth
+* Compare providers where appropriate
+* Avoid unnecessary vendor lock-in
+* Maintain security and reliability
+* Support sustainable product development
+
+Cost reduction must not come at the expense of essential security, data integrity, reliability, or user protection.
+
+---
+
+## 38.4 Major Cost Categories
+
+Potential QubWatch cost categories include:
+
+1. Hosting/infrastructure
+2. Database services
+3. Storage
+4. AI services
+5. Email
+6. SMS
+7. Push notifications
+8. Monitoring and logging
+9. Backup and recovery
+10. Domain and networking services
+11. Security services
+12. Third-party APIs
+13. Payment services
+14. Development tools
+15. Software licenses
+16. Support and maintenance
+
+Actual costs will depend on the technologies and providers selected.
+
+---
+
+## 38.5 Infrastructure Costs
+
+Infrastructure costs may include:
+
+* Application hosting
+* Backend hosting
+* Database hosting
+* File storage
+* Network traffic
+* Compute resources
+* Serverless functions
+* Containers
+* Caching
+* Load balancing
+
+QubWatch should avoid provisioning significantly more infrastructure than required by actual usage.
+
+---
+
+## 38.6 Database Cost Management
+
+Database costs should be monitored as the amount of business data increases.
+
+Factors affecting database costs may include:
+
+* Number of businesses
+* Number of users
+* Number of products
+* Number of transactions
+* Number of alerts
+* Investigation records
+* Audit records
+* AI-related records
+* Storage requirements
+* Backup requirements
+
+Database optimization should consider indexing, query efficiency, retention, and appropriate data architecture.
+
+---
+
+## 38.7 Storage Cost Management
+
+QubWatch should manage storage deliberately.
+
+Potential storage may include:
+
+* Business records
+* Audit records
+* Investigation evidence
+* Reports
+* Uploaded files where supported
+* Logs
+* Backups
+* Analytics data
+
+Storage should not grow indefinitely without appropriate retention policies.
+
+Data should be archived or deleted according to the applicable retention requirements defined elsewhere in this PRD.
+
+---
+
+## 38.8 AI Cost Management
+
+AI may become one of the more variable QubWatch operating costs.
+
+QubWatch should therefore monitor:
+
+* Number of AI requests
+* Input token usage where applicable
+* Output token usage where applicable
+* Model usage
+* AI response length
+* AI request frequency
+* Failed requests
+* Cost per business where appropriate
+* Cost per investigation where appropriate
+* Total AI expenditure
+
+The platform should avoid sending unnecessary information to an AI provider.
+
+---
+
+## 38.9 AI Context Optimization
+
+QubWatch should provide the AI Assistant with relevant information rather than unnecessarily sending large amounts of business data.
+
+The system should consider:
+
+* Relevant transaction records
+* Relevant alerts
+* Relevant investigation information
+* Appropriate business context
+* User permissions
+* Required historical information
+
+This can improve:
+
+* Cost
+* Performance
+* Privacy
+* AI response quality
+
+---
+
+## 38.10 AI Usage Limits
+
+Where appropriate, QubWatch may implement reasonable limits on AI usage.
+
+Examples include:
+
+* Request limits
+* Rate limits
+* Daily limits
+* Business-level limits
+* Role-based limits
+* Cost thresholds
+
+Limits should be communicated clearly to authorized users.
+
+Important investigations should not be unnecessarily disrupted by poorly designed limits.
+
+---
+
+## 38.11 AI Failure and Cost Protection
+
+QubWatch should protect against situations where an AI integration repeatedly fails and automatically retries indefinitely.
+
+The system should use appropriate:
+
+* Retry limits
+* Timeouts
+* Backoff strategies
+* Error handling
+* Usage controls
+
+This helps prevent unexpected AI costs.
+
+---
+
+## 38.12 Notification Cost Management
+
+Notification services may generate usage-based charges.
+
+QubWatch should avoid unnecessary notification volume through:
+
+* Duplicate suppression
+* Notification grouping
+* User preferences
+* Appropriate severity thresholds
+* Rate limiting
+* Retry controls
+
+A critical security notification should not be treated the same way as a low-priority informational message.
+
+---
+
+## 38.13 Monitoring and Logging Costs
+
+Monitoring and logging can become expensive as QubWatch grows.
+
+The platform should therefore manage:
+
+* Log volume
+* Log retention
+* Monitoring frequency
+* Metrics retention
+* Trace retention
+* Storage
+* Alert volume
+
+Sensitive information should not be logged merely for analytics or debugging purposes.
+
+---
+
+## 38.14 Backup Cost Management
+
+Backups are essential but should be managed efficiently.
+
+QubWatch should consider:
+
+* Backup frequency
+* Backup size
+* Retention period
+* Storage location
+* Recovery requirements
+* Backup duplication
+
+Cost optimization must not eliminate backups necessary for recovery.
+
+---
+
+## 38.15 Cost and Security
+
+Cost optimization must never weaken essential security.
+
+QubWatch should not reduce or remove important security controls solely to save money without understanding the resulting risk.
+
+Examples include:
+
+* Removing necessary backups
+* Disabling security monitoring
+* Storing sensitive data insecurely
+* Removing encryption where required
+* Giving excessive permissions to reduce administrative effort
+* Using unsupported or insecure software
+
+Security risk should be considered alongside financial cost.
+
+---
+
+## 38.16 Cost and Reliability
+
+Cost optimization must also consider reliability.
+
+A cheaper architecture that causes frequent:
+
+* Downtime
+* Data loss
+* Slow performance
+* Failed transactions
+* Failed alerts
+* Failed investigations
+
+may ultimately cost more than an appropriately designed system.
+
+QubWatch should consider **total cost of ownership**, not simply the lowest immediate price.
+
+---
+
+## 38.17 Resource Optimization
+
+The platform should use resources efficiently.
+
+Possible optimization areas include:
+
+* Database queries
+* API calls
+* AI requests
+* Storage
+* Background jobs
+* Caching
+* Network traffic
+* Compute resources
+* Logging
+
+Optimization should be based on actual measurements rather than assumptions.
+
+---
+
+## 38.18 Capacity Planning
+
+QubWatch should estimate how resource requirements may change as the platform grows.
+
+Planning should consider:
+
+* Number of businesses
+* Number of users
+* Transaction volume
+* Alert volume
+* Investigation volume
+* AI usage
+* Storage growth
+* API traffic
+* Integration activity
+
+Capacity planning should identify when additional infrastructure may become necessary.
+
+---
+
+## 38.19 Cost Monitoring
+
+Authorized operators should be able to monitor important cost indicators.
+
+Possible metrics include:
+
+* Total monthly infrastructure cost
+* AI expenditure
+* Database cost
+* Storage cost
+* Notification cost
+* Monitoring cost
+* Cost per business
+* Cost per active user
+* Cost per transaction where meaningful
+* Cost per investigation where meaningful
+
+These measurements should be treated as estimates where exact attribution is not possible.
+
+---
+
+## 38.20 Cost Alerts
+
+Where supported by infrastructure or service providers, QubWatch should use cost alerts.
+
+Examples:
+
+* Unusual increase in AI usage
+* Unexpected infrastructure growth
+* Storage growth
+* Excessive API requests
+* Notification spikes
+* Approaching spending limits
+
+Cost alerts should identify unusual spending before it becomes a major financial problem.
+
+---
+
+## 38.21 Budget Controls
+
+Where appropriate, QubWatch should establish spending limits or budgets for:
+
+* AI
+* Hosting
+* Storage
+* Notifications
+* External APIs
+* Monitoring
+
+A budget limit should not silently cause critical security or business functionality to fail.
+
+Where a limit may affect an important service, the system should provide appropriate warnings and fallback behavior.
+
+---
+
+## 38.22 Cost Allocation
+
+As QubWatch grows, costs may be analyzed by:
+
+* Environment
+* Feature
+* Business
+* Service
+* Provider
+* Product module
+
+For example, the organization may want to determine how much of its monthly operating cost is associated with the AI Assistant.
+
+Cost allocation should not require collecting unnecessary personal information.
+
+---
+
+## 38.23 Development Cost Management
+
+During development, the project should avoid unnecessary expenditure.
+
+The development team should consider:
+
+* Free or low-cost development tools where appropriate
+* Local development
+* Free tiers where suitable
+* Test environments appropriate to project size
+* Avoiding unnecessary paid services
+* Reusing appropriate infrastructure
+* Monitoring free-tier limitations
+
+Free services should not be selected if they create unacceptable security, reliability, privacy, or scalability risks.
+
+---
+
+## 38.24 Vendor Selection
+
+External providers should be evaluated using more than price.
+
+Important considerations include:
+
+* Security
+* Reliability
+* Privacy
+* Performance
+* Cost
+* Scalability
+* Support
+* Integration capability
+* Data portability
+* Contract terms
+* Vendor lock-in
+
+The cheapest provider is not automatically the best provider.
+
+---
+
+## 38.25 Vendor Lock-In
+
+QubWatch should avoid unnecessary dependence on a single vendor where practical.
+
+This is particularly important for:
+
+* AI providers
+* Cloud hosting
+* Databases
+* Authentication
+* Notifications
+* Payment services
+
+The architecture should make future provider changes reasonably possible where the cost of doing so is justified.
+
+---
+
+## 38.26 AI Provider Independence
+
+QubWatch should maintain reasonable separation between its application logic and a specific AI provider.
+
+Where practical, the AI integration should allow future replacement or addition of AI providers.
+
+This supports:
+
+* Cost comparison
+* Resilience
+* Model improvements
+* Provider flexibility
+* Negotiation
+* Business continuity
+
+Provider independence does not require supporting multiple AI providers in the MVP.
+
+---
+
+## 38.27 Cost and Data Portability
+
+QubWatch should consider how easily important business data can be moved if a provider is changed.
+
+Data should not be intentionally trapped in a proprietary system without a reasonable business justification.
+
+Important data portability considerations include:
+
+* Transactions
+* Products
+* Alerts
+* Investigations
+* Audit records
+* Business configuration
+
+---
+
+## 38.28 Cost and Performance
+
+Performance optimization should consider both user experience and resource consumption.
+
+For example:
+
+An inefficient database query may increase both:
+
+* Response time
+* Infrastructure cost
+
+Efficient architecture can therefore improve both performance and financial sustainability.
+
+---
+
+## 38.29 Cost and Scalability
+
+QubWatch should scale resources according to actual demand where practical.
+
+The system should avoid:
+
+* Permanently oversized infrastructure
+* Unused resources
+* Unnecessary database capacity
+* Excessive storage
+* Unlimited logging
+* Uncontrolled AI usage
+
+At the same time, the platform should avoid aggressive cost-cutting that prevents reasonable growth.
+
+---
+
+## 38.30 Cost and Business Model
+
+Future versions of QubWatch may introduce pricing or subscription models.
+
+Potential models may include:
+
+* Free tier
+* Subscription
+* Business tier
+* Enterprise tier
+* Usage-based pricing
+* Feature-based pricing
+* Hybrid pricing
+
+Any future pricing model should be evaluated separately from the technical requirements of the MVP.
+
+---
+
+## 38.31 Cost Transparency
+
+Where users may incur usage-related charges, QubWatch should provide understandable information.
+
+Users should not be surprised by significant usage costs caused by hidden system behavior.
+
+Where applicable, the platform should communicate:
+
+* Usage
+* Limits
+* Allowances
+* Additional charges
+* Service restrictions
+
+---
+
+## 38.32 Cost and Data Retention
+
+Data retention can directly affect storage and operational costs.
+
+QubWatch should therefore align retention decisions with:
+
+* Business requirements
+* Security
+* Privacy
+* Legal/regulatory requirements where applicable
+* Investigation requirements
+* Audit requirements
+* Recovery requirements
+* Cost
+
+Data should not be retained forever simply because storage is available.
+
+---
+
+## 38.33 Cost and Analytics
+
+Product analytics should help identify unnecessary resource consumption.
+
+Examples:
+
+* Rarely used features
+* Excessive AI requests
+* Repeated failed API calls
+* Unnecessary notifications
+* Inefficient workflows
+* Unused infrastructure
+
+Analytics should support informed optimization.
+
+---
+
+## 38.34 Cost and Third-Party Integrations
+
+Each integration may introduce:
+
+* Subscription costs
+* API usage costs
+* Transaction fees
+* Storage costs
+* Maintenance costs
+* Support costs
+
+Before introducing an integration, QubWatch should consider whether its business value justifies its total cost.
+
+---
+
+## 38.35 Cost Failure Handling
+
+If a paid service becomes unavailable because of:
+
+* Spending limits
+* Expired subscription
+* Billing failure
+* Provider restrictions
+* Usage quota
+
+QubWatch should fail safely.
+
+Where practical, the platform should:
+
+* Detect the problem
+* Notify authorized operators
+* Preserve existing business data
+* Continue unaffected core functions
+* Provide an appropriate fallback
+* Avoid data corruption
+
+---
+
+## 38.36 MVP Cost Management Requirements
+
+The MVP should:
+
+* Use an architecture appropriate to the project's actual size
+* Avoid unnecessary infrastructure
+* Monitor major service costs
+* Protect against uncontrolled AI usage
+* Use reasonable AI request limits where appropriate
+* Avoid unnecessary notifications
+* Control logging and storage growth
+* Use appropriate backups
+* Track important operational costs
+* Avoid committing to expensive services unnecessarily
+* Keep the architecture capable of reasonable future growth
+
+The MVP does **not** require a sophisticated financial-management system.
+
+---
+
+## 38.37 Future Cost Management Capabilities
+
+Future versions may include:
+
+* Advanced cost dashboards
+* Per-business cost attribution
+* AI cost optimization
+* Automated resource scaling
+* Advanced usage forecasting
+* Provider cost comparison
+* Automated budget alerts
+* Cost-based feature optimization
+* FinOps-style operational practices
+* Customer usage billing
+* Subscription management
+* Enterprise cost controls
+
+These capabilities should be introduced as QubWatch's scale and business model require them.
+
+---
+
+## 38.38 Cost Governance
+
+Important cost decisions should consider:
+
+* Business value
+* Security
+* Privacy
+* Reliability
+* Performance
+* Scalability
+* Maintainability
+* Vendor dependency
+* Long-term sustainability
+
+Cost decisions should be documented where they have significant architectural consequences.
+
+---
+
+## 38.39 Cost Priority
+
+QubWatch cost management should prioritize:
+
+1. Security
+2. Data integrity
+3. Business continuity
+4. Privacy
+5. Reliability
+6. Core functionality
+7. Performance
+8. Cost optimization
+9. Convenience
+
+Cost savings should never justify unacceptable security or data-integrity risks.
+
+---
+
+## 38.40 Core Cost Management Rule
+
+> **QubWatch should use resources efficiently, monitor meaningful costs, prevent uncontrolled usage, and scale deliberately without sacrificing security, privacy, reliability, or business value.**
+
+---
+
+## 38.41 Summary
+
+QubWatch should be financially sustainable as it develops from an MVP into a larger platform.
+
+The cost-management lifecycle is:
+
+**Estimate → Monitor → Measure → Optimize → Control → Review → Scale**
+
+The objective is not simply to make QubWatch as cheap as possible.
+
+The objective is to build a platform where:
+
+* Costs are understood
+* Waste is reduced
+* AI usage is controlled
+* Infrastructure is appropriately sized
+* Security is protected
+* Reliability is maintained
+* Growth is financially manageable
+
+### Core Principle
+
+> **Spend deliberately. Measure continuously. Optimize intelligently. Never trade essential security, privacy, reliability, or data integrity for short-term savings.**
