@@ -1,0 +1,391 @@
+# QubWatch Product Requirements Document (PRD)
+
+## 1. Product Overview
+
+### 1.1 Product Name
+
+**QubWatch**
+
+### 1.2 Product Description
+
+QubWatch is an AI-powered business monitoring and investigation platform designed to help business owners monitor business activities, identify unusual patterns, detect potential operational losses, and investigate activities that require attention.
+
+QubWatch combines business data, monitoring rules, alerts, investigation tools, and an AI assistant to provide business owners with greater visibility into what is happening within their businesses.
+
+### 1.3 Product Vision
+
+To give business owners an intelligent digital "watch" over their business operations, helping them see unusual activity, understand what may have happened, and investigate issues before they become major losses.
+
+### 1.4 Problem Statement
+
+Business owners may not always be physically present to supervise daily operations. They often depend on employees and business records to know what is happening.
+
+This creates a visibility problem.
+
+A business may experience unusual discounts, refunds, transaction patterns, inventory discrepancies, unauthorized activities, or other operational irregularities without the owner immediately noticing.
+
+QubWatch is designed to reduce this visibility gap by monitoring available business information and bringing potentially unusual activities to the attention of authorized users.
+
+### 1.5 Product Goal
+
+QubWatch should enable an authorized business user to:
+
+1. Set up a business profile.
+2. Record and manage products.
+3. Record and review transactions.
+4. Monitor important business activities.
+5. Detect potentially unusual activity.
+6. Receive alerts.
+7. Investigate alerts and related transactions.
+8. Ask questions about business information using an AI assistant.
+9. Make better-informed decisions based on available information.
+
+### 1.6 Important Product Principle
+
+QubWatch identifies activities that may require attention. It does not automatically determine that an employee has committed theft, fraud, or another wrongdoing.
+
+An alert is an indication that an activity may be unusual and should be reviewed.
+
+Final conclusions and decisions remain with the authorized business user.
+
+## 2. Users and Roles
+
+### 2.1 Primary User
+
+The primary user is the **Business Owner**.
+
+The business owner should be able to:
+
+* Create and configure a business.
+* Add products.
+* Review transactions.
+* View the dashboard.
+* Receive and review alerts.
+* Start and manage investigations.
+* Use the AI assistant.
+* Manage authorized users.
+
+### 2.2 Authorized Manager
+
+A business owner may give selected managers access to QubWatch.
+
+An authorized manager may be permitted to:
+
+* View business information.
+* Monitor transactions.
+* Review alerts.
+* Participate in investigations.
+* Add investigation notes.
+
+The exact permissions will be controlled by the application's role and permission system.
+
+### 2.3 Staff User
+
+Staff users may eventually be given limited access to perform specific operational activities, such as recording transactions.
+
+Staff users should not automatically have access to sensitive investigation information.
+
+### 2.4 Administrator
+
+An administrator role may be introduced for system-level management.
+
+Administrators may manage:
+
+* User accounts.
+* System configuration.
+* Platform settings.
+* Technical support functions.
+
+Administrative privileges should be separated from business-owner privileges.
+
+### 2.5 Role-Based Access
+
+QubWatch should use role-based access control so that users can only access information and functions appropriate to their assigned role.
+
+Permissions should follow the principle of **least privilege**: users should receive only the access required to perform their responsibilities.
+
+
+## 3. Functional Requirements
+
+Functional requirements define the specific functions and capabilities that QubWatch must provide to its users.
+
+### 3.1 Authentication and Login
+
+QubWatch must provide a secure authentication system.
+
+The system should allow users to:
+
+* Create an account.
+* Log in securely.
+* Log out.
+* Reset a forgotten password.
+* Maintain a secure session.
+* Access only the business information they are authorized to access.
+
+The system should not expose passwords or other authentication credentials in plain text.
+
+### 3.2 Business Setup
+
+After creating an account, the business owner should be able to create and configure a business profile.
+
+The business setup should include:
+
+* Business name.
+* Business type.
+* Business description.
+* Contact information.
+* Business location.
+* Currency.
+* Products or services.
+* Authorized users.
+
+The system should allow the business owner to update business information when necessary.
+
+### 3.3 User Management
+
+The business owner should be able to manage authorized users.
+
+The system should support:
+
+* Adding users.
+* Assigning roles.
+* Removing users.
+* Activating or deactivating users.
+* Managing permissions.
+
+Each important user action should be recorded in an audit trail where appropriate.
+
+### 3.4 Product Management
+
+Authorized users should be able to create and manage products.
+
+Each product may contain:
+
+* Product name.
+* Product code or identifier.
+* Category.
+* Selling price.
+* Cost price.
+* Quantity or stock level.
+* Minimum stock level.
+* Product status.
+
+Users should be able to:
+
+* Add products.
+* Edit products.
+* View products.
+* Search products.
+* Update stock information.
+* Deactivate products.
+
+### 3.5 Transaction Management
+
+QubWatch should record business transactions that can be monitored and analysed.
+
+A transaction may contain:
+
+* Transaction ID.
+* Date and time.
+* Product or service.
+* Quantity.
+* Unit price.
+* Total amount.
+* Discount.
+* Payment method.
+* Staff/user responsible.
+* Transaction status.
+
+Authorized users should be able to:
+
+* Record transactions.
+* View transactions.
+* Search transactions.
+* Filter transactions.
+* Review transaction details.
+
+The system should maintain transaction history and should not silently delete important transaction records.
+
+### 3.6 Dashboard
+
+QubWatch should provide a dashboard that gives the business owner a quick overview of business activity.
+
+The dashboard should display relevant information such as:
+
+* Total transactions.
+* Total sales or revenue.
+* Number of products.
+* Inventory information.
+* Recent transactions.
+* Active alerts.
+* Open investigations.
+* Important activity trends.
+
+The dashboard should prioritize information requiring the user's attention.
+
+### 3.7 Monitoring
+
+QubWatch should monitor available business activity for patterns that may require review.
+
+Monitoring may consider factors such as:
+
+* Transaction frequency.
+* Transaction amounts.
+* Discounts.
+* Refunds.
+* Reversals.
+* Product activity.
+* Inventory changes.
+* Staff activity.
+* Unusual changes compared with normal business patterns.
+
+Monitoring rules should be configurable and should evolve as the product develops.
+
+### 3.8 Alerts
+
+QubWatch should generate alerts when predefined rules or detection mechanisms identify potentially unusual activity.
+
+An alert should contain information such as:
+
+* Alert ID.
+* Date and time.
+* Alert type.
+* Severity.
+* Related transaction or activity.
+* User/staff involved where applicable.
+* Reason for the alert.
+* Current status.
+
+Possible alert statuses include:
+
+* New.
+* Under Review.
+* Investigating.
+* Resolved.
+* Dismissed.
+
+Users should be able to review an alert and decide whether further investigation is required.
+
+### 3.9 Investigation
+
+Authorized users should be able to create an investigation from an alert or suspicious activity.
+
+An investigation should allow the user to:
+
+* Review the triggering alert.
+* Examine related transactions.
+* Examine relevant business activity.
+* Record observations.
+* Add investigation notes.
+* Record findings.
+* Update investigation status.
+* Close the investigation.
+
+Possible investigation statuses include:
+
+* Open.
+* Under Investigation.
+* Resolved.
+* Closed.
+
+QubWatch should preserve an appropriate history of investigation activity.
+
+### 3.10 AI Assistant
+
+QubWatch should provide an AI assistant that helps authorized users understand available business information.
+
+Users should be able to ask natural-language questions such as:
+
+* "Why was this transaction flagged?"
+* "Show me unusual transactions from this week."
+* "Which products have unusual activity?"
+* "What transactions are associated with this alert?"
+* "Summarize this investigation."
+* "What changed compared with the previous period?"
+
+The AI assistant should provide explanations based on information that the user is authorized to access.
+
+The AI assistant should clearly distinguish between:
+
+* Known information from business data.
+* Possible explanations.
+* Recommendations for further review.
+
+The AI assistant should not present an unverified suspicion as a confirmed fact.
+
+### 3.11 Notifications
+
+QubWatch may provide notifications when important alerts or events require attention.
+
+Notifications may eventually be delivered through:
+
+* In-app notifications.
+* Email.
+* Other supported notification channels.
+
+The first MVP should prioritize in-app notifications.
+
+### 3.12 Search and Filtering
+
+QubWatch should allow authorized users to search and filter important business information.
+
+Search and filtering should eventually be available for:
+
+* Products.
+* Transactions.
+* Alerts.
+* Investigations.
+* Users.
+
+Users should be able to narrow information by relevant fields such as date, status, user, product, amount, or alert type.
+
+### 3.13 Audit Trail
+
+QubWatch should maintain an audit trail for important activities.
+
+Examples include:
+
+* Login events.
+* User creation.
+* Permission changes.
+* Product changes.
+* Transaction actions.
+* Alert actions.
+* Investigation actions.
+
+The audit trail should help establish what action occurred, when it occurred and which authorized user performed it.
+
+### 3.14 Data Protection and Security
+
+Because QubWatch may contain sensitive business information, security must be considered throughout the product.
+
+The system should aim to implement:
+
+* Secure authentication.
+* Role-based access control.
+* Least-privilege access.
+* Secure data storage.
+* Protection of sensitive information.
+* Audit logging.
+* Input validation.
+* Secure communication.
+* Appropriate session management.
+
+Security requirements will become more detailed during technical design and implementation.
+
+### 3.15 MVP Functional Priority
+
+The first MVP should prioritize the following capabilities:
+
+1. Authentication and Login.
+2. Business Setup.
+3. User Management.
+4. Product Management.
+5. Transaction Management.
+6. Dashboard.
+7. Basic Monitoring.
+8. Rule-based Alerts.
+9. Basic Investigation.
+10. Initial AI Assistant.
+
+Features such as advanced anomaly detection, external integrations, mobile applications, advanced analytics and automated reporting can be developed in later versions.
